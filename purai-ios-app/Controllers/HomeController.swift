@@ -10,7 +10,25 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var gradientLayer: CAGradientLayer!
+    var events: [Event] = {
+        var partyCategory = Category()
+        partyCategory.title = "Festa e Show"
+        partyCategory.url_image = "party"
+        
+        var sampleEvent = Event()
+        sampleEvent.url_image = "sample-event"
+        sampleEvent.title = "Sample Event"
+        sampleEvent.city = "Cupertino"
+        sampleEvent.category = partyCategory
+        
+        var awesomeEvent = Event()
+        awesomeEvent.url_image = "awesome-event"
+        awesomeEvent.title = "My Awesome Event My Awesome Event My Awesome Event My Awesome Event"
+        awesomeEvent.city = "Divinópolis"
+        awesomeEvent.category = partyCategory
+        
+        return [sampleEvent, awesomeEvent]
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,17 +83,18 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return events.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventCell
+        cell.event = events[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (view.frame.width - 16 - 16) * 9 / 16
-        return CGSize(width: view.frame.width, height: height + 16 + 68)
+        return CGSize(width: view.frame.width, height: height + 16 + 76)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
