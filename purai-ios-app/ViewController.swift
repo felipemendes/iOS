@@ -10,12 +10,22 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    var gradientLayer: CAGradientLayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        navigationItem.title = "Próximos eventos"
-        collectionView?.backgroundColor = UIColor.white
         
+        navigationItem.title = "Próximos eventos"
+        navigationController?.navigationBar.isTranslucent = false
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        titleLabel.text = "Próximos eventos"
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        navigationItem.titleView = titleLabel
+        
+        collectionView?.backgroundColor = UIColor.init(red: 23/255, green: 25/255, blue: 29/255, alpha: 1)
+
         collectionView?.register(EventCell.self, forCellWithReuseIdentifier: "cell")
     }
     
@@ -29,7 +39,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        let height = (view.frame.width - 16 - 16) * 9 / 16
+        return CGSize(width: view.frame.width, height: height + 16 + 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -45,27 +56,33 @@ class EventCell: UICollectionViewCell {
     
     let eventImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.blue
+        imageView.image = UIImage.init(named: "sample-event")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.purple
+        label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Sample Event"
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
-    let subtitleTextView: UITextView = {
-       let textView = UITextView()
-        textView.backgroundColor = UIColor.red
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
+    let subtitleLabel: UILabel = {
+       let label = UILabel()
+        label.textColor = UIColor.init(red: 96/255, green: 97/255, blue: 100/255, alpha: 1)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Cupertino"
+        label.font = UIFont.systemFont(ofSize: 10)
+        return label
     }()
     
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.init(red: 96/255, green: 97/255, blue: 100/255, alpha: 1)
         return view
     }()
     
@@ -73,30 +90,28 @@ class EventCell: UICollectionViewCell {
         addSubview(eventImageView)
         addSubview(separatorView)
         addSubview(titleLabel)
-        addSubview(subtitleTextView)
+        addSubview(subtitleLabel)
         
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: eventImageView)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-16-[v0]-16-[v1]-8-[v2]-16-[v3(1)]|", views: eventImageView, titleLabel, subtitleTextView, separatorView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1]-4-[v2]-[v3(1)]|", views: eventImageView, titleLabel, subtitleLabel, separatorView)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
         
-        // titleLabel - top constraints
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: eventImageView, attribute: .bottom, multiplier: 1, constant: 16))
         // titleLabel - left constraints
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .left, relatedBy: .equal, toItem: eventImageView, attribute: .left, multiplier: 1, constant: 0))
         // titleLabel - right constraints
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: eventImageView, attribute: .right, multiplier: 1, constant: 0))
         // titleLabel - height constraints
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 15))
         
         // subtitleTextView - left constraints
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .left, relatedBy: .equal, toItem: titleLabel, attribute: .left, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .left, relatedBy: .equal, toItem: titleLabel, attribute: .left, multiplier: 1, constant: 0))
         // subtitleTextView - right constraints
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .right, relatedBy: .equal, toItem: titleLabel, attribute: .right, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .right, relatedBy: .equal, toItem: titleLabel, attribute: .right, multiplier: 1, constant: 0))
         // subtitleTextView - height constraints
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 15))
     }
     
     required init?(coder aDecoder: NSCoder) {
