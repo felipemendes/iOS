@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290B7218E9BCF00FE99C7 /* Extensions.swift */; };
 		02E290BB218E9C8A00FE99C7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* EventCell.swift */; };
+		02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BD218E9EC100FE99C7 /* MenuBar.swift */; };
 		02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D8D7217516DA001FD974 /* AppDelegate.swift */; };
 		02E8D8DA217516DA001FD974 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D8D9217516DA001FD974 /* HomeController.swift */; };
 		02E8D8DD217516DA001FD974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E8D8DB217516DA001FD974 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		02E290B7218E9BCF00FE99C7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		02E290BA218E9C8A00FE99C7 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		02E290BD218E9EC100FE99C7 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		02E8D8D4217516DA001FD974 /* purai-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "purai-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E8D8D7217516DA001FD974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02E8D8D9217516DA001FD974 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				02E290BA218E9C8A00FE99C7 /* EventCell.swift */,
+				02E290BD218E9EC100FE99C7 /* MenuBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				02E8D8DA217516DA001FD974 /* HomeController.swift in Sources */,
 				02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */,
 				02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */,
+				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
