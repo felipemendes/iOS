@@ -29,15 +29,11 @@ class EventCell: BaseCell {
         didSet {
             titleLabel.text = event?.title
             
-            if let eventImage = event?.url_image {
-                eventImageView.image = UIImage(named: eventImage)
-            }
+            setupEventImage()
             
             subtitleLabel.text = event?.city
             
-            if let categoryImage = event?.category?.url_image {
-                categoryImageView.image = UIImage(named: categoryImage)
-            }
+            setupCategoryImage()
             
             // Measure title text
             if let title = event?.title {
@@ -54,9 +50,21 @@ class EventCell: BaseCell {
         }
     }
     
+    func setupEventImage() {
+        if let eventImageUrl = event?.url_image {
+            eventImageView.loadImageUsingUrlString(urlString: eventImageUrl)
+        }
+    }
+    
+    func setupCategoryImage() {
+        if let categoryImageUrl = event?.category?.category_image {
+            categoryImageView.loadImageUsingUrlString(urlString: categoryImageUrl)
+        }
+    }
+    
     let eventImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.init(named: "sample-event")
+//        imageView.image = UIImage.init(named: "sample-event")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
@@ -66,7 +74,7 @@ class EventCell: BaseCell {
     
     let categoryImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "sample-event")
+//        imageView.image = UIImage(named: "sample-event")
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
         return imageView
@@ -76,7 +84,7 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sample Event"
+//        label.text = "Sample Event"
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 2
         return label
@@ -86,7 +94,7 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .rgb(red: 96, green: 97, blue: 100)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cupertino"
+//        label.text = "Cupertino"
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()

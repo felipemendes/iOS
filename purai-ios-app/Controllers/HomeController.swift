@@ -9,29 +9,56 @@
 import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
-    var events: [Event] = {
-        var partyCategory = Category()
-        partyCategory.title = "Festa e Show"
-        partyCategory.url_image = "party"
-        
-        var sampleEvent = Event()
-        sampleEvent.url_image = "sample-event"
-        sampleEvent.title = "Sample Event"
-        sampleEvent.city = "Cupertino"
-        sampleEvent.category = partyCategory
-        
-        var awesomeEvent = Event()
-        awesomeEvent.url_image = "awesome-event"
-        awesomeEvent.title = "My Awesome Event My Awesome Event My Awesome Event My Awesome Event"
-        awesomeEvent.city = "Divinópolis"
-        awesomeEvent.category = partyCategory
-        
-        return [sampleEvent, awesomeEvent]
-    }()
+    
+    var events: [Event]?
+    
+    func fetchEvents() {
+        let url = URL(string: "https://api.myjson.com/bins/r0puu")
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                
+                self.events = [Event]()
+                
+                for dictionay in json as! [[String: AnyObject]] {
+                    
+                    let event = Event()
+                    event.title = dictionay["title"] as? String
+                    event.city = dictionay["city"] as? String
+                    event.url_image = dictionay["url_image"] as? String
+                    
+                    let categoryDictionay = dictionay["category"] as! [String: AnyObject]
+                    
+                    let category = Category()
+                    category.title = categoryDictionay["title"] as? String
+                    category.category_image = categoryDictionay["category_image"] as? String
+                    
+                    event.category = category
+                    
+                    self.events?.append(event)
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+                
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+        }.resume()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchEvents()
         
         navigationItem.title = "Próximos eventos"
         navigationController?.navigationBar.isTranslucent = false
@@ -83,12 +110,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return events.count
+        return events?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventCell
-        cell.event = events[indexPath.item]
+        cell.event = events?[indexPath.item]
         return cell
     }
     
