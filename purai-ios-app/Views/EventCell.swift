@@ -62,8 +62,8 @@ class EventCell: BaseCell {
         }
     }
     
-    let eventImageView: UIImageView = {
-        let imageView = UIImageView()
+    let eventImageView: CustomImageView = {
+        let imageView = CustomImageView()
 //        imageView.image = UIImage.init(named: "sample-event")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
@@ -72,8 +72,8 @@ class EventCell: BaseCell {
         return imageView
     }()
     
-    let categoryImageView: UIImageView = {
-        let imageView = UIImageView()
+    let categoryImageView: CustomImageView = {
+        let imageView = CustomImageView()
 //        imageView.image = UIImage(named: "sample-event")
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true

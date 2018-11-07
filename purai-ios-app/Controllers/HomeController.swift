@@ -13,7 +13,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var events: [Event]?
     
     func fetchEvents() {
-        let url = URL(string: "https://api.myjson.com/bins/r0puu")
+        let url = URL(string: "https://api.myjson.com/bins/sik4m")
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if error != nil {
