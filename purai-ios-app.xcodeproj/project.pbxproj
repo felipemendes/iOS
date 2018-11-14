@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */; };
 		02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290B7218E9BCF00FE99C7 /* Extensions.swift */; };
 		02E290BB218E9C8A00FE99C7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* EventCell.swift */; };
 		02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BD218E9EC100FE99C7 /* MenuBar.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		02E290B7218E9BCF00FE99C7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		02E290BA218E9C8A00FE99C7 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		02E290BD218E9EC100FE99C7 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				02E8D8D9217516DA001FD974 /* HomeController.swift */,
+				021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				02E290BB218E9C8A00FE99C7 /* EventCell.swift in Sources */,
 				02E8D8DA217516DA001FD974 /* HomeController.swift in Sources */,
 				02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */,
+				021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */,
 				02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */,
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
