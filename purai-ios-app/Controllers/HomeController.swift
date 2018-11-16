@@ -60,7 +60,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         fetchEvents()
         
-        navigationItem.title = "Próximos eventos"
         navigationController?.navigationBar.isTranslucent = false
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
@@ -119,9 +118,20 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }()
     
     private func setupMenuBar() {
+        navigationController?.hidesBarsOnSwipe = true
+        
+        let blackView = UIView()
+        blackView.backgroundColor = UIColor.rgb(red: 23, green: 25, blue: 29)
+        view.addSubview(blackView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: blackView)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: blackView)
+        
         view.addSubview(menuBar)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: menuBar)
+        
+        let guide = view.safeAreaLayoutGuide
+        menuBar.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
