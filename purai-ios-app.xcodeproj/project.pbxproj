@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */; };
+		02330C87219F36B400A257CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		027E3C32219D070900219E32 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E3C31219D070900219E32 /* SettingCell.swift */; };
 		02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290B7218E9BCF00FE99C7 /* Extensions.swift */; };
 		02E290BB218E9C8A00FE99C7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* EventCell.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		02330C86219F36B400A257CF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		027E3C31219D070900219E32 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		02E290B7218E9BCF00FE99C7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		02E290BA218E9C8A00FE99C7 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02330C85219F369400A257CF /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				02330C86219F36B400A257CF /* ApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
 		02E290B6218E9BBA00FE99C7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		02E8D8D6217516DA001FD974 /* purai-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				02330C85219F369400A257CF /* ApiService */,
 				02E290BF218EBE0800FE99C7 /* Models */,
 				02E290BC218E9CBB00FE99C7 /* Controllers */,
 				02E290B9218E9C4100FE99C7 /* Views */,
@@ -190,6 +201,7 @@
 				027E3C32219D070900219E32 /* SettingCell.swift in Sources */,
 				02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */,
 				021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */,
+				02330C87219F36B400A257CF /* ApiService.swift in Sources */,
 				02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */,
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,

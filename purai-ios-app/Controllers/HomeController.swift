@@ -13,46 +13,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var events: [Event]?
     
     func fetchEvents() {
-        let url = URL(string: "https://api.myjson.com/bins/sik4m")
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                
-                self.events = [Event]()
-                
-                for dictionay in json as! [[String: AnyObject]] {
-                    
-                    let event = Event()
-                    event.title = dictionay["title"] as? String
-                    event.city = dictionay["city"] as? String
-                    event.url_image = dictionay["url_image"] as? String
-                    
-                    let categoryDictionay = dictionay["category"] as! [String: AnyObject]
-                    
-                    let category = Category()
-                    category.title = categoryDictionay["title"] as? String
-                    category.category_image = categoryDictionay["category_image"] as? String
-                    
-                    event.category = category
-                    
-                    self.events?.append(event)
-                }
-                
-                DispatchQueue.main.async {
-                    self.collectionView?.reloadData()
-                }
-                
-            } catch let jsonError {
-                print(jsonError)
-            }
-            
-        }.resume()
+        ApiService.sharedInstance.fetchEvents { (events: [Event]) in
+            self.events = events
+            self.collectionView?.reloadData()
+        }
     }
     
     override func viewDidLoad() {
