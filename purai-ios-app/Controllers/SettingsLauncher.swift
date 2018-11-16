@@ -9,13 +9,20 @@
 import UIKit
 
 class Setting: NSObject {
-    let name: String
+    let name: SettingName
     let imageName: String
     
-    init(name: String, imageName: String) {
+    init(name: SettingName, imageName: String) {
         self.name = name
         self.imageName = imageName
     }
+}
+
+enum SettingName: String {
+    case Settings = "Configurações"
+    case SuggestEvent = "Sugerir evento"
+    case Help = "Ajuda"
+    case Cancel = "Cancelar"
 }
 
 class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -33,11 +40,17 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let cellHeight: CGFloat = 50
     
     let settings: [Setting] = {
+        
+        let settingsSetting = Setting(name: .Settings, imageName: "settings")
+        let suggestEventSetting = Setting(name: .SuggestEvent, imageName: "settings")
+        let helpSetting = Setting(name: .Help, imageName: "settings")
+        let cancelSetting = Setting(name: .Cancel, imageName: "settings")
+        
         return [
-            Setting(name: "Configurações", imageName: "settings"),
-            Setting(name: "Sugerir evento", imageName: "settings"),
-            Setting(name: "Ajuda", imageName: "settings"),
-            Setting(name: "Cancelar", imageName: "settings")
+            settingsSetting,
+            suggestEventSetting,
+            helpSetting,
+            cancelSetting
         ]
     }()
     
@@ -80,7 +93,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
             
         }) { (Bool) in
             
-            if setting.name != "" && setting.name != "Cancelar" {
+            if setting.name != .Cancel {
                 self.homeController?.showControllerForSetting(setting)
             }
             
