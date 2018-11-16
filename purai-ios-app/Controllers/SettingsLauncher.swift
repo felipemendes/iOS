@@ -69,13 +69,21 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         }
     }
     
-    @objc func handleDismiss() {
-        UIView.animate(withDuration: 0.5) {
+    @objc func handleDismiss(_ setting: Setting) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
-             self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
+            
+        }) { (Bool) in
+            
+            if setting.name != "" && setting.name != "Cancelar" {
+                self.homeController?.showControllerForSetting(setting)
+            }
+            
         }
     }
     
@@ -100,23 +108,8 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            
-            self.blackView.alpha = 0
-            
-            if let window = UIApplication.shared.keyWindow {
-                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
-            }
-            
-        }) { (Bool) in
-            
-            let setting = self.settings[indexPath.item]
-            if setting.name != "Cancelar" {
-                self.homeController?.showControllerForSetting(setting)
-            }
-            
-        }
+        let setting = self.settings[indexPath.item]
+        handleDismiss(setting)
     }
     
     override init() {
