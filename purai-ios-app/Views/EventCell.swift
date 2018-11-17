@@ -64,7 +64,6 @@ class EventCell: BaseCell {
     
     let eventImageView: CustomImageView = {
         let imageView = CustomImageView()
-//        imageView.image = UIImage.init(named: "sample-event")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
@@ -74,7 +73,6 @@ class EventCell: BaseCell {
     
     let categoryImageView: CustomImageView = {
         let imageView = CustomImageView()
-//        imageView.image = UIImage(named: "sample-event")
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
         return imageView
@@ -84,7 +82,6 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Sample Event"
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 2
         return label
@@ -94,7 +91,6 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .rgb(red: 96, green: 97, blue: 100)
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Cupertino"
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
