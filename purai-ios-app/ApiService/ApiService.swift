@@ -18,15 +18,15 @@ class ApiService: NSObject {
     }
     
     func fetchSpotlighEvents(completion: @escaping ([Event]) -> ()) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/11vkm2", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
     }
     
     func fetchTodayEvents(completion: @escaping ([Event]) -> ()) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/11vkm2", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
     }
     
     func fetchCategoryEvents(completion: @escaping ([Event]) -> ()) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/11vkm2", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
     }
     
     func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> ()) {
@@ -39,30 +39,17 @@ class ApiService: NSObject {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                
-                var events = [Event]()
-                
-                for dictionay in json as! [[String: AnyObject]] {
+                if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
                     
-                    let event = Event()
-                    event.title = dictionay["title"] as? String
-                    event.city = dictionay["city"] as? String
-                    event.url_image = dictionay["url_image"] as? String
+                    var events = [Event]()
+                    for dictionay in jsonDictionaries {
+                        let event = Event(dictionay: dictionay)
+                        events.append(event)
+                    }
                     
-                    let categoryDictionay = dictionay["category"] as! [String: AnyObject]
-                    
-                    let category = Category()
-                    category.title = categoryDictionay["title"] as? String
-                    category.category_image = categoryDictionay["category_image"] as? String
-                    
-                    event.category = category
-                    
-                    events.append(event)
-                }
-                
-                DispatchQueue.main.async {
-                    completion(events)
+                    DispatchQueue.main.async {
+                        completion(events)
+                    }
                 }
                 
             } catch let jsonError {

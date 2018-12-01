@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class Event: NSObject {
     
     var id: NSNumber?
@@ -24,9 +25,26 @@ class Event: NSObject {
     var id_sale_place: NSNumber?
     var sale_place: SalePlace?
     var category: Category?
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        if key == "category" {
+            self.category = Category()
+            self.category?.setValuesForKeys(value as! [String: AnyObject])
+
+        } else {
+            super.setValue(value, forKey: key)
+        }
+    }
+    
+    init(dictionay: [String: AnyObject]) {
+        super.init()
+        setValuesForKeys(dictionay)
+    }
 }
 
+@objcMembers
 class SalePlace: NSObject {
+    
     var id: NSNumber?
     var uuid: String?
     var status: NSNumber?
@@ -34,6 +52,7 @@ class SalePlace: NSObject {
     var phone: String?
 }
 
+@objcMembers
 class Category: NSObject {
     
     var id: NSNumber?
