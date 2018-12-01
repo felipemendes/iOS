@@ -10,10 +10,27 @@ import UIKit
 
 class ApiService: NSObject {
     
+    let baseUrl = "https://api.myjson.com"
     static let sharedInstance = ApiService()
     
-    func fetchEvents(completion: @escaping ([Event]) -> ()) {
-        let url = URL(string: "https://api.myjson.com/bins/sik4m")
+    func fetchComingEvents(completion: @escaping ([Event]) -> ()) {
+        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
+    }
+    
+    func fetchSpotlighEvents(completion: @escaping ([Event]) -> ()) {
+        fetchFeed(forUrlString: "\(baseUrl)/bins/11vkm2", completion: completion)
+    }
+    
+    func fetchTodayEvents(completion: @escaping ([Event]) -> ()) {
+        fetchFeed(forUrlString: "\(baseUrl)/bins/11vkm2", completion: completion)
+    }
+    
+    func fetchCategoryEvents(completion: @escaping ([Event]) -> ()) {
+        fetchFeed(forUrlString: "\(baseUrl)/bins/11vkm2", completion: completion)
+    }
+    
+    func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> ()) {
+        let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if error != nil {
@@ -52,6 +69,6 @@ class ApiService: NSObject {
                 print(jsonError)
             }
             
-            }.resume()
+        }.resume()
     }
 }

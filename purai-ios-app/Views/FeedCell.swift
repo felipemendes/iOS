@@ -21,10 +21,10 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     
     var events: [Event]?
     
-    let cellId = "cell"
+    let cellId = "cellId"
     
     func fetchEvents() {
-        ApiService.sharedInstance.fetchEvents { (events: [Event]) in
+        ApiService.sharedInstance.fetchComingEvents { (events: [Event]) in
             self.events = events
             self.collectionView.reloadData()
         }
@@ -47,7 +47,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! EventCell
         cell.event = events?[indexPath.item]
         return cell
     }

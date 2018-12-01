@@ -10,12 +10,16 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let cellId = "cell"
+    let comingCellId = "comingCellId"
+    let spotlightCellId = "spotlightCellId"
+    let todayCellId = "todayCellId"
+    let categoryCellId = "categoryCellId"
+    
     let titles = [
         "Próximos eventos",
+        "Destaques",
         "Hoje",
-        "Categorias",
-        "Favoritos"
+        "Categorias"
     ]
     
     override func viewDidLoad() {
@@ -42,7 +46,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
         
         collectionView?.backgroundColor = .rgb(red: 7, green: 8, blue: 9)
-        collectionView?.register(FeedCell.self, forCellWithReuseIdentifier: cellId)
+        
+        collectionView?.register(ComingCell.self, forCellWithReuseIdentifier: comingCellId)
+        collectionView?.register(SpotlightCell.self, forCellWithReuseIdentifier: spotlightCellId)
+        collectionView?.register(TodayCell.self, forCellWithReuseIdentifier: todayCellId)
+        collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: categoryCellId)
         
         collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
@@ -138,7 +146,23 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        
+        let identifier: String
+        
+        switch indexPath.item {
+        case 0:
+            identifier = comingCellId
+        case 1:
+            identifier = spotlightCellId
+        case 2:
+            identifier = todayCellId
+        case 3:
+            identifier = categoryCellId
+        default:
+            identifier = comingCellId
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         return cell
     }
     

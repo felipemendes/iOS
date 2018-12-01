@@ -36,7 +36,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         return cv
     }()
     
-    let cellId = "cell"
+    let cellId = "cellId"
     let cellHeight: CGFloat = 50
     
     let settings: [Setting] = {

@@ -19,7 +19,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         return cv
     }()
     
-    let cellId = "cell"
+    let cellId = "cellId"
     let imageNames = ["home", "trending", "subscriptions", "account"]
     
     var homeController: HomeController?
