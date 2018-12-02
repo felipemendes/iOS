@@ -8,6 +8,14 @@
 
 import UIKit
 
+enum SettingName: String {
+    case cancel = "Cancelar"
+    case settings = "Configurações"
+    case suggestEvent = "Sugerir evento"
+    case help = "Ajuda"
+    case favorites = "Favoritos"
+}
+
 class Setting: NSObject {
     let name: SettingName
     let imageName: String
@@ -18,14 +26,9 @@ class Setting: NSObject {
     }
 }
 
-enum SettingName: String {
-    case Settings = "Configurações"
-    case SuggestEvent = "Sugerir evento"
-    case Help = "Ajuda"
-    case Cancel = "Cancelar"
-}
-
 class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    var homeController: HomeController?
     
     let blackView = UIView()
     
@@ -40,32 +43,30 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let cellHeight: CGFloat = 50
     
     let settings: [Setting] = {
+        let favoritesSetting = Setting(name: .favorites, imageName: "settings")
+        let settingsSetting = Setting(name: .settings, imageName: "settings")
+        let suggestEventSetting = Setting(name: .suggestEvent, imageName: "settings")
+        let helpSetting = Setting(name: .help, imageName: "settings")
+        let cancelSetting = Setting(name: .cancel, imageName: "settings")
         
-        let settingsSetting = Setting(name: .Settings, imageName: "settings")
-        let suggestEventSetting = Setting(name: .SuggestEvent, imageName: "settings")
-        let helpSetting = Setting(name: .Help, imageName: "settings")
-        let cancelSetting = Setting(name: .Cancel, imageName: "settings")
-        
-        return [
-            settingsSetting,
-            suggestEventSetting,
-            helpSetting,
-            cancelSetting
-        ]
+        return [favoritesSetting, settingsSetting, suggestEventSetting, helpSetting, cancelSetting]
     }()
     
-    var homeController: HomeController?
-    
     func showSettings() {
+        //show menu
+        
         if let window = UIApplication.shared.keyWindow {
+            
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
             
             blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
             
             window.addSubview(blackView)
+            
             window.addSubview(collectionView)
             
             let height: CGFloat = CGFloat(settings.count) * cellHeight
+            let y = window.frame.height - height
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             
             blackView.frame = window.frame
@@ -73,31 +74,32 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 
-                let y = window.frame.height - height
-                
                 self.blackView.alpha = 1
-                self.collectionView.frame = CGRect(x: 0, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                
+                self.collectionView.frame = CGRect(x:0, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
                 
             }, completion: nil)
         }
     }
     
-    @objc func handleDismiss(_ setting: Setting) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            
+    @objc func handleDismiss(setting: Setting) {
+        UIView.animate(withDuration: 0.5, animations: {
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
-            
-        }) { (Bool) in
-            
-            if setting.name != .Cancel {
+        }, completion: { (_) in
+            if setting.name != .cancel {
                 self.homeController?.showControllerForSetting(setting)
             }
-            
-        }
+        })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let setting = self.settings[indexPath.item]
+        handleDismiss(setting: setting)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -109,6 +111,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         
         let setting = settings[indexPath.item]
         cell.setting = setting
+        
         return cell
     }
     
@@ -120,11 +123,6 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let setting = self.settings[indexPath.item]
-        handleDismiss(setting)
-    }
-    
     override init() {
         super.init()
         
@@ -133,4 +131,12 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         
         collectionView.register(SettingCell.self, forCellWithReuseIdentifier: cellId)
     }
+    
 }
+
+
+
+
+
+
+

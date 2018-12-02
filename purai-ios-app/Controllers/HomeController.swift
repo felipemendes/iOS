@@ -111,7 +111,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }()
     
     private func setupMenuBar() {
-        navigationController?.hidesBarsOnSwipe = true
+//        navigationController?.hidesBarsOnSwipe = true
         
         let blackView = UIView()
         blackView.backgroundColor = UIColor.rgb(red: 23, green: 25, blue: 29)
