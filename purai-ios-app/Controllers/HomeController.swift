@@ -95,6 +95,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         settingsLauncher.showSettings()
     }
     
+    func showDetailController(_ teste: Int) {
+        let viewController = DetailController()
+        viewController.view.backgroundColor = UIColor.white
+        viewController.navigationItem.title = "Detalhes"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func showControllerForSetting(_ setting: Setting) {
         let dummySettingViewController = UIViewController()
         dummySettingViewController.view.backgroundColor = UIColor.white
@@ -150,8 +159,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let identifier: String
         
         switch indexPath.item {
-        case 0:
-            identifier = comingCellId
         case 1:
             identifier = spotlightCellId
         case 2:
@@ -162,12 +169,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             identifier = comingCellId
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! FeedCell
+        cell.homeController = self
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height - 50)
     }
-    
+
 }

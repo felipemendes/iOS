@@ -9,7 +9,11 @@
 import UIKit
 
 class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    
+    weak var homeController : HomeController?
+    var events: [Event]?
+    let cellId = "cellId"
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -18,10 +22,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         cv.delegate = self
         return cv
     }()
-    
-    var events: [Event]?
-    
-    let cellId = "cellId"
     
     func fetchEvents() {
         ApiService.sharedInstance.fetchComingEvents { (events: [Event]) in
@@ -60,5 +60,8 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.homeController?.showDetailController(indexPath.item)
+    }
 }

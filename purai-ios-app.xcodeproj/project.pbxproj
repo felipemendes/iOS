@@ -10,13 +10,14 @@
 		021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */; };
 		02330C87219F36B400A257CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		027E3C32219D070900219E32 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E3C31219D070900219E32 /* SettingCell.swift */; };
+		0295753721B47766000572B2 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295753621B47766000572B2 /* DetailController.swift */; };
 		02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3021B2F72500998543 /* SpotlightCell.swift */; };
 		02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3221B2F9BD00998543 /* TodayCell.swift */; };
 		02BBBA3721B3001F00998543 /* ComingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3621B3001F00998543 /* ComingCell.swift */; };
 		02BBBA3921B301DA00998543 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3821B301DA00998543 /* CategoryCell.swift */; };
 		02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */; };
 		02E290B8218E9BCF00FE99C7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290B7218E9BCF00FE99C7 /* Extensions.swift */; };
-		02E290BB218E9C8A00FE99C7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* EventCell.swift */; };
+		02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* BaseCell.swift */; };
 		02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BD218E9EC100FE99C7 /* MenuBar.swift */; };
 		02E290C1218EBE1800FE99C7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290C0218EBE1800FE99C7 /* Event.swift */; };
 		02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D8D7217516DA001FD974 /* AppDelegate.swift */; };
@@ -30,13 +31,14 @@
 		021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		02330C86219F36B400A257CF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		027E3C31219D070900219E32 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		0295753621B47766000572B2 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		02BBBA3021B2F72500998543 /* SpotlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
 		02BBBA3221B2F9BD00998543 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		02BBBA3621B3001F00998543 /* ComingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingCell.swift; sourceTree = "<group>"; };
 		02BBBA3821B301DA00998543 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		02E290B7218E9BCF00FE99C7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		02E290BA218E9C8A00FE99C7 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		02E290BA218E9C8A00FE99C7 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		02E290BD218E9EC100FE99C7 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		02E290C0218EBE1800FE99C7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		02E8D8D4217516DA001FD974 /* purai-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "purai-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +80,7 @@
 		02E290B9218E9C4100FE99C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				02E290BA218E9C8A00FE99C7 /* EventCell.swift */,
+				02E290BA218E9C8A00FE99C7 /* BaseCell.swift */,
 				02E290BD218E9EC100FE99C7 /* MenuBar.swift */,
 				027E3C31219D070900219E32 /* SettingCell.swift */,
 				02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */,
@@ -95,6 +97,7 @@
 			children = (
 				02E8D8D9217516DA001FD974 /* HomeController.swift */,
 				021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */,
+				0295753621B47766000572B2 /* DetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E290BB218E9C8A00FE99C7 /* EventCell.swift in Sources */,
+				02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */,
 				02BBBA3721B3001F00998543 /* ComingCell.swift in Sources */,
 				02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */,
 				02BBBA3921B301DA00998543 /* CategoryCell.swift in Sources */,
@@ -224,6 +227,7 @@
 				02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */,
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
+				0295753721B47766000572B2 /* DetailController.swift in Sources */,
 				02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
