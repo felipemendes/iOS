@@ -95,10 +95,9 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         settingsLauncher.showSettings()
     }
     
-    func showDetailController(_ teste: Int) {
+    func showDetailController(for event: Event) {
         let viewController = DetailController()
-        viewController.view.backgroundColor = UIColor.white
-        viewController.navigationItem.title = "Detalhes"
+        viewController.event = event
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.pushViewController(viewController, animated: true)

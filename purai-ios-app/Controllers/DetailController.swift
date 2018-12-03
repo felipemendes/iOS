@@ -10,7 +10,12 @@ import UIKit
 
 class DetailController: UIViewController {
 
+    var event: Event?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = event?.title
     }
 }

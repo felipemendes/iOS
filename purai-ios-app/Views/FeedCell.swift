@@ -62,6 +62,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeController?.showDetailController(indexPath.item)
+        self.homeController?.showDetailController(for: (events?[indexPath.item])!)
     }
 }
