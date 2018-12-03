@@ -28,7 +28,7 @@ class Setting: NSObject {
 
 class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var homeController: HomeController?
+    var homeController: FeedController?
     
     let blackView = UIView()
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let comingCellId = "comingCellId"
     let spotlightCellId = "spotlightCellId"

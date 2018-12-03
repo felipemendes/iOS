@@ -10,7 +10,7 @@ import UIKit
 
 class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var homeController : HomeController?
+    weak var homeController : FeedController?
     var events: [Event]?
     let cellId = "cellId"
     

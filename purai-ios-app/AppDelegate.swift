@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let layout = UICollectionViewFlowLayout()
-        window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
+        window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
         
         UINavigationBar.appearance().barTintColor = .rgb(red: 23, green: 25, blue: 29)
         
