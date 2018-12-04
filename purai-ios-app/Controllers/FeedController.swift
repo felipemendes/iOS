@@ -25,17 +25,28 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isTranslucent = false
-        
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Próximos eventos"
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20)
         navigationItem.titleView = titleLabel
+        navigationController?.navigationBar.isTranslucent = false
         
         setupCollectionView()
         setupMenuBar()
         setupNavBarButtons()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .rgb(red: 23, green: 25, blue: 29)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .rgb(red: 23, green: 25, blue: 29)
     }
     
     func setupCollectionView() {
