@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailController: UIViewController{
+class DetailController: UIViewController {
 
     var event: Event?
     
@@ -24,8 +24,11 @@ class DetailController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+
         self.view.backgroundColor = .rgb(red: 7, green: 8, blue: 9)
         self.navigationItem.title = event?.title
         

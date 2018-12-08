@@ -13,7 +13,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .rgb(red: 23, green: 25, blue: 29)
+        cv.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -43,7 +43,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func setupHorizontalBar() {
         let horizontalBarView = UIView()
-        horizontalBarView.backgroundColor = .white
+        horizontalBarView.backgroundColor = .rgb(red: 255, green: 34, blue: 94)
         horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(horizontalBarView)
         
@@ -51,7 +51,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         horizontalBarLeftAnchorConstraint?.isActive = true
         horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         horizontalBarView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
-        horizontalBarView.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        horizontalBarView.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {    
@@ -89,7 +89,7 @@ class MenuCell: BaseCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "home")?.withRenderingMode(.alwaysTemplate)
+        iv.image = UIImage(named: "incoming")?.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .rgb(red: 96, green: 97, blue: 100)
         return iv
     }()

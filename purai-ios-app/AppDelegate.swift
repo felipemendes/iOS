@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
-        
-        UINavigationBar.appearance().barTintColor = .rgb(red: 23, green: 25, blue: 29)
+//        UINavigationBar.appearance().backgroundColor = .rgb(red: 20, green: 25, blue: 33)
+        UINavigationBar.appearance().barTintColor = .rgb(red: 20, green: 25, blue: 33)
         
         // Get rid of black underneath navbar
         UINavigationBar.appearance().shadowImage = UIImage()
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Change status bar background color
 //        let statusBarBackgroundView = UIView()
-//        statusBarBackgroundView.backgroundColor = .rgb(red: 24, green: 24, blue: 24)
+//        statusBarBackgroundView.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
 //        window?.addSubview(statusBarBackgroundView)
 //        window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)
 //        window?.addConstraintsWithFormat(format: "V:|[v0(20)]|", views: statusBarBackgroundView)

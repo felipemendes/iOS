@@ -33,6 +33,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
      override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.isTranslucent = false
     }
     
@@ -49,8 +50,8 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func setupNavBar() {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Próximos eventos"
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        titleLabel.textColor = .rgb(red: 255, green: 34, blue: 94)
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
     }
@@ -62,7 +63,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
             flowLayout.minimumLineSpacing = 0
         }
         
-        collectionView?.backgroundColor = .rgb(red: 23, green: 25, blue: 29)
+        collectionView?.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
         
         collectionView?.register(ComingCell.self, forCellWithReuseIdentifier: comingCellId)
         collectionView?.register(SpotlightCell.self, forCellWithReuseIdentifier: spotlightCellId)
@@ -121,10 +122,11 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     func showControllerForSetting(_ setting: Setting) {
         let dummySettingViewController = UIViewController()
-        dummySettingViewController.view.backgroundColor = .rgb(red: 23, green: 25, blue: 29)
+        dummySettingViewController.view.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
         dummySettingViewController.navigationItem.title = setting.name.rawValue
         navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.pushViewController(dummySettingViewController, animated: true)
     }
     
@@ -135,10 +137,8 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }()
     
     private func setupMenuBar() {
-//        navigationController?.hidesBarsOnSwipe = true
-        
         let blackView = UIView()
-        blackView.backgroundColor = UIColor.rgb(red: 23, green: 25, blue: 29)
+        blackView.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
         view.addSubview(blackView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: blackView)
         view.addConstraintsWithFormat(format: "V:[v0(50)]", views: blackView)

@@ -28,12 +28,8 @@ class EventCell: BaseCell {
     var event: Event? {
         didSet {
             titleLabel.text = event?.title
-            
             setupEventImage()
-            
             subtitleLabel.text = event?.city
-            
-            setupCategoryImage()
             
             // Measure title text
             if let title = event?.title {
@@ -56,25 +52,12 @@ class EventCell: BaseCell {
         }
     }
     
-    func setupCategoryImage() {
-        if let categoryImageUrl = event?.category?.category_image {
-            categoryImageView.loadImageUsingUrlString(urlString: categoryImageUrl)
-        }
-    }
-    
     let eventImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
-        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 15
+        imageView.layer.masksToBounds = false
         imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let categoryImageView: CustomImageView = {
-        let imageView = CustomImageView()
-        imageView.layer.cornerRadius = 20
-        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -82,16 +65,18 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
         label.numberOfLines = 2
+        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
     }()
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .rgb(red: 96, green: 97, blue: 100)
+        label.textColor = .rgb(red: 223, green: 224, blue: 230)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
     }()
     
@@ -99,34 +84,16 @@ class EventCell: BaseCell {
     
     override func setupViews() {
         addSubview(eventImageView)
-        addSubview(categoryImageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         
-        addConstraintsWithFormat(format: "H:|[v0]|", views: eventImageView)
-        
-        addConstraintsWithFormat(format: "H:|-16-[v0(40)]", views: categoryImageView)
+        // horizontal constraints
+        addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: eventImageView)
+        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: subtitleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-8-[v0]-12-[v1(40)]-24-|", views: eventImageView, categoryImageView)
-        
-        // titleLabel - top constraint
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: eventImageView, attribute: .bottom, multiplier: 1, constant: 8))
-        // titleLabel - left constraints
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .left, relatedBy: .equal, toItem: categoryImageView, attribute: .right, multiplier: 1, constant: 12))
-        // titleLabel - right constraints
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: eventImageView, attribute: .right, multiplier: 1, constant: 0))
-        // titleLabel - height constraints
-        titleLabelHeightConstraint = NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 15)
-        addConstraint(titleLabelHeightConstraint!)
-        
-        // subtitleTextView - top constraint
-        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 3))
-        // subtitleTextView - left constraints
-        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .left, relatedBy: .equal, toItem: categoryImageView, attribute: .right, multiplier: 1, constant: 12))
-        // subtitleTextView - right constraints
-        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .right, relatedBy: .equal, toItem: titleLabel, attribute: .right, multiplier: 1, constant: 0))
-        // subtitleTextView - height constraints
-        addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 15))
+        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
+        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-30-|", views: titleLabel, subtitleLabel)
     }
 }
