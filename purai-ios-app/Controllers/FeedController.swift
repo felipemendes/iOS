@@ -25,28 +25,34 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
-        titleLabel.text = "Próximos eventos"
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
-        navigationItem.titleView = titleLabel
-        navigationController?.navigationBar.isTranslucent = false
-        
+        setupNavBar()
         setupCollectionView()
         setupMenuBar()
         setupNavBarButtons()
     }
     
+     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .rgb(red: 23, green: 25, blue: 29)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    func setupNavBar() {
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        titleLabel.text = "Próximos eventos"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .rgb(red: 23, green: 25, blue: 29)
     }
     
     func setupCollectionView() {
@@ -56,7 +62,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
             flowLayout.minimumLineSpacing = 0
         }
         
-        collectionView?.backgroundColor = .rgb(red: 7, green: 8, blue: 9)
+        collectionView?.backgroundColor = .rgb(red: 23, green: 25, blue: 29)
         
         collectionView?.register(ComingCell.self, forCellWithReuseIdentifier: comingCellId)
         collectionView?.register(SpotlightCell.self, forCellWithReuseIdentifier: spotlightCellId)
@@ -70,10 +76,10 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func setupNavBarButtons() {
-        let searchImage = UIImage(named: "search_icon")?.withRenderingMode(.alwaysOriginal)
+        let searchImage = UIImage(named: "search")?.withRenderingMode(.alwaysOriginal)
         let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
 
-        let moreImage = UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal)
+        let moreImage = UIImage(named: "more")?.withRenderingMode(.alwaysOriginal)
         let moreBarButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(handleMore))
         
         navigationItem.rightBarButtonItems = [moreBarButtonItem, searchBarButtonItem]
@@ -110,17 +116,14 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let viewController = DetailController()
 //        let viewController = DetailController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.event = event
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showControllerForSetting(_ setting: Setting) {
         let dummySettingViewController = UIViewController()
-        dummySettingViewController.view.backgroundColor = UIColor.white
+        dummySettingViewController.view.backgroundColor = .rgb(red: 23, green: 25, blue: 29)
         dummySettingViewController.navigationItem.title = setting.name.rawValue
-        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.pushViewController(dummySettingViewController, animated: true)
     }

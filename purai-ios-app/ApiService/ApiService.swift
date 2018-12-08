@@ -26,7 +26,7 @@ class ApiService: NSObject {
     }
     
     func fetchCategoryEvents(completion: @escaping ([Event]) -> ()) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m3", completion: completion)
     }
     
     func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> ()) {

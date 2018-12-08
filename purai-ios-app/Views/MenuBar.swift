@@ -13,14 +13,14 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.rgb(red: 23, green: 25, blue: 29)
+        cv.backgroundColor = .rgb(red: 23, green: 25, blue: 29)
         cv.dataSource = self
         cv.delegate = self
         return cv
     }()
     
     let cellId = "cellId"
-    let imageNames = ["home", "trending", "subscriptions", "account"]
+    let imageNames = ["incoming", "spotlight", "today", "category"]
     
     var homeController: FeedController?
     
