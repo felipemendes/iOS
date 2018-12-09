@@ -20,19 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
-//        UINavigationBar.appearance().backgroundColor = .rgb(red: 20, green: 25, blue: 33)
         UINavigationBar.appearance().barTintColor = .rgb(red: 20, green: 25, blue: 33)
         
         // Get rid of black underneath navbar
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        
-        // Change status bar background color
-//        let statusBarBackgroundView = UIView()
-//        statusBarBackgroundView.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
-//        window?.addSubview(statusBarBackgroundView)
-//        window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)
-//        window?.addConstraintsWithFormat(format: "V:|[v0(20)]|", views: statusBarBackgroundView)
         
         return true
     }

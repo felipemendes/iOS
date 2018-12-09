@@ -40,14 +40,6 @@ class ApiService: NSObject {
             
             do {
                 if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
-                    
-//                    let events = jsonDictionaries.map({ return Event(dictionay: $0)} )
-//                    var events = [Event]()
-//                    for dictionay in jsonDictionaries {
-//                        let event = Event(dictionay: dictionay)
-//                        events.append(event)
-//                    }
-                    
                     DispatchQueue.main.async {
                         completion(jsonDictionaries.map({ return Event(dictionay: $0)} ))
                     }

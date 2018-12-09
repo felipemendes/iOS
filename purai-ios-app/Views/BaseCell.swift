@@ -31,7 +31,6 @@ class EventCell: BaseCell {
             setupEventImage()
             subtitleLabel.text = event?.city
             
-            // Measure title text
             if let title = event?.title {
                 let size = CGSize(width: frame.width - 16 - 40 - 8 - 16, height: 1000)
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
@@ -66,7 +65,7 @@ class EventCell: BaseCell {
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
-        label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
     }()
