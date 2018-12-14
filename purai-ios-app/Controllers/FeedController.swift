@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import EasyTransitions
+
+struct AppStoreAnimatorInfo {
+    var animator: AppStoreAnimator
+    var index: IndexPath
+}
 
 class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    private var modalTransitionDelegate = ModalTransitionDelegate()
+    private var animatorInfo: AppStoreAnimatorInfo?
+        
     let comingCellId = "comingCellId"
     let spotlightCellId = "spotlightCellId"
     let todayCellId = "todayCellId"
@@ -40,6 +49,27 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isTranslucent = false
+        recalculateItemSizes(givenWidth: self.view.frame.size.width)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        recalculateItemSizes(givenWidth: size.width)
+        
+        coordinator.animate(alongsideTransition: nil) { (context) in
+            //As the position of the cells might have changed, if we have an AppStoreAnimator, we update it's
+            //"initialFrame" so the dimisss animation still matches
+            if let animatorInfo = self.animatorInfo {
+                if let cell = self.collectionView?.cellForItem(at: animatorInfo.index) {
+                    let cellFrame = self.view.convert(cell.frame, from: self.collectionView)
+                    animatorInfo.animator.initialFrame = cellFrame
+                }
+                else {
+                    //ups! the cell is not longer on the screen so… ¯\_(ツ)_/¯ lets move it out of the screen
+                    animatorInfo.animator.initialFrame = CGRect(x: (size.width-animatorInfo.animator.initialFrame.width)/2.0, y: size.height, width: animatorInfo.animator.initialFrame.width, height: animatorInfo.animator.initialFrame.height)
+                }
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -113,10 +143,43 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         settingsLauncher.showSettings()
     }
     
-    func showDetailController(for event: Event) {
-        let viewController = DetailController()
-        viewController.event = event
-        self.navigationController?.pushViewController(viewController, animated: true)
+    func showDetailController(for event: Event, at indexPath: IndexPath, of collectionView: UICollectionView) {
+        let detailController = DetailController()
+        detailController.event = event
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) else {
+            present(detailController, animated: true, completion: nil)
+            return
+        }
+        
+        let cellFrame = view.convert(cell.frame, from: collectionView)
+        
+        let appStoreAnimator = AppStoreAnimator(initialFrame: cellFrame)
+        appStoreAnimator.onReady = { cell.isHidden = true }
+        appStoreAnimator.onDismissed = { cell.isHidden = false }
+        
+        modalTransitionDelegate.set(animator: appStoreAnimator, for: .present)
+        modalTransitionDelegate.set(animator: appStoreAnimator, for: .dismiss)
+        modalTransitionDelegate.wire(
+            viewController: detailController,
+            with: .regular(.fromTop),
+            navigationAction: {
+                detailController.dismiss(animated: true, completion: nil)
+        })
+        
+        detailController.transitioningDelegate = modalTransitionDelegate
+        detailController.modalPresentationStyle = .custom
+        
+        present(detailController, animated: true, completion: nil)
+        animatorInfo = AppStoreAnimatorInfo(animator: appStoreAnimator, index: indexPath)
+    }
+    
+    func recalculateItemSizes(givenWidth width: CGFloat) {
+        let vcWidth = width - 20//20 is left margin
+        var width: CGFloat = 355 //335 is ideal size + 20 of right margin for each item
+        let colums = round(vcWidth / width) //Aproximate times the ideal size fits the screen
+        width = (vcWidth / colums) - 20 //we substract the right marging
+        (collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: width, height: 412)
     }
     
     func showControllerForSetting(_ setting: Setting) {

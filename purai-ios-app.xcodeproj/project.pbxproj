@@ -178,6 +178,7 @@
 				02E8D8D0217516DA001FD974 /* Sources */,
 				02E8D8D1217516DA001FD974 /* Frameworks */,
 				02E8D8D2217516DA001FD974 /* Resources */,
+				2C57E4A6AAE9F855A05F9A52 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +236,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2C57E4A6AAE9F855A05F9A52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyTransitions/EasyTransitions.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTransitions.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B36A9A9887B5AB698C4CDDCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
