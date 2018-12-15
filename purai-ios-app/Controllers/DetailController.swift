@@ -27,7 +27,6 @@ class DetailController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.dropShadow(color: .black, opacity: 0.8, offSet: CGSize.init(width: -1, height: 2), radius: 2)
         return imageView
     }()
     

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
-        UINavigationBar.appearance().barTintColor = .rgb(red: 20, green: 25, blue: 33)
+        UINavigationBar.appearance().barTintColor = .dark
         
         // Get rid of black underneath navbar
         UINavigationBar.appearance().shadowImage = UIImage()

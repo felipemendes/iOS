@@ -80,7 +80,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func setupNavBar() {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Próximos eventos"
-        titleLabel.textColor = .rgb(red: 255, green: 34, blue: 94)
+        titleLabel.textColor = .highlight
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
@@ -93,7 +93,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
             flowLayout.minimumLineSpacing = 0
         }
         
-        collectionView?.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
+        collectionView?.backgroundColor = .dark
         
         collectionView?.register(ComingCell.self, forCellWithReuseIdentifier: comingCellId)
         collectionView?.register(SpotlightCell.self, forCellWithReuseIdentifier: spotlightCellId)
@@ -184,7 +184,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     func showControllerForSetting(_ setting: Setting) {
         let dummySettingViewController = UIViewController()
-        dummySettingViewController.view.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
+        dummySettingViewController.view.backgroundColor = .dark
         dummySettingViewController.navigationItem.title = setting.name.rawValue
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -200,7 +200,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     private func setupMenuBar() {
         let blackView = UIView()
-        blackView.backgroundColor = .rgb(red: 20, green: 25, blue: 33)
+        blackView.backgroundColor = .dark
         view.addSubview(blackView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: blackView)
         view.addConstraintsWithFormat(format: "V:[v0(50)]", views: blackView)
