@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,7 +51,7 @@
 		1FDE0CCE21D582E553DC8B0278720F0D /* NavigationTransitionConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationTransitionConfigurator.swift; path = EasyTransitions/Classes/Navigation/NavigationTransitionConfigurator.swift; sourceTree = "<group>"; };
 		29AD6ED22522B7DA2C79926DD62C0BEC /* Pods-purai-ios-app.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-purai-ios-app.modulemap"; sourceTree = "<group>"; };
 		2B910224AEAF3B834DE2A734CFE0EC04 /* Pods-purai-ios-app-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-purai-ios-app-dummy.m"; sourceTree = "<group>"; };
-		30BC3152AF8FDEC36DD935D6E6DC6F82 /* Pods_purai_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_purai_ios_app.framework; path = "Pods-purai-ios-app.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BC3152AF8FDEC36DD935D6E6DC6F82 /* Pods_purai_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_purai_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BE8507EB4B3ED0A7F88294B2A775AC /* AppStoreAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppStoreAnimator.swift; path = EasyTransitions/Classes/Animators/AppStoreAnimator.swift; sourceTree = "<group>"; };
 		3DF5D1285D670EC874BF74D2509D10AC /* NavigationTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationTransitionAnimator.swift; path = EasyTransitions/Classes/Navigation/NavigationTransitionAnimator.swift; sourceTree = "<group>"; };
 		3E0CF92E8486199B78823D3BE90B32C1 /* EasyTransitions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyTransitions-prefix.pch"; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 		83114A813650C68B79DC7DFD8201AFE2 /* PanFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanFactory.swift; path = EasyTransitions/Classes/Models/Pan/PanFactory.swift; sourceTree = "<group>"; };
 		860234CD7A46B66FC9C2F85EFA8199CB /* PanDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanDirection.swift; path = EasyTransitions/Classes/Models/Pan/PanDirection.swift; sourceTree = "<group>"; };
 		87016EDCA81FE5711C9AFBB055EA59CF /* Pods-purai-ios-app-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-purai-ios-app-acknowledgements.markdown"; sourceTree = "<group>"; };
-		89F9A9A842A2861F8C3D70BD89D32F46 /* EasyTransitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyTransitions.framework; path = EasyTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		89F9A9A842A2861F8C3D70BD89D32F46 /* EasyTransitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A423C03841C9330970C5D643A9064B29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC77237A34C7D2297AF63E7D8D565A2 /* ShowAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShowAnimator.swift; path = EasyTransitions/Classes/Animators/ShowAnimator.swift; sourceTree = "<group>"; };
 		B49738AC7D7C595CB8E3AFBC3A923B58 /* ModalTransitionConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalTransitionConfigurator.swift; path = EasyTransitions/Classes/Modal/ModalTransitionConfigurator.swift; sourceTree = "<group>"; };
@@ -130,7 +130,6 @@
 				82141DCDD0FB36858B46677D9A9C1E28 /* TransitionPanGestureRecognizer.swift */,
 				81CDE72C3A9EB3CE3B1BA538CFB9EB6C /* Support Files */,
 			);
-			name = EasyTransitions;
 			path = EasyTransitions;
 			sourceTree = "<group>";
 		};
@@ -285,6 +284,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					03279DA1D47CE741210549BBB2958CCB = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -387,18 +391,14 @@
 				INFOPLIST_FILE = "Target Support Files/EasyTransitions/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EasyTransitions/EasyTransitions.modulemap";
 				PRODUCT_MODULE_NAME = EasyTransitions;
 				PRODUCT_NAME = EasyTransitions;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -424,11 +424,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-purai-ios-app/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app.modulemap";
 				OTHER_LDFLAGS = "";
@@ -529,18 +525,14 @@
 				INFOPLIST_FILE = "Target Support Files/EasyTransitions/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EasyTransitions/EasyTransitions.modulemap";
 				PRODUCT_MODULE_NAME = EasyTransitions;
 				PRODUCT_NAME = EasyTransitions;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -602,8 +594,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -627,11 +618,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-purai-ios-app/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app.modulemap";
 				OTHER_LDFLAGS = "";
