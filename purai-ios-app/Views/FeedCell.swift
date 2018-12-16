@@ -43,6 +43,12 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (self.events?.count == nil || self.events?.count ?? 0 == 0) {
+            self.collectionView.setEmptyMessage("Eita, nenhum resultado foi encontrado.")
+        } else {
+            self.collectionView.restore()
+        }
+        
         return events?.count ?? 0
     }
     

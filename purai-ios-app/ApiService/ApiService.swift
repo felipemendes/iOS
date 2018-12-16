@@ -14,7 +14,7 @@ class ApiService: NSObject {
     static let sharedInstance = ApiService()
     
     func fetchComingEvents(completion: @escaping ([Event]) -> ()) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/mwrh4", completion: completion)
     }
     
     func fetchSpotlighEvents(completion: @escaping ([Event]) -> ()) {

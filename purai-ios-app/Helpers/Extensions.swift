@@ -73,6 +73,24 @@ extension UIView {
     }
 }
 
+extension UICollectionView {
+    
+    func setEmptyMessage(_ message: String) {
+        let messageLabel = UILabel()
+        messageLabel.text = message
+        messageLabel.textColor = .white
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        messageLabel.sizeToFit()
+        self.backgroundView = messageLabel;
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+    }
+}
+
 extension UIImageView
 {
     func addBlurEffect()
