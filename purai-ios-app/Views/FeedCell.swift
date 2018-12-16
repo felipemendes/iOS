@@ -43,7 +43,9 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (self.events?.count == nil || self.events?.count ?? 0 == 0) {
+        if !Reachability.isConnectedToNetwork(){
+            self.collectionView.setEmptyMessage("Eita, não há conexão com a Internet.")
+        } else if (self.events?.count == nil || self.events?.count ?? 0 == 0) {
             self.collectionView.setEmptyMessage("Eita, nenhum resultado foi encontrado.")
         } else {
             self.collectionView.restore()
