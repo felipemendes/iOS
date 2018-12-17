@@ -246,9 +246,15 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
             identifier = comingCellId
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! FeedCell
-        cell.homeController = self
-        return cell
+        if identifier == categoryCellId {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! FeedCategoryCell
+            cell.homeController = self
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! FeedCell
+            cell.homeController = self
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

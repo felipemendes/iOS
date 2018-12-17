@@ -51,13 +51,3 @@ class SalePlace: NSObject {
     var title: String?
     var phone: String?
 }
-
-@objcMembers
-class Category: NSObject {
-    
-    var id: NSNumber?
-    var uuid: String?
-    var status: NSNumber?
-    var title: String?
-    var category_image: String?
-}
