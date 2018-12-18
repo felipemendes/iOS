@@ -51,7 +51,7 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func showDetailController(for event: Event, at indexPath: IndexPath, of collectionView: UICollectionView) {
-        let detailController = DetailController()
+        let detailController = DetailViewController()
         detailController.event = event
         
         guard let cell = collectionView.cellForItem(at: indexPath) else {

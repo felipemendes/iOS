@@ -46,7 +46,7 @@ class EventCell: BaseCell {
     }
     
     func setupEventImage() {
-        if let eventImageUrl = event?.url_image {
+        if let eventImageUrl = event?.image {
             eventImageView.loadImageUsingUrlString(urlString: eventImageUrl)
         }
     }

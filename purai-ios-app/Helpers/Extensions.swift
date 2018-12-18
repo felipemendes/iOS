@@ -73,6 +73,46 @@ extension UIView {
     }
 }
 
+extension CustomImageView {
+    
+    func setImageStyle() -> CustomImageView {
+        let imageView = CustomImageView()
+        imageView.image = UIImage(named: "awesome-event")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }
+}
+
+extension UILabel {
+    
+    func setLargeTextStyle() -> UILabel {
+        let label = UILabel()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.sizeToFit()
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
+        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
+        return label
+    }
+    
+    func setNormalTextStyle() -> UILabel {
+        let label = UILabel()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.sizeToFit()
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0;
+        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
+        return label
+    }
+}
+
 extension UICollectionView {
     
     func setEmptyMessage(_ message: String) {

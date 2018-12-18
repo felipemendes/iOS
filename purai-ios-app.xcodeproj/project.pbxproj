@@ -15,8 +15,9 @@
 		026161F421C714B700DDD5C2 /* BaseCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */; };
 		026161F621C7160200DDD5C2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F521C7160200DDD5C2 /* CategoryCell.swift */; };
 		02684CA121BB418200A2ABE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02684CA021BB418100A2ABE3 /* Assets.xcassets */; };
+		027C103721C894DF00D78A51 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
 		027E3C32219D070900219E32 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E3C31219D070900219E32 /* SettingCell.swift */; };
-		0295753721B47766000572B2 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295753621B47766000572B2 /* DetailController.swift */; };
+		0295753721B47766000572B2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295753621B47766000572B2 /* DetailViewController.swift */; };
 		02B280E621C7CA2800CD7C62 /* CategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E521C7CA2800CD7C62 /* CategoryListController.swift */; };
 		02B280E821C7D83800CD7C62 /* EventsByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */; };
 		02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E921C8375D00CD7C62 /* BaseController.swift */; };
@@ -44,8 +45,9 @@
 		026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCategoryCell.swift; sourceTree = "<group>"; };
 		026161F521C7160200DDD5C2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		02684CA021BB418100A2ABE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		027C103621C894DF00D78A51 /* SalePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePlace.swift; sourceTree = "<group>"; };
 		027E3C31219D070900219E32 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
-		0295753621B47766000572B2 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		0295753621B47766000572B2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		02B280E521C7CA2800CD7C62 /* CategoryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListController.swift; sourceTree = "<group>"; };
 		02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsByCategoryCell.swift; sourceTree = "<group>"; };
 		02B280E921C8375D00CD7C62 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 				02B280E921C8375D00CD7C62 /* BaseController.swift */,
 				02E8D8D9217516DA001FD974 /* FeedController.swift */,
 				021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */,
-				0295753621B47766000572B2 /* DetailController.swift */,
+				0295753621B47766000572B2 /* DetailViewController.swift */,
 				02B280E521C7CA2800CD7C62 /* CategoryListController.swift */,
 			);
 			path = Controllers;
@@ -132,6 +134,7 @@
 			children = (
 				02E290C0218EBE1800FE99C7 /* Event.swift */,
 				026161F121C7148200DDD5C2 /* Category.swift */,
+				027C103621C894DF00D78A51 /* SalePlace.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */,
 				02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */,
 				02E8D8DA217516DA001FD974 /* FeedController.swift in Sources */,
+				027C103721C894DF00D78A51 /* SalePlace.swift in Sources */,
 				026161F621C7160200DDD5C2 /* CategoryCell.swift in Sources */,
 				027E3C32219D070900219E32 /* SettingCell.swift in Sources */,
 				02B280E621C7CA2800CD7C62 /* CategoryListController.swift in Sources */,
@@ -327,7 +331,7 @@
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
-				0295753721B47766000572B2 /* DetailController.swift in Sources */,
+				0295753721B47766000572B2 /* DetailViewController.swift in Sources */,
 				026161F021C5EBDC00DDD5C2 /* Reachability.swift in Sources */,
 				02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */,
 			);

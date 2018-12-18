@@ -6,7 +6,7 @@
 //  Copyright © 2018 Felipe Mendes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 @objcMembers
 class Category: NSObject {
