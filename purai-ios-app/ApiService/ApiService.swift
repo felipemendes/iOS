@@ -25,8 +25,9 @@ class ApiService: NSObject {
         fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
     }
     
-    func fetchCategoryEvents(completion: @escaping ([Category]) -> ()) {
-        fetchCategoryFeed(forUrlString: "\(baseUrl)/bins/v1cnk", completion: completion)
+    func fetchEventsByCategory(uuid: String, completion: @escaping ([Event]) -> ()) {
+        print("\(baseUrl)/bins/mwrh4/\(uuid)")
+        fetchFeed(forUrlString: "\(baseUrl)/bins/sik4m", completion: completion)
     }
     
     func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> ()) {
@@ -42,29 +43,6 @@ class ApiService: NSObject {
                 if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
                     DispatchQueue.main.async {
                         completion(jsonDictionaries.map({ return Event(dictionay: $0)} ))
-                    }
-                }
-                
-            } catch let jsonError {
-                print(jsonError)
-            }
-            
-        }.resume()
-    }
-    
-    func fetchCategoryFeed(forUrlString urlString: String, completion: @escaping ([Category]) -> ()) {
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            
-            do {
-                if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
-                    DispatchQueue.main.async {
-                        completion(jsonDictionaries.map({ return Category(dictionay: $0)} ))
                     }
                 }
                 

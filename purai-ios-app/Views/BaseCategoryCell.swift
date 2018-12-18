@@ -8,22 +8,7 @@
 
 import UIKit
 
-class BaseCategoryCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    func setupViews() {
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class EventCategoryCell: BaseCategoryCell {
+class BaseCategoryCell: BaseCell {
     
     var category: Category? {
         didSet {
@@ -53,7 +38,7 @@ class EventCategoryCell: BaseCategoryCell {
     let categoryImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = false
         imageView.clipsToBounds = true
         return imageView
@@ -63,7 +48,7 @@ class EventCategoryCell: BaseCategoryCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.adjustsFontSizeToFitWidth = true
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
@@ -81,6 +66,6 @@ class EventCategoryCell: BaseCategoryCell {
         
         // vertical constraints
         addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: categoryImageView)
-        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: titleLabel)
+        addConstraintsWithFormat(format: "V:|-30-[v0]", views: titleLabel)
     }
 }

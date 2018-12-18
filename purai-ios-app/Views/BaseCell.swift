@@ -54,7 +54,7 @@ class EventCell: BaseCell {
     let eventImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = false
         imageView.clipsToBounds = true
         return imageView

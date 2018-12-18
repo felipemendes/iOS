@@ -10,8 +10,9 @@ import UIKit
 
 class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var homeController : FeedController?
+    weak var baseController : BaseController?
     var events: [Event]?
+    var category: Category?
     let cellId = "cellId"
     
     lazy var collectionView: UICollectionView = {
@@ -24,22 +25,19 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }()
     
     func fetchEvents() {
-        ApiService.sharedInstance.fetchComingEvents { (events: [Event]) in
-            self.events = events
-            self.collectionView.reloadData()
-        }
+        
     }
     
     override func setupViews() {
         super.setupViews()
-        
-        fetchEvents()
         
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         
         collectionView.register(EventCell.self, forCellWithReuseIdentifier: cellId)
+        
+        fetchEvents()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,6 +68,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeController?.showDetailController(for: (events?[indexPath.item])!, at: indexPath, of: collectionView)
+        self.baseController?.showDetailController(for: (events?[indexPath.item])!, at: indexPath, of: collectionView)
     }
 }
