@@ -160,12 +160,12 @@
 		02E8D8D6217516DA001FD974 /* purai-ios-app */ = {
 			isa = PBXGroup;
 			children = (
-				02E8D8D7217516DA001FD974 /* AppDelegate.swift */,
 				02330C85219F369400A257CF /* ApiService */,
 				02E290BF218EBE0800FE99C7 /* Models */,
-				02E290BC218E9CBB00FE99C7 /* Controllers */,
 				02E290B9218E9C4100FE99C7 /* Views */,
+				02E290BC218E9CBB00FE99C7 /* Controllers */,
 				02E290B6218E9BBA00FE99C7 /* Helpers */,
+				02E8D8D7217516DA001FD974 /* AppDelegate.swift */,
 				02E8D8E3217516E5001FD974 /* Info.plist */,
 				02684CA021BB418100A2ABE3 /* Assets.xcassets */,
 				02E8D8DB217516DA001FD974 /* Main.storyboard */,
@@ -202,7 +202,6 @@
 				02E8D8D0217516DA001FD974 /* Sources */,
 				02E8D8D1217516DA001FD974 /* Frameworks */,
 				02E8D8D2217516DA001FD974 /* Resources */,
-				2C57E4A6AAE9F855A05F9A52 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,28 +259,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C57E4A6AAE9F855A05F9A52 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/EasyTransitions/EasyTransitions.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTransitions.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B36A9A9887B5AB698C4CDDCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

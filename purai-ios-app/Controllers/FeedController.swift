@@ -7,12 +7,6 @@
 //
 
 import UIKit
-import EasyTransitions
-
-struct AppStoreAnimatorInfo {
-    var animator: AppStoreAnimator
-    var index: IndexPath
-}
 
 class FeedController: BaseController {
         
@@ -42,12 +36,12 @@ class FeedController: BaseController {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.isTranslucent = false
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isTranslucent = false
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationController?.navigationBar.isTranslucent = true
