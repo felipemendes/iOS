@@ -38,7 +38,7 @@ class BaseCategoryCell: BaseCell {
     let categoryImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 4
         imageView.layer.masksToBounds = false
         imageView.clipsToBounds = true
         return imageView
@@ -61,11 +61,11 @@ class BaseCategoryCell: BaseCell {
         addSubview(titleLabel)
         
         // horizontal constraints
-        addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: categoryImageView)
-        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-5-[v0]-5-|", views: categoryImageView)
+        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: titleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: categoryImageView)
-        addConstraintsWithFormat(format: "V:|-30-[v0]", views: titleLabel)
+        addConstraintsWithFormat(format: "V:|-5-[v0]-5-|", views: categoryImageView)
+        addConstraintsWithFormat(format: "V:|-20-[v0]", views: titleLabel)
     }
 }

@@ -13,7 +13,7 @@ class ApiService: NSObject {
     let baseUrl = "https://api.myjson.com"
     static let sharedInstance = ApiService()
     
-    func fetchComingEvents(completion: @escaping ([Event]) -> ()) {
+    func fetchUpcomingEvents(completion: @escaping ([Event]) -> ()) {
         fetchFeed(forUrlString: "\(baseUrl)/bins/d0e00", completion: completion)
     }
     
@@ -22,12 +22,12 @@ class ApiService: NSObject {
     }
     
     func fetchTodayEvents(completion: @escaping ([Event]) -> ()) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/d0e00", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
     }
     
     func fetchEventsByCategory(uuid: String, completion: @escaping ([Event]) -> ()) {
         print("\(baseUrl)/bins/mwrh4/\(uuid)")
-        fetchFeed(forUrlString: "\(baseUrl)/bins/d0e00", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
     }
     
     func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> ()) {

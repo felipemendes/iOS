@@ -80,7 +80,7 @@ extension CustomImageView {
         imageView.image = UIImage(named: "awesome-event")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 4
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }

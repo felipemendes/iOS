@@ -20,7 +20,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }()
     
     let cellId = "cellId"
-    let imageNames = ["incoming", "spotlight", "today", "category"]
+    let imageNames = ["upcoming", "spotlight", "today", "category"]
     
     var homeController: FeedController?
     
@@ -89,7 +89,7 @@ class MenuCell: BaseCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "incoming")?.withRenderingMode(.alwaysTemplate)
+        iv.image = UIImage(named: "upcoming")?.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .rgb(red: 96, green: 97, blue: 100)
         return iv
     }()

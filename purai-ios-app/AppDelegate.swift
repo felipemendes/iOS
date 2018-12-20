@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
         UINavigationBar.appearance().barTintColor = .dark
+        UINavigationBar.appearance().tintColor = .highlight
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.highlight]
         
         // Get rid of black underneath navbar
         UINavigationBar.appearance().shadowImage = UIImage()

@@ -54,7 +54,7 @@ class EventCell: BaseCell {
     let eventImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 4
         imageView.layer.masksToBounds = false
         imageView.clipsToBounds = true
         return imageView
@@ -87,12 +87,12 @@ class EventCell: BaseCell {
         addSubview(subtitleLabel)
         
         // horizontal constraints
-        addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: eventImageView)
-        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: titleLabel)
-        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: subtitleLabel)
+        addConstraintsWithFormat(format: "H:|-5-[v0]-5-|", views: eventImageView)
+        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: subtitleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
-        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-30-|", views: titleLabel, subtitleLabel)
+        addConstraintsWithFormat(format: "V:|-5-[v0]-5-|", views: eventImageView)
+        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-20-|", views: titleLabel, subtitleLabel)
     }
 }

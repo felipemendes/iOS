@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .rgb(red: 7, green: 8, blue: 9)
         setupView()
     }
     
@@ -45,7 +44,7 @@ class DetailViewController: UIViewController {
         view.addSubview(salePlacePhone)
         
         // horizontal constraints
-        view.addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: featuredImage)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: featuredImage)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: titleLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: descriptionLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: priceLabel)
@@ -54,9 +53,8 @@ class DetailViewController: UIViewController {
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: salePlacePhone)
         
         // vertical constraints
-        view.addConstraintsWithFormat(format: "V:|-24-[v0]-20-[v1]-10-[v2]-10-[v3]-10-[v4]-10-[v5]-10-[v6]", views: featuredImage, titleLabel, descriptionLabel, priceLabel, addressLabel, salePlaceTitle, salePlacePhone)
+        view.addConstraintsWithFormat(format: "V:|[v0]-20-[v1]-10-[v2]-10-[v3]-10-[v4]-10-[v5]-10-[v6]", views: featuredImage, titleLabel, descriptionLabel, priceLabel, addressLabel, salePlaceTitle, salePlacePhone)
         
-//        featuredImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         featuredImage.heightAnchor.constraint(lessThanOrEqualToConstant: view.frame.height / 2).isActive = true
     }
     

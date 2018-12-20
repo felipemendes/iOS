@@ -1,5 +1,5 @@
 //
-//  ComingCell.swift
+//  UpcomingCell.swift
 //  purai-ios-app
 //
 //  Created by Felipe Mendes on 01/12/18.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ComingCell: FeedCell {
+class UpcomingCell: FeedCell {
     
     override func fetchEvents() {
-        ApiService.sharedInstance.fetchComingEvents { (events) in
+        ApiService.sharedInstance.fetchUpcomingEvents { (events) in
             self.events = events
             self.collectionView.reloadData()
         }

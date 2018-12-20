@@ -10,14 +10,12 @@ import UIKit
 
 enum SettingName: String {
     case cancel = "Cancelar"
-    case settings = "Configurações"
-    case suggestEvent = "Sugerir evento"
-    case help = "Ajuda"
-    case favorites = "Favoritos"
+    case about = "Sobre"
+    case suggestion = "Sugerir evento"
 }
 
 class Setting: NSObject {
-    let name: SettingName
+    let name: SettingName 
     let imageName: String
     
     init(name: SettingName, imageName: String) {
@@ -43,13 +41,11 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let cellHeight: CGFloat = 50
     
     let settings: [Setting] = {
-        let favoritesSetting = Setting(name: .favorites, imageName: "settings")
-        let settingsSetting = Setting(name: .settings, imageName: "settings")
-        let suggestEventSetting = Setting(name: .suggestEvent, imageName: "settings")
-        let helpSetting = Setting(name: .help, imageName: "settings")
-        let cancelSetting = Setting(name: .cancel, imageName: "settings")
+        let aboutSetting = Setting(name: .about, imageName: "information")
+        let suggestionSetting = Setting(name: .suggestion, imageName: "like")
+        let cancelSetting = Setting(name: .cancel, imageName: "cancel")
         
-        return [favoritesSetting, settingsSetting, suggestEventSetting, helpSetting, cancelSetting]
+        return [aboutSetting, suggestionSetting, cancelSetting]
     }()
     
     func showSettings() {

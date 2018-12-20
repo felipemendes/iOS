@@ -10,7 +10,7 @@ import UIKit
 
 class FeedController: BaseController {
         
-    let comingCellId = "comingCellId"
+    let upcomingCellId = "upcomingCellId"
     let spotlightCellId = "spotlightCellId"
     let todayCellId = "todayCellId"
     let categoryCellId = "categoryCellId"
@@ -65,7 +65,7 @@ class FeedController: BaseController {
         
         collectionView?.backgroundColor = .dark
         
-        collectionView?.register(ComingCell.self, forCellWithReuseIdentifier: comingCellId)
+        collectionView?.register(UpcomingCell.self, forCellWithReuseIdentifier: upcomingCellId)
         collectionView?.register(SpotlightCell.self, forCellWithReuseIdentifier: spotlightCellId)
         collectionView?.register(TodayCell.self, forCellWithReuseIdentifier: todayCellId)
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: categoryCellId)
@@ -77,13 +77,10 @@ class FeedController: BaseController {
     }
     
     func setupNavBarButtons() {
-        let searchImage = UIImage(named: "search")?.withRenderingMode(.alwaysOriginal)
-        let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
-
         let moreImage = UIImage(named: "more")?.withRenderingMode(.alwaysOriginal)
         let moreBarButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(handleMore))
         
-        navigationItem.rightBarButtonItems = [moreBarButtonItem, searchBarButtonItem]
+        navigationItem.rightBarButtonItems = [moreBarButtonItem]
     }
     
     func scrollTo(menuIndex: Int) {
@@ -97,10 +94,6 @@ class FeedController: BaseController {
         if let titleLabel = navigationItem.titleView as? UILabel {
             titleLabel.text = titles[index]
         }
-    }
-    
-    @objc func handleSearch() {
-        print("search")
     }
     
     lazy var settingsLauncher: SettingsLauncher = {
@@ -117,9 +110,7 @@ class FeedController: BaseController {
         let dummySettingViewController = UIViewController()
         dummySettingViewController.view.backgroundColor = .dark
         dummySettingViewController.navigationItem.title = setting.name.rawValue
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.pushViewController(dummySettingViewController, animated: true)
     }
     
@@ -174,7 +165,7 @@ class FeedController: BaseController {
         case 3:
             identifier = categoryCellId
         default:
-            identifier = comingCellId
+            identifier = upcomingCellId
         }
         
         if identifier == categoryCellId {

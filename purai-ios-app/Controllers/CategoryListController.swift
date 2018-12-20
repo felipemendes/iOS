@@ -16,13 +16,9 @@ class CategoryListController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .dark
         
         self.navigationItem.title = category?.title
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.isTranslucent = true
         
         setupCollectionView()
