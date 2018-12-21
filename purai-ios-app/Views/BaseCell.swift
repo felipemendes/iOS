@@ -93,7 +93,7 @@ class EventCell: BaseCell {
         addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: subtitleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-20-[v0]-0-|", views: eventImageView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-16-|", views: eventImageView)
         addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-24-|", views: titleLabel, subtitleLabel)
     }
 }

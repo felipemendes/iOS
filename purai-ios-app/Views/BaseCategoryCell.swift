@@ -13,12 +13,11 @@ class BaseCategoryCell: BaseCell {
     var category: Category? {
         didSet {
             titleLabel.text = category?.title
-            setupCategoryImage()
             
             if let title = category?.title {
                 let size = CGSize(width: frame.width - 16 - 40 - 8 - 16, height: 1000)
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-                let estimateRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], context: nil)
+                let estimateRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 14)!], context: nil)
                 
                 if estimateRect.size.height > 20 {
                     titleLabelHeightConstraint?.constant = 35
@@ -29,26 +28,18 @@ class BaseCategoryCell: BaseCell {
         }
     }
     
-    func setupCategoryImage() {
-        if let categoryImageUrl = category?.category_image {
-            categoryImageView.loadImageUsingUrlString(urlString: categoryImageUrl)
-        }
-    }
-    
-    let categoryImageView: CustomImageView = {
-        let imageView = CustomImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 4
-        imageView.layer.masksToBounds = false
-        imageView.clipsToBounds = true
-        return imageView
+    let background: UIView = {
+       let view = UIView()
+        view.layer.cornerRadius = 12
+        view.backgroundColor = .gray
+        return view
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 22)
         label.adjustsFontSizeToFitWidth = true
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
@@ -57,15 +48,15 @@ class BaseCategoryCell: BaseCell {
     var titleLabelHeightConstraint: NSLayoutConstraint?
     
     override func setupViews() {
-        addSubview(categoryImageView)
+        addSubview(background)
         addSubview(titleLabel)
         
         // horizontal constraints
-        addConstraintsWithFormat(format: "H:|-5-[v0]-5-|", views: categoryImageView)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: background)
+        addConstraintsWithFormat(format: "H:|-28-[v0]-28-|", views: titleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-5-[v0]-5-|", views: categoryImageView)
-        addConstraintsWithFormat(format: "V:|-20-[v0]", views: titleLabel)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: background)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
     }
 }
