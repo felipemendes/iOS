@@ -31,14 +31,12 @@ class SettingCell: BaseCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Settings"
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
         return label
     }()
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "settings")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()

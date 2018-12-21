@@ -51,7 +51,7 @@ class FeedController: BaseController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Próximos eventos"
         titleLabel.textColor = .highlight
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
     }

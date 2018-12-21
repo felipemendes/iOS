@@ -43,8 +43,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if !Reachability.isConnectedToNetwork(){
             self.collectionView.setEmptyMessage("Eita, não há conexão com a Internet.")
-        } else if (self.events?.count == nil || self.events?.count ?? 0 == 0) {
-            self.collectionView.setEmptyMessage("Eita, nenhum resultado foi encontrado.")
         } else {
             self.collectionView.restore()
         }
@@ -59,7 +57,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (frame.width - 16 - 16) * 9 / 16
+        let height = (frame.width - 16 - 16) * 12 / 16
         return CGSize(width: frame.width, height: height + 16 + 76)
     }
     

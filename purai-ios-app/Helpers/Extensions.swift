@@ -19,6 +19,13 @@ extension UIColor {
             return UIColor(hexString: "#131921")!
         }
     }
+    @objc class var gray: UIColor {
+        if #available(iOS 11.0, *) {
+            return UIColor(named: "gray")!
+        } else {
+            return UIColor(hexString: "#1A1A1A")!
+        }
+    }
     @objc class var highlight: UIColor {
         if #available(iOS 11.0, *) {
             return UIColor(named: "highlight")!
@@ -65,7 +72,7 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: viewsDictionary))
     }
     
-    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1) {
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
         layer.shadowOffset = offSet
@@ -77,7 +84,6 @@ extension CustomImageView {
     
     func setImageStyle() -> CustomImageView {
         let imageView = CustomImageView()
-        imageView.image = UIImage(named: "awesome-event")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 4
@@ -92,7 +98,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 34)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
@@ -104,7 +110,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0;
@@ -121,7 +127,7 @@ extension UICollectionView {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = .center;
-        messageLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        messageLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 26)
         messageLabel.sizeToFit()
         self.backgroundView = messageLabel;
     }

@@ -9,6 +9,7 @@
 import UIKit
 
 class BaseCell: UICollectionViewCell {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -34,7 +35,7 @@ class EventCell: BaseCell {
             if let title = event?.title {
                 let size = CGSize(width: frame.width - 16 - 40 - 8 - 16, height: 1000)
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-                let estimateRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], context: nil)
+                let estimateRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 14)!], context: nil)
                 
                 if estimateRect.size.height > 20 {
                     titleLabelHeightConstraint?.constant = 35
@@ -54,7 +55,7 @@ class EventCell: BaseCell {
     let eventImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 4
+        imageView.layer.cornerRadius = 12
         imageView.layer.masksToBounds = false
         imageView.clipsToBounds = true
         return imageView
@@ -64,7 +65,7 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
         label.adjustsFontSizeToFitWidth = true
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
@@ -72,9 +73,9 @@ class EventCell: BaseCell {
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .rgb(red: 223, green: 224, blue: 230)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
     }()
@@ -87,12 +88,12 @@ class EventCell: BaseCell {
         addSubview(subtitleLabel)
         
         // horizontal constraints
-        addConstraintsWithFormat(format: "H:|-5-[v0]-5-|", views: eventImageView)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: titleLabel)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: subtitleLabel)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: eventImageView)
+        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: subtitleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-5-[v0]-5-|", views: eventImageView)
-        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-20-|", views: titleLabel, subtitleLabel)
+        addConstraintsWithFormat(format: "V:|-20-[v0]-0-|", views: eventImageView)
+        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-24-|", views: titleLabel, subtitleLabel)
     }
 }

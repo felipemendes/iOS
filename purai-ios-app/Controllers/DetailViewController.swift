@@ -35,6 +35,10 @@ class DetailViewController: UIViewController {
         salePlaceTitle.text = event?.sale_place?.title
         salePlacePhone.text = event?.sale_place?.phone
         
+        if let eventImageUrl = event?.image {
+            featuredImage.loadImageUsingUrlString(urlString: eventImageUrl)
+        }
+        
         view.addSubview(featuredImage)
         view.addSubview(titleLabel)
         view.addSubview(descriptionLabel)
@@ -60,6 +64,11 @@ class DetailViewController: UIViewController {
     
     func setupBackgroundImage() {
         let backgroundImage = CustomImageView().setImageStyle()
+        
+        if let eventImageUrl = event?.image {
+            backgroundImage.loadImageUsingUrlString(urlString: eventImageUrl)
+        }
+        
         view.addSubview(backgroundImage)
         backgroundImage.addBlurEffect()
         backgroundImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
