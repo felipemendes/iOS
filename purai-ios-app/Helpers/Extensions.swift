@@ -26,6 +26,13 @@ extension UIColor {
             return UIColor(hexString: "#1A1A1A")!
         }
     }
+    @objc class var lightGray: UIColor {
+        if #available(iOS 11.0, *) {
+            return UIColor(named: "lightGray")!
+        } else {
+            return UIColor(hexString: "#858585")!
+        }
+    }
     @objc class var highlight: UIColor {
         if #available(iOS 11.0, *) {
             return UIColor(named: "highlight")!
@@ -61,6 +68,12 @@ extension UIColor {
 }
 
 extension UIView {
+    func setupDetailView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
     func addConstraintsWithFormat(format: String, views: UIView...) {
         var viewsDictionary = [String: UIView]()
         for (index, view) in views.enumerated() {
@@ -82,11 +95,11 @@ extension UIView {
 
 extension CustomImageView {
     
-    func setImageStyle() -> CustomImageView {
+    func setImageStyle(mode: UIView.ContentMode = .scaleAspectFill, radius: CGFloat = 18) -> CustomImageView {
         let imageView = CustomImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = mode
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 4
+        imageView.layer.cornerRadius = radius
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }
@@ -94,27 +107,14 @@ extension CustomImageView {
 
 extension UILabel {
     
-    func setLargeTextStyle() -> UILabel {
+    func setTextStyle(size: CGFloat = 18, color: UIColor = .white) -> UILabel {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = color
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 34)
-        label.sizeToFit()
-        label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 0
-        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
-        return label
-    }
-    
-    func setNormalTextStyle() -> UILabel {
-        let label = UILabel()
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: size)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0;
-        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
     }
 }
