@@ -68,7 +68,7 @@ extension UIColor {
 }
 
 extension UIView {
-    func setupDetailView() -> UIView {
+    func setupBoxInfo() -> UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

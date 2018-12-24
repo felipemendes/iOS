@@ -13,20 +13,6 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-        navigationController?.navigationBar.tintColor = .highlight
-        navigationController?.navigationBar.barStyle = .black
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.barTintColor = .dark
-        navigationController?.navigationBar.barStyle = .black
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        navigationController?.navigationBar.barTintColor = .dark
-        navigationController?.navigationBar.barStyle = .black
     }
     
     func showCategoryListController(for category: Category) {
@@ -38,15 +24,6 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func showDetailController(for event: Event, at indexPath: IndexPath, of collectionView: UICollectionView) {
         let modalViewController = DetailViewController()
         modalViewController.event = event
-        
         self.navigationController?.pushViewController(modalViewController, animated: true)
-        
-//        modalViewController.modalPresentationStyle = .overCurrentContext
-//        present(modalViewController, animated: true, completion: nil)
-        
-//        let modalViewController = TesteViewController()
-//        self.navigationController?.pushViewController(modalViewController, animated: true)
     }
-    
-    
 }

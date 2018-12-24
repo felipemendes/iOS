@@ -18,8 +18,11 @@ class CategoryListController: BaseController {
         super.viewDidLoad()
         
         self.navigationItem.title = category?.title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.isTranslucent = true
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.isTranslucent = true
+        }
         
         setupCollectionView()
     }

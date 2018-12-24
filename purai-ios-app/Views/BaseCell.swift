@@ -82,11 +82,11 @@ class EventCell: BaseCell {
         
         // horizontal constraints
         addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: eventImageView)
-        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: titleLabel)
-        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: subtitleLabel)
+        addConstraintsWithFormat(format: "H:|-35-[v0]-35-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-35-[v0]-35-|", views: subtitleLabel)
         
         // vertical constraints
         addConstraintsWithFormat(format: "V:|-16-[v0]-16-|", views: eventImageView)
-        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-30-|", views: titleLabel, subtitleLabel)
+        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-50-|", views: titleLabel, subtitleLabel)
     }
 }
