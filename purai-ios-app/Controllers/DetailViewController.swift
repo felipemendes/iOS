@@ -73,6 +73,7 @@ class DetailViewController: UIViewController {
         
         setupValues()
         setupView()
+        setupNavBarButtons()
     }
     
     func setupValues() {
@@ -146,5 +147,18 @@ extension DetailViewController {
         NSLayoutConstraint(item: value, attribute: .right, relatedBy: .equal, toItem: label, attribute: .right, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 25.0).isActive = true
         box.widthAnchor.constraint(equalToConstant: view.frame.width - 32).isActive = true
+    }
+    
+    func setupNavBarButtons() {
+        let shareImage = UIImage(named: "share")?.withRenderingMode(.alwaysOriginal)
+        let shareBarButtonItem = UIBarButtonItem(image: shareImage, style: .plain, target: self, action: #selector(handleShare))
+        
+        navigationItem.rightBarButtonItems = [shareBarButtonItem]
+    }
+    
+    @objc func handleShare() {
+        let view = UIActivityViewController(activityItems: ["Confira os eventos mais próximos de você :)"], applicationActivities: nil)
+        view.popoverPresentationController?.sourceView = self.view
+        self.present(view, animated: true, completion: nil)
     }
 }

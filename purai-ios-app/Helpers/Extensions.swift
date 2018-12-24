@@ -37,7 +37,7 @@ extension UIColor {
         if #available(iOS 11.0, *) {
             return UIColor(named: "highlight")!
         } else {
-            return UIColor(hexString: "#FF275E")!
+            return UIColor(hexString: "#6A66E7")!
         }
     }
     public convenience init?(hexString: String) {
