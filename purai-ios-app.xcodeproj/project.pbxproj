@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020F41C021D18312007CE3BC /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41BF21D18312007CE3BC /* LoaderController.swift */; };
 		021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */; };
 		02330C87219F36B400A257CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		023CAC0B21C8718300958231 /* ApiServiceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CAC0A21C8718300958231 /* ApiServiceCategories.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020F41BF21D18312007CE3BC /* LoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
 		021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		02330C86219F36B400A257CF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		023CAC0A21C8718300958231 /* ApiServiceCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceCategories.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				02E290B7218E9BCF00FE99C7 /* Extensions.swift */,
 				026161EF21C5EBDC00DDD5C2 /* Reachability.swift */,
+				020F41BF21D18312007CE3BC /* LoaderController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
+				020F41C021D18312007CE3BC /* LoaderController.swift in Sources */,
 				0295753721B47766000572B2 /* DetailViewController.swift in Sources */,
 				026161F021C5EBDC00DDD5C2 /* Reachability.swift in Sources */,
 				02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */,

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class FeedController: BaseController {
+class FeedController: BaseController, MFMailComposeViewControllerDelegate {
         
     let upcomingCellId = "upcomingCellId"
     let spotlightCellId = "spotlightCellId"
@@ -51,7 +52,7 @@ class FeedController: BaseController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Próximos eventos"
         titleLabel.textColor = .highlight
-        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
     }
@@ -112,6 +113,23 @@ class FeedController: BaseController {
         dummySettingViewController.navigationItem.title = setting.name.rawValue
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.pushViewController(dummySettingViewController, animated: true)
+    }
+    
+    func suggestEvent() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["felipemendes@me.com"])
+            mail.setSubject("Sugestão de evento")
+            
+            present(mail, animated: true)
+        } else {
+            print("Email não pode ser enviado")
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
     lazy var menuBar: MenuBar = {

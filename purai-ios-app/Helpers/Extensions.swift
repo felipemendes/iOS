@@ -98,7 +98,7 @@ extension CustomImageView {
     func setImageStyle(mode: UIView.ContentMode = .scaleAspectFill, radius: CGFloat = 18) -> CustomImageView {
         let imageView = CustomImageView()
         imageView.contentMode = mode
-        imageView.clipsToBounds = true
+        imageView.clipsToBounds = false
         imageView.layer.cornerRadius = radius
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -111,7 +111,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = color
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: size)
+        label.font = UIFont.systemFont(ofSize: size, weight: .bold)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0;
@@ -127,13 +127,46 @@ extension UICollectionView {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = .center;
-        messageLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 26)
+        messageLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         messageLabel.sizeToFit()
         self.backgroundView = messageLabel;
     }
     
     func restore() {
         self.backgroundView = nil
+    }
+}
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector(("statusBar"))) {
+            return value(forKey: "statusBar") as? UIView
+        }
+        return nil
+    }
+}
+
+
+extension UIViewController {
+    class func showSpinner(onView : UIView) -> UIView {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+        return spinnerView
+    }
+    
+    class func hideSpinner(spinner :UIView) {
+        DispatchQueue.main.async {
+            spinner.removeFromSuperview()
+        }
     }
 }
 

@@ -45,7 +45,10 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if !Reachability.isConnectedToNetwork(){
             self.collectionView.setEmptyMessage("Eita, não há conexão com a Internet.")
+        } else if (self.categories?.count == nil) {
+            SpinnerController.sharedInstance.showSpinner()
         } else {
+            SpinnerController.sharedInstance.removeSpinner()
             self.collectionView.restore()
         }
         

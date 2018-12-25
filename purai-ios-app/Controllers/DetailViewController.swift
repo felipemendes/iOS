@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     
     let titleLabel = UILabel().setTextStyle(size: 22)
     let featuredImage = CustomImageView().setImageStyle()
+    let backgroundImage = CustomImageView().setImageStyle(mode: .scaleAspectFill, radius: 0)
     
     // Description
     var descriptionView = UIView().setupBoxInfo()
@@ -63,6 +64,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = event?.title
+        self.navigationController?.navigationBar.backgroundColor = .dark
         
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -86,6 +88,7 @@ class DetailViewController: UIViewController {
         
         if let eventImageUrl = event?.image {
             featuredImage.loadImageUsingUrlString(urlString: eventImageUrl)
+            backgroundImage.loadImageUsingUrlString(urlString: eventImageUrl)
         }
     }
     
@@ -95,7 +98,8 @@ class DetailViewController: UIViewController {
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
+
+//        setupBackgroundImage()
         setupFeaturedImage()
         
         setupBox(for: "Descrição", label: descriptionLabel, value: descriptionValue, icon: descriptionIcon, iconName: "info", box: descriptionView)
@@ -118,8 +122,13 @@ class DetailViewController: UIViewController {
         featuredImage.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
     }
     
-    @objc func dismiss(sender: UIButton!) {
-        self.dismiss(animated: true, completion: nil)
+    func setupBackgroundImage() {
+        scrollView.addSubview(backgroundImage)
+        backgroundImage.addBlurEffect()
+        backgroundImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     }
 }
 
@@ -154,6 +163,10 @@ extension DetailViewController {
         let shareBarButtonItem = UIBarButtonItem(image: shareImage, style: .plain, target: self, action: #selector(handleShare))
         
         navigationItem.rightBarButtonItems = [shareBarButtonItem]
+    }
+    
+    @objc func dismiss(sender: UIButton!) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func handleShare() {

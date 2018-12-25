@@ -82,7 +82,9 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         }, completion: { (_) in
-            if setting.name != .cancel {
+            if setting.name == .suggestion {
+                self.homeController?.suggestEvent()
+            } else if setting.name != .cancel {
                 self.homeController?.showControllerForSetting(setting)
             }
         })

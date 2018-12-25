@@ -13,7 +13,7 @@ class ApiServiceCategory: ApiService {
     static let sharedCategoryInstance = ApiServiceCategory()
     
     func fetchCategories(completion: @escaping ([Category]) -> ()) {
-        fetchCategoryFeed(forUrlString: "\(baseUrl)/bins/v1cnk", completion: completion)
+        fetchCategoryFeed(forUrlString: "\(baseUrl)/bins/19clcc", completion: completion)
     }
     
     func fetchCategoryFeed(forUrlString urlString: String, completion: @escaping ([Category]) -> ()) {

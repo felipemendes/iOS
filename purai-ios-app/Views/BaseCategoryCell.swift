@@ -17,7 +17,7 @@ class BaseCategoryCell: BaseCell {
             if let title = category?.title {
                 let size = CGSize(width: frame.width - 16 - 40 - 8 - 16, height: 1000)
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-                let estimateRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 14)!], context: nil)
+                let estimateRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)], context: nil)
                 
                 if estimateRect.size.height > 20 {
                     titleLabelHeightConstraint?.constant = 35
@@ -39,7 +39,7 @@ class BaseCategoryCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 22)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.adjustsFontSizeToFitWidth = true
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label

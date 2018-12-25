@@ -31,7 +31,7 @@ class SettingCell: BaseCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return label
     }()
     
