@@ -112,6 +112,62 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		020F41D221D2B6AD007CE3BC /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				02E290BA218E9C8A00FE99C7 /* BaseCell.swift */,
+				027E3C31219D070900219E32 /* SettingCell.swift */,
+				02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */,
+				02BBBA3021B2F72500998543 /* SpotlightCell.swift */,
+				02BBBA3221B2F9BD00998543 /* TodayCell.swift */,
+				02BBBA3621B3001F00998543 /* UpcomingCell.swift */,
+				02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		020F41D321D2B6C8007CE3BC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */,
+				026161F521C7160200DDD5C2 /* CategoryCell.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		020F41D421D2B6EF007CE3BC /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				02B280E921C8375D00CD7C62 /* BaseController.swift */,
+				02E8D8D9217516DA001FD974 /* FeedController.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		020F41D521D2B6F5007CE3BC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				02B280E521C7CA2800CD7C62 /* CategoryListController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		020F41D621D2B700007CE3BC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0295753621B47766000572B2 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		020F41D721D2B713007CE3BC /* SettingsLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */,
+			);
+			path = SettingsLauncher;
+			sourceTree = "<group>";
+		};
 		02330C85219F369400A257CF /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,16 +190,9 @@
 		02E290B9218E9C4100FE99C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				02E290BA218E9C8A00FE99C7 /* BaseCell.swift */,
+				020F41D221D2B6AD007CE3BC /* Event */,
+				020F41D321D2B6C8007CE3BC /* Category */,
 				02E290BD218E9EC100FE99C7 /* MenuBar.swift */,
-				027E3C31219D070900219E32 /* SettingCell.swift */,
-				02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */,
-				02BBBA3021B2F72500998543 /* SpotlightCell.swift */,
-				02BBBA3221B2F9BD00998543 /* TodayCell.swift */,
-				02BBBA3621B3001F00998543 /* UpcomingCell.swift */,
-				026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */,
-				026161F521C7160200DDD5C2 /* CategoryCell.swift */,
-				02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,11 +200,10 @@
 		02E290BC218E9CBB00FE99C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */,
-				02B280E921C8375D00CD7C62 /* BaseController.swift */,
-				02E8D8D9217516DA001FD974 /* FeedController.swift */,
-				0295753621B47766000572B2 /* DetailViewController.swift */,
-				02B280E521C7CA2800CD7C62 /* CategoryListController.swift */,
+				020F41D721D2B713007CE3BC /* SettingsLauncher */,
+				020F41D421D2B6EF007CE3BC /* Event */,
+				020F41D621D2B700007CE3BC /* Detail */,
+				020F41D521D2B6F5007CE3BC /* Category */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
