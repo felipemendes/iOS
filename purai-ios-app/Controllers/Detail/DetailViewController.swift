@@ -118,6 +118,7 @@ class DetailViewController: UIViewController {
     
     func setupFeaturedImage() {
         scrollView.addSubview(featuredImage)
+        scrollView.animate(for: featuredImage)
         featuredImage.heightAnchor.constraint(lessThanOrEqualToConstant: view.frame.height / 2).isActive = true
         featuredImage.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
     }
@@ -139,6 +140,8 @@ extension DetailViewController {
         
         scrollView.addSubview(box)
         scrollView.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: box)
+        
+        scrollView.animate(for: box)
         
         NSLayoutConstraint(item: box, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0).isActive = true
         
