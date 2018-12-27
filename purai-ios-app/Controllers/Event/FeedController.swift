@@ -17,10 +17,10 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
     let categoryCellId = "categoryCellId"
     
     let titles = [
-        "Próximos eventos",
-        "Destaques",
-        "Hoje",
-        "Categorias"
+        localized("next_events"),
+        localized("featured"),
+        localized("today"),
+        localized("categories")
     ]
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
     
     func setupNavBar() {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
-        titleLabel.text = "Próximos eventos"
+        titleLabel.text = localized("next_events")
         titleLabel.textColor = .highlight
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         navigationItem.titleView = titleLabel
@@ -110,7 +110,7 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
     func showControllerForSetting(_ setting: Setting) {
         let dummySettingViewController = UIViewController()
         dummySettingViewController.view.backgroundColor = .dark
-        dummySettingViewController.navigationItem.title = setting.name.rawValue
+        dummySettingViewController.navigationItem.title = setting.name
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.pushViewController(dummySettingViewController, animated: true)
     }
@@ -119,12 +119,12 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["felipemendes@me.com"])
-            mail.setSubject("Sugestão de evento")
+            mail.setToRecipients([localized("email_to")])
+            mail.setSubject(localized("email_to"))
             
             present(mail, animated: true)
         } else {
-            print("Email não pode ser enviado")
+            print(localized("email_not_send"))
         }
     }
     

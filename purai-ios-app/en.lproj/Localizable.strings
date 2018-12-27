@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  purai-ios-app
+
+  Created by Felipe Mendes on 25/12/18.
+  Copyright © 2018 Felipe Mendes. All rights reserved.
+*/
+
+// General
+
+"back" = "Back";
+"no_internet_connection" = "Oh, no! There is no internet connection.";
+
+// SettingsLauncher
+
+"cancel" = "Cancel";
+"about" = "About";
+"suggestion" = "Suggestion";
+
+// Feed
+
+"next_events" = "Eext events";
+"featured" = "Featured";
+"today" = "Today";
+"categories" = "Categories";
+"email_to" = "felipemendes@me.com";
+"email_subject" = "Event suggestion";
+"email_not_send" = "Email can not be sent";
+
+// Detail
+
+"description" = "Description";
+"price" = "Price";
+"address" = "Address";
+"sale_place" = "Where to buy";
+"phone" = "Phone";
+"share_message" = "Check the events closest to you";

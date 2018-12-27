@@ -102,11 +102,11 @@ class DetailViewController: UIViewController {
 //        setupBackgroundImage()
         setupFeaturedImage()
         
-        setupBox(for: "Descrição", label: descriptionLabel, value: descriptionValue, icon: descriptionIcon, iconName: "info", box: descriptionView)
-        setupBox(for: "Preço", label: priceLabel, value: priceValue, icon: priceIcon, iconName: "price", box: priceView)
-        setupBox(for: "Endereço", label: addressLabel, value: addressValue, icon: addressIcon, iconName: "address", box: addressView)
-        setupBox(for: "Onde comprar", label: salePlaceLabel, value: salePlaceValue, icon: salePlaceIcon, iconName: "sale_place", box: salePlaceView)
-        setupBox(for: "Telefone", label: salePlacePhoneLabel, value: salePlacePhoneValue, icon: salePlacePhoneIcon, iconName: "phone", box: salePlacePhoneView)
+        setupBox(for: localized("description"), label: descriptionLabel, value: descriptionValue, icon: descriptionIcon, iconName: "info", box: descriptionView)
+        setupBox(for: localized("price"), label: priceLabel, value: priceValue, icon: priceIcon, iconName: "price", box: priceView)
+        setupBox(for: localized("address"), label: addressLabel, value: addressValue, icon: addressIcon, iconName: "address", box: addressView)
+        setupBox(for: localized("sale_place"), label: salePlaceLabel, value: salePlaceValue, icon: salePlaceIcon, iconName: "sale_place", box: salePlaceView)
+        setupBox(for: localized("phone"), label: salePlacePhoneLabel, value: salePlacePhoneValue, icon: salePlacePhoneIcon, iconName: "phone", box: salePlacePhoneView)
         
         scrollView.addConstraintsWithFormat(format: "V:|-24-[v0]-16-[v1]-16-[v2]-16-[v3]-16-[v4]-16-[v5]", views: featuredImage, descriptionView, priceView, addressView, salePlaceView, salePlacePhoneView)
         
@@ -170,7 +170,7 @@ extension DetailViewController {
     }
     
     @objc func handleShare() {
-        let view = UIActivityViewController(activityItems: ["Confira os eventos mais próximos de você :)"], applicationActivities: nil)
+        let view = UIActivityViewController(activityItems: [localized("share_message")], applicationActivities: nil)
         view.popoverPresentationController?.sourceView = self.view
         self.present(view, animated: true, completion: nil)
     }

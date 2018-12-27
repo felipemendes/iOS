@@ -8,17 +8,19 @@
 
 import UIKit
 
-enum SettingName: String {
-    case cancel = "Cancelar"
-    case about = "Sobre"
-    case suggestion = "Sugerir evento"
+//    let myString = Localizations.StringId1
+
+enum SettingName {
+    static let cancel = NSLocalizedString("cancel", comment: "")
+    static let about = NSLocalizedString("about", comment: "")
+    static let suggestion = NSLocalizedString("suggestion", comment: "")
 }
 
 class Setting: NSObject {
-    let name: SettingName 
+    let name: String
     let imageName: String
     
-    init(name: SettingName, imageName: String) {
+    init(name: String, imageName: String) {
         self.name = name
         self.imageName = imageName
     }
@@ -41,9 +43,9 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let cellHeight: CGFloat = 50
     
     let settings: [Setting] = {
-        let aboutSetting = Setting(name: .about, imageName: "information")
-        let suggestionSetting = Setting(name: .suggestion, imageName: "like")
-        let cancelSetting = Setting(name: .cancel, imageName: "cancel")
+        let aboutSetting = Setting(name: SettingName.about, imageName: "information")
+        let suggestionSetting = Setting(name: SettingName.suggestion, imageName: "like")
+        let cancelSetting = Setting(name: SettingName.cancel, imageName: "cancel")
         
         return [aboutSetting, suggestionSetting, cancelSetting]
     }()
@@ -82,9 +84,9 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         }, completion: { (_) in
-            if setting.name == .suggestion {
+            if setting.name == SettingName.suggestion {
                 self.homeController?.suggestEvent()
-            } else if setting.name != .cancel {
+            } else if setting.name != SettingName.cancel {
                 self.homeController?.showControllerForSetting(setting)
             }
         })

@@ -42,7 +42,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if !Reachability.isConnectedToNetwork(){
-            self.collectionView.setEmptyMessage("Eita! Não há conexão com a Internet.")
+            self.collectionView.setEmptyMessage(localized("no_internet_connection"))
         } else if (self.events?.count == nil) {
             SpinnerController.sharedInstance.showSpinner()
         } else {

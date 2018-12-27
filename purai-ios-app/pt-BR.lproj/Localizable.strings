@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  purai-ios-app
+
+  Created by Felipe Mendes on 25/12/18.
+  Copyright © 2018 Felipe Mendes. All rights reserved.
+*/
+
+// General
+
+"back" = "Voltar";
+"no_internet_connection" = "Eita! Não há conexão com a Internet.";
+
+// SettingsLauncher
+
+"cancel" = "Cancelar";
+"about" = "Sobre";
+"suggestion" = "Sugestão";
+
+// Feed
+
+"next_events" = "Próximos eventos";
+"featured" = "Destaques";
+"today" = "Hoje";
+"categories" = "Categorias";
+"email_to" = "felipemendes@me.com";
+"email_subject" = "Sugestão de evento";
+"email_not_send" = "Email não pode ser enviado";
+
+// Detail
+
+"description" = "Descrição";
+"price" = "Preço";
+"address" = "Endereço";
+"sale_place" = "Onde comprar";
+"phone" = "Telefone";
+"share_message" = "Confira os eventos mais próximos de você";

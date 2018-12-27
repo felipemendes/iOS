@@ -12,7 +12,7 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: localized("back"), style: .plain, target: nil, action: nil)
     }
     
     func showCategoryListController(for category: Category) {
