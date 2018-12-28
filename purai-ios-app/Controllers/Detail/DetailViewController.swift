@@ -19,39 +19,38 @@ class DetailViewController: UIViewController {
     
     var event: Event?
     
-    let titleLabel = UILabel().setTextStyle(size: 22)
     let featuredImage = CustomImageView().setImageStyle()
     let backgroundImage = CustomImageView().setImageStyle(mode: .scaleAspectFill, radius: 0)
     
     // Description
     var descriptionView = UIView().setupBoxInfo()
-    let descriptionLabel = UILabel().setTextStyle(size: 20)
+    let descriptionLabel = UILabel().setTextStyle(size: 18)
     let descriptionValue = UILabel().setTextStyle(color: .lightGray)
-    let descriptionIcon = CustomImageView().setImageStyle(mode: .scaleToFill ,radius: 0)
+    let descriptionIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     // Price
     var priceView = UIView().setupBoxInfo()
-    let priceLabel = UILabel().setTextStyle(size: 20)
+    let priceLabel = UILabel().setTextStyle(size: 18)
     let priceValue = UILabel().setTextStyle(color: .lightGray)
-    let priceIcon = CustomImageView().setImageStyle(mode: .scaleToFill ,radius: 0)
+    let priceIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     // Address
     var addressView = UIView().setupBoxInfo()
-    let addressLabel = UILabel().setTextStyle(size: 20)
+    let addressLabel = UILabel().setTextStyle(size: 18)
     let addressValue = UILabel().setTextStyle(color: .lightGray)
-    let addressIcon = CustomImageView().setImageStyle(mode: .scaleToFill ,radius: 0)
+    let addressIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     // Sale Place
     var salePlaceView = UIView().setupBoxInfo()
-    let salePlaceLabel = UILabel().setTextStyle(size: 20)
+    let salePlaceLabel = UILabel().setTextStyle(size: 18)
     let salePlaceValue = UILabel().setTextStyle(color: .lightGray)
-    let salePlaceIcon = CustomImageView().setImageStyle(mode: .scaleToFill ,radius: 0)
+    let salePlaceIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     // Sale Place Phone
     var salePlacePhoneView = UIView().setupBoxInfo()
-    let salePlacePhoneLabel = UILabel().setTextStyle(size: 20)
+    let salePlacePhoneLabel = UILabel().setTextStyle(size: 18)
     let salePlacePhoneValue = UILabel().setTextStyle(color: .lightGray)
-    let salePlacePhoneIcon = CustomImageView().setImageStyle(mode: .scaleToFill ,radius: 0)
+    let salePlacePhoneIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     let dismissButton: UIButton = {
         let btn: UIButton = UIButton()
@@ -79,7 +78,6 @@ class DetailViewController: UIViewController {
     }
     
     func setupValues() {
-        titleLabel.text = event?.title
         descriptionValue.text = event?.about
         priceValue.text = event?.price
         addressValue.text = event?.addressFormatted

@@ -49,10 +49,10 @@ class CustomImageView: UIImageView {
 
 extension CustomImageView {
     
-    func setImageStyle(mode: UIView.ContentMode = .scaleAspectFill, radius: CGFloat = 18) -> CustomImageView {
+    func setImageStyle(mode: UIView.ContentMode = .scaleAspectFill, radius: CGFloat = 12, clipsToBounds: Bool = false) -> CustomImageView {
         let imageView = CustomImageView()
         imageView.contentMode = mode
-        imageView.clipsToBounds = false
+        imageView.clipsToBounds = clipsToBounds
         imageView.layer.cornerRadius = radius
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

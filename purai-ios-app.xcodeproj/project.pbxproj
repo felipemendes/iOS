@@ -261,8 +261,8 @@
 				020F41D121D2B5C6007CE3BC /* Extensions */,
 				02E290B6218E9BBA00FE99C7 /* Helpers */,
 				02A04CA521D4592E00E9D417 /* Storyboards */,
-				02E8D8D7217516DA001FD974 /* AppDelegate.swift */,
 				02684CA021BB418100A2ABE3 /* Assets.xcassets */,
+				02E8D8D7217516DA001FD974 /* AppDelegate.swift */,
 				02E8D8E3217516E5001FD974 /* Info.plist */,
 				02EEB42921D2B9E100EB73C5 /* Localizable.strings */,
 			);

@@ -52,7 +52,7 @@ class EventCell: BaseCell {
         }
     }
 
-    let eventImageView = CustomImageView().setImageStyle(mode: .scaleAspectFill, radius: 0)
+    let eventImageView = CustomImageView().setImageStyle(mode: .scaleAspectFill, clipsToBounds: true)
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -60,7 +60,7 @@ class EventCell: BaseCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.adjustsFontSizeToFitWidth = true
-        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
+        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 0)
         return label
     }()
     
@@ -69,7 +69,7 @@ class EventCell: BaseCell {
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
+        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 0)
         return label
     }()
     
@@ -81,12 +81,12 @@ class EventCell: BaseCell {
         addSubview(subtitleLabel)
         
         // horizontal constraints
-        addConstraintsWithFormat(format: "H:|[v0]|", views: eventImageView)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: titleLabel)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: subtitleLabel)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: eventImageView)
+        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-30-[v0]-30-|", views: subtitleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|[v0]|", views: eventImageView)
+        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
         addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-30-|", views: titleLabel, subtitleLabel)
     }
 }

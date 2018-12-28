@@ -25,7 +25,7 @@ class SpinnerController: NSObject {
             
             self.activityIndicator.hidesWhenStopped = true
             self.activityIndicator.center = holdingView.center
-            self.activityIndicator.color = .highlight
+            self.activityIndicator.color = .white
             holdingView.addSubview(self.activityIndicator)
             holdingView.addSubview(self.activityIndicator)
             self.activityIndicator.startAnimating()

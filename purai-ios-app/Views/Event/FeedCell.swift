@@ -41,10 +41,13 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        SpinnerController.sharedInstance.showSpinner()
+        
         if !Reachability.isConnectedToNetwork(){
             self.collectionView.setEmptyMessage(localized("no_internet_connection"))
         } else if (self.events?.count == nil) {
-            SpinnerController.sharedInstance.showSpinner()
+            self.collectionView.setEmptyMessage(localized("empty_view"))
         } else {
             SpinnerController.sharedInstance.removeSpinner()
             self.collectionView.restore()

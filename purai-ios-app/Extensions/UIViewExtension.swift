@@ -35,7 +35,9 @@ extension UIView {
     }
     
     func animate(for item: UIView) {
-        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
-        item.animate(animations: animations)
+        let fromAnimation = AnimationType.from(direction: .right, offset: 30.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.1)
+        item.animate(animations: [fromAnimation, zoomAnimation],
+                       duration: 0.2)
     }
 }

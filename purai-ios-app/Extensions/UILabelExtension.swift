@@ -10,11 +10,11 @@ import UIKit
 
 extension UILabel {
     
-    func setTextStyle(size: CGFloat = 18, color: UIColor = .white) -> UILabel {
+    func setTextStyle(size: CGFloat = 20, color: UIColor = .white) -> UILabel {
         let label = UILabel()
         label.textColor = color
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: size, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: size, weight: .medium)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0;

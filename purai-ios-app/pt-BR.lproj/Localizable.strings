@@ -10,6 +10,7 @@
 
 "back" = "Voltar";
 "no_internet_connection" = "Eita! Não há conexão com a Internet.";
+"empty_view" = "Eita! Nada encontrado aqui.";
 
 // SettingsLauncher
 

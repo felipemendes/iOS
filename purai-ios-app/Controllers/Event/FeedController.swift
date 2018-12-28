@@ -51,8 +51,8 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
     func setupNavBar() {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = localized("next_events")
-        titleLabel.textColor = .highlight
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
     }

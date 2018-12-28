@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
         UINavigationBar.appearance().barTintColor = .dark
-        UINavigationBar.appearance().tintColor = .highlight
+        UINavigationBar.appearance().tintColor = .white
         
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.highlight]
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         

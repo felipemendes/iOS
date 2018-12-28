@@ -27,6 +27,7 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
         ApiServiceCategory.sharedCategoryInstance.fetchCategories { (categories: [Category]) in
             self.categories = categories
             self.collectionView.reloadData()
+            self.animate(for: self.collectionView)
         }
     }
     
@@ -43,10 +44,13 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        SpinnerController.sharedInstance.showSpinner()
+        
         if !Reachability.isConnectedToNetwork(){
             self.collectionView.setEmptyMessage(localized("no_internet_connection"))
         } else if (self.categories?.count == nil) {
-            SpinnerController.sharedInstance.showSpinner()
+            self.collectionView.setEmptyMessage(localized("empty_view"))
         } else {
             SpinnerController.sharedInstance.removeSpinner()
             self.collectionView.restore()
