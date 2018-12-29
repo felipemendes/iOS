@@ -23,6 +23,8 @@
 		026161F421C714B700DDD5C2 /* BaseCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */; };
 		026161F621C7160200DDD5C2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F521C7160200DDD5C2 /* CategoryCell.swift */; };
 		02684CA121BB418200A2ABE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02684CA021BB418100A2ABE3 /* Assets.xcassets */; };
+		0270366F21D8101B008C5F28 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270366E21D8101B008C5F28 /* Animations.swift */; };
+		0270367121D81080008C5F28 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270367021D81080008C5F28 /* Animator.swift */; };
 		027C103721C894DF00D78A51 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
 		027E3C32219D070900219E32 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E3C31219D070900219E32 /* SettingCell.swift */; };
 		0295753721B47766000572B2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295753621B47766000572B2 /* DetailViewController.swift */; };
@@ -61,6 +63,8 @@
 		026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCategoryCell.swift; sourceTree = "<group>"; };
 		026161F521C7160200DDD5C2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		02684CA021BB418100A2ABE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0270366E21D8101B008C5F28 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		0270367021D81080008C5F28 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		027C103621C894DF00D78A51 /* SalePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePlace.swift; sourceTree = "<group>"; };
 		027E3C31219D070900219E32 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		0295753621B47766000572B2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,15 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
+		0270366D21D81007008C5F28 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				0270366E21D8101B008C5F28 /* Animations.swift */,
+				0270367021D81080008C5F28 /* Animator.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		02A04CA521D4592E00E9D417 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +261,7 @@
 		02E8D8D6217516DA001FD974 /* purai-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				0270366D21D81007008C5F28 /* Animations */,
 				02330C85219F369400A257CF /* ApiService */,
 				02E290BF218EBE0800FE99C7 /* Models */,
 				02E290B9218E9C4100FE99C7 /* Views */,
@@ -287,12 +301,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02E8D8E6217516E5001FD974 /* Build configuration list for PBXNativeTarget "purai-ios-app" */;
 			buildPhases = (
-				02B541FD21D621EB00E0A39E /* ShellScript */,
 				B36A9A9887B5AB698C4CDDCE /* [CP] Check Pods Manifest.lock */,
+				02B541FD21D621EB00E0A39E /* ShellScript */,
 				02E8D8D0217516DA001FD974 /* Sources */,
 				02E8D8D1217516DA001FD974 /* Frameworks */,
 				02E8D8D2217516DA001FD974 /* Resources */,
-				648DCEA7D52E9607BBDF67AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,28 +382,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		648DCEA7D52E9607BBDF67AD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B36A9A9887B5AB698C4CDDCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +415,7 @@
 				02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */,
 				02BBBA3721B3001F00998543 /* UpcomingCell.swift in Sources */,
 				020F41D921D2B7B8007CE3BC /* StringExtension.swift in Sources */,
+				0270367121D81080008C5F28 /* Animator.swift in Sources */,
 				02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */,
 				02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */,
 				02E8D8DA217516DA001FD974 /* FeedController.swift in Sources */,
@@ -436,6 +428,7 @@
 				021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */,
 				02330C87219F36B400A257CF /* ApiService.swift in Sources */,
 				02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */,
+				0270366F21D8101B008C5F28 /* Animations.swift in Sources */,
 				023CAC0B21C8718300958231 /* ApiServiceCategories.swift in Sources */,
 				020F41CA21D2B54D007CE3BC /* UIApplicationExtension.swift in Sources */,
 				02B280E821C7D83800CD7C62 /* EventsByCategoryCell.swift in Sources */,

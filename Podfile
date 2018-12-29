@@ -6,6 +6,5 @@ target 'purai-ios-app' do
   use_frameworks!
 
   # Pods for purai-ios-app
-  pod "ViewAnimator"
   pod "SwiftLint"
 end

@@ -89,6 +89,6 @@ class EventCell: BaseCell {
         addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
         addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-30-|", views: titleLabel, subtitleLabel)
         
-        self.animate(for: eventImageView)
+//        self.animate(for: eventImageView)
     }
 }

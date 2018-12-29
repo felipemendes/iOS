@@ -25,7 +25,7 @@ class ApiService: NSObject {
         fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
     }
     
-    func fetchEventsByCategory(uuid: String, completion: @escaping ([Event]) -> ()) {
+    func fetchEventsByCategory(uuid: String, completion: @escaping ([Event]) -> Void) {
         print("\(baseUrl)/bins/14g3vc/\(uuid)")
         fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
     }

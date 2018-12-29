@@ -1,20 +1,16 @@
 PODS:
   - SwiftLint (0.29.1)
-  - ViewAnimator (2.2.2)
 
 DEPENDENCIES:
   - SwiftLint
-  - ViewAnimator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SwiftLint
-    - ViewAnimator
 
 SPEC CHECKSUMS:
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
-  ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
-PODFILE CHECKSUM: bab39412c34fc232ee9f9654ea0665e05292df19
+PODFILE CHECKSUM: 60d1c3df96a29a437b3ce0fc2cbfb5db4e9956b7
 
 COCOAPODS: 1.5.3

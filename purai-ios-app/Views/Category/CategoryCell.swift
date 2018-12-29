@@ -54,6 +54,11 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! BaseCategoryCell
         cell.category = categories?[indexPath.item]
+        
+        let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
+        let animator = Animator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: collectionView)
+        
         return cell
     }
     

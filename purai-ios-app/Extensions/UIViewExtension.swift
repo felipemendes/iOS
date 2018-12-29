@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ViewAnimator
 
 extension UIView {
     func setupBoxInfo() -> UIView {
@@ -32,12 +31,5 @@ extension UIView {
         layer.shadowOpacity = opacity
         layer.shadowOffset = offSet
         layer.shadowRadius = radius
-    }
-    
-    func animate(for item: UIView) {
-        let fromAnimation = AnimationType.from(direction: .right, offset: 30.0)
-        let zoomAnimation = AnimationType.zoom(scale: 0.1)
-        item.animate(animations: [fromAnimation, zoomAnimation],
-                       duration: 0.2)
     }
 }

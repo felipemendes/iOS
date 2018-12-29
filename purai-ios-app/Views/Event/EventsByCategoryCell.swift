@@ -14,6 +14,7 @@ class EventByCategoryCell: FeedCell {
         DispatchQueue.main.async {
             ApiService.sharedInstance.fetchEventsByCategory(uuid: (self.category?.uuid)!) { (events: [Event]) in
                 self.events = events
+                self.collectionView.reloadData()
             }
         }
     }
