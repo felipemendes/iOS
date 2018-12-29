@@ -17,7 +17,7 @@ extension UILabel {
         label.font = UIFont.systemFont(ofSize: size, weight: .medium)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 0;
+        label.numberOfLines = 0
         return label
     }
 }

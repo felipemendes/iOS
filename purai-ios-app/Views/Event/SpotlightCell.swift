@@ -14,7 +14,6 @@ class SpotlightCell: FeedCell {
         ApiService.sharedInstance.fetchSpotlighEvents { (events) in
             self.events = events
             self.collectionView.reloadData()
-            self.animate(for: self.collectionView)
         }
     }
 }

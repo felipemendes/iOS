@@ -14,7 +14,6 @@ class UpcomingCell: FeedCell {
         ApiService.sharedInstance.fetchUpcomingEvents { (events) in
             self.events = events
             self.collectionView.reloadData()
-            self.animate(for: self.collectionView)
         }
     }
 }

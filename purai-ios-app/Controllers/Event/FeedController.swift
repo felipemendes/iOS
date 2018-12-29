@@ -133,9 +133,9 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
     }
     
     lazy var menuBar: MenuBar = {
-        let mb = MenuBar()
-        mb.homeController = self
-        return mb
+        let menu = MenuBar()
+        menu.homeController = self
+        return menu
     }()
     
     private func setupMenuBar() {

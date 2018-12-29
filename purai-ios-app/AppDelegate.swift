@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = .dark
         UINavigationBar.appearance().tintColor = .white
         
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         

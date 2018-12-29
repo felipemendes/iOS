@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020F41C021D18312007CE3BC /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41BF21D18312007CE3BC /* LoaderController.swift */; };
 		020F41C221D2B4C1007CE3BC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C121D2B4C1007CE3BC /* UIColorExtension.swift */; };
 		020F41C421D2B4F5007CE3BC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C321D2B4F5007CE3BC /* UIViewExtension.swift */; };
 		020F41C621D2B51E007CE3BC /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C521D2B51E007CE3BC /* UILabelExtension.swift */; };
 		020F41C821D2B537007CE3BC /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C721D2B537007CE3BC /* UICollectionViewExtension.swift */; };
 		020F41CA21D2B54D007CE3BC /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C921D2B54D007CE3BC /* UIApplicationExtension.swift */; };
-		020F41CC21D2B566007CE3BC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41CB21D2B566007CE3BC /* UIViewControllerExtension.swift */; };
 		020F41CE21D2B579007CE3BC /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41CD21D2B579007CE3BC /* UIImageViewExtension.swift */; };
 		020F41D021D2B5AA007CE3BC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41CF21D2B5AA007CE3BC /* CustomImageView.swift */; };
 		020F41D921D2B7B8007CE3BC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41D821D2B7B8007CE3BC /* StringExtension.swift */; };
@@ -47,13 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		020F41BF21D18312007CE3BC /* LoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
 		020F41C121D2B4C1007CE3BC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		020F41C321D2B4F5007CE3BC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		020F41C521D2B51E007CE3BC /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		020F41C721D2B537007CE3BC /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		020F41C921D2B54D007CE3BC /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
-		020F41CB21D2B566007CE3BC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		020F41CD21D2B579007CE3BC /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		020F41CF21D2B5AA007CE3BC /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		020F41D821D2B7B8007CE3BC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -107,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				020F41CD21D2B579007CE3BC /* UIImageViewExtension.swift */,
-				020F41CB21D2B566007CE3BC /* UIViewControllerExtension.swift */,
 				020F41C921D2B54D007CE3BC /* UIApplicationExtension.swift */,
 				020F41C721D2B537007CE3BC /* UICollectionViewExtension.swift */,
 				020F41C121D2B4C1007CE3BC /* UIColorExtension.swift */,
@@ -197,7 +192,6 @@
 			children = (
 				020F41CF21D2B5AA007CE3BC /* CustomImageView.swift */,
 				026161EF21C5EBDC00DDD5C2 /* Reachability.swift */,
-				020F41BF21D18312007CE3BC /* LoaderController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -293,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02E8D8E6217516E5001FD974 /* Build configuration list for PBXNativeTarget "purai-ios-app" */;
 			buildPhases = (
+				02B541FD21D621EB00E0A39E /* ShellScript */,
 				B36A9A9887B5AB698C4CDDCE /* [CP] Check Pods Manifest.lock */,
 				02E8D8D0217516DA001FD974 /* Sources */,
 				02E8D8D1217516DA001FD974 /* Frameworks */,
@@ -357,6 +352,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02B541FD21D621EB00E0A39E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		648DCEA7D52E9607BBDF67AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,7 +423,6 @@
 				020F41CE21D2B579007CE3BC /* UIImageViewExtension.swift in Sources */,
 				02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */,
 				02BBBA3721B3001F00998543 /* UpcomingCell.swift in Sources */,
-				020F41CC21D2B566007CE3BC /* UIViewControllerExtension.swift in Sources */,
 				020F41D921D2B7B8007CE3BC /* StringExtension.swift in Sources */,
 				02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */,
 				02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */,
@@ -435,7 +446,6 @@
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
-				020F41C021D18312007CE3BC /* LoaderController.swift in Sources */,
 				020F41C421D2B4F5007CE3BC /* UIViewExtension.swift in Sources */,
 				0295753721B47766000572B2 /* DetailViewController.swift in Sources */,
 				026161F021C5EBDC00DDD5C2 /* Reachability.swift in Sources */,

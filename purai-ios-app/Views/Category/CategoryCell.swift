@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var baseController : BaseController?
+    weak var baseController: BaseController?
     var categories: [Category]?
     let cellId = "cellId"
     
@@ -27,7 +27,6 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
         ApiServiceCategory.sharedCategoryInstance.fetchCategories { (categories: [Category]) in
             self.categories = categories
             self.collectionView.reloadData()
-            self.animate(for: self.collectionView)
         }
     }
     
@@ -44,18 +43,11 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        SpinnerController.sharedInstance.showSpinner()
-        
-        if !Reachability.isConnectedToNetwork(){
+        if !Reachability.isConnectedToNetwork() {
             self.collectionView.setEmptyMessage(localized("no_internet_connection"))
-        } else if (self.categories?.count == nil) {
-            self.collectionView.setEmptyMessage(localized("empty_view"))
         } else {
-            SpinnerController.sharedInstance.removeSpinner()
             self.collectionView.restore()
         }
-        
         return categories?.count ?? 0
     }
     

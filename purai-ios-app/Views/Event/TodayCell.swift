@@ -14,7 +14,6 @@ class TodayCell: FeedCell {
         ApiService.sharedInstance.fetchTodayEvents { (events) in
             self.events = events
             self.collectionView.reloadData()
-            self.animate(for: self.collectionView)
         }
     }
 }

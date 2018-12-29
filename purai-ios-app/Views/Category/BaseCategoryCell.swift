@@ -49,7 +49,7 @@ class BaseCategoryCell: BaseCell {
     
     override func setupViews() {
         addSubview(background)
-        addSubview(titleLabel)
+        background.addSubview(titleLabel)
         
         // horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: background)

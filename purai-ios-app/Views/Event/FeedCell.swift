@@ -10,18 +10,18 @@ import UIKit
 
 class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var baseController : BaseController?
+    weak var baseController: BaseController?
     var events: [Event]?
     var category: Category?
     let cellId = "cellId"
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .dark
-        cv.dataSource = self
-        cv.delegate = self
-        return cv
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = .dark
+        view.dataSource = self
+        view.delegate = self
+        return view
     }()
     
     func fetchEvents() {
@@ -41,18 +41,11 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        SpinnerController.sharedInstance.showSpinner()
-        
-        if !Reachability.isConnectedToNetwork(){
+        if !Reachability.isConnectedToNetwork() {
             self.collectionView.setEmptyMessage(localized("no_internet_connection"))
-        } else if (self.events?.count == nil) {
-            self.collectionView.setEmptyMessage(localized("empty_view"))
         } else {
-            SpinnerController.sharedInstance.removeSpinner()
             self.collectionView.restore()
         }
-        
         return events?.count ?? 0
     }
     

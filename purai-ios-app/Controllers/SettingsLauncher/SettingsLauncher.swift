@@ -34,9 +34,9 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.white
-        return cv
+        let cView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cView.backgroundColor = UIColor.white
+        return cView
     }()
     
     let cellId = "cellId"
@@ -61,7 +61,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
             window.addSubview(collectionView)
             
             let height: CGFloat = CGFloat(settings.count) * cellHeight
-            let y = window.frame.height - height
+            let axisY = window.frame.height - height
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             
             blackView.frame = window.frame
@@ -70,7 +70,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 
                 self.blackView.alpha = 1
-                self.collectionView.frame = CGRect(x:0, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                self.collectionView.frame = CGRect(x: 0, y: axisY, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
                 
             }, completion: nil)
         }

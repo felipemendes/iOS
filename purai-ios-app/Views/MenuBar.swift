@@ -12,11 +12,11 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .dark
-        cv.dataSource = self
-        cv.delegate = self
-        return cv
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = .dark
+        view.dataSource = self
+        view.delegate = self
+        return view
     }()
     
     let cellId = "cellId"
@@ -88,10 +88,10 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 class MenuCell: BaseCell {
     
     let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "upcoming")?.withRenderingMode(.alwaysTemplate)
-        iv.tintColor = .lightGray
-        return iv
+        let view = UIImageView()
+        view.image = UIImage(named: "upcoming")?.withRenderingMode(.alwaysTemplate)
+        view.tintColor = .lightGray
+        return view
     }()
     
     override var isHighlighted: Bool {

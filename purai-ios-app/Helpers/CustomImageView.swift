@@ -17,7 +17,9 @@ class CustomImageView: UIImageView {
     func loadImageUsingUrlString(urlString: String) {
         imageUrlString = urlString
         
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else {
+            return
+        }
         
         image = nil
         
@@ -26,24 +28,26 @@ class CustomImageView: UIImageView {
             return
         }
         
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            guard let data = data else {
+                return
+            }
             
             if error != nil {
-                print(error!)
+                print(error ?? "No error message")
                 return
             }
             
             DispatchQueue.main.async {
-                let imageToCache = UIImage(data: data!)
-                
-                if self.imageUrlString == urlString {
-                    self.image = imageToCache
+                if let imageToCache = UIImage(data: data) {
+                    if self.imageUrlString == urlString {
+                        self.image = imageToCache
+                    }
+                    imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
                 }
-                
-                imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
             }
             
-            }.resume()
+        }.resume()
     }
 }
 
@@ -58,4 +62,3 @@ extension CustomImageView {
         return imageView
     }
 }
-

@@ -11,6 +11,7 @@
 "back" = "Back";
 "no_internet_connection" = "Oh, no! There is no internet connection.";
 "empty_view" = "Oh, no! Nothing here.";
+"not_informed" = "Not informed";
 
 // SettingsLauncher
 

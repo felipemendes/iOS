@@ -14,11 +14,11 @@ extension UICollectionView {
         let messageLabel = UILabel()
         messageLabel.text = message
         messageLabel.textColor = .white
-        messageLabel.numberOfLines = 0;
-        messageLabel.textAlignment = .center;
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
         messageLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         messageLabel.sizeToFit()
-        self.backgroundView = messageLabel;
+        self.backgroundView = messageLabel
     }
     
     func restore() {

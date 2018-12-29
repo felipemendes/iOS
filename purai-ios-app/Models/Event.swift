@@ -30,7 +30,10 @@ class Event: NSObject {
     var category: Category?
     
     var addressFormatted: String {
-        return address! + " - " + city!
+        if let city = city {
+            return "\(address ?? localized("not_informed")) - \(city)"
+        }
+        return "\(address ?? localized("not_informed"))"
     }
     
     override func setValue(_ value: Any?, forKey key: String) {

@@ -13,36 +13,39 @@ class ApiService: NSObject {
     let baseUrl = "https://api.myjson.com"
     static let sharedInstance = ApiService()
     
-    func fetchUpcomingEvents(completion: @escaping ([Event]) -> ()) {
+    func fetchUpcomingEvents(completion: @escaping ([Event]) -> Void) {
         fetchFeed(forUrlString: "\(baseUrl)/bins/d0e00", completion: completion)
     }
     
-    func fetchSpotlighEvents(completion: @escaping ([Event]) -> ()) {
+    func fetchSpotlighEvents(completion: @escaping ([Event]) -> Void) {
         fetchFeed(forUrlString: "\(baseUrl)/bins/dasd3", completion: completion)
     }
     
-    func fetchTodayEvents(completion: @escaping ([Event]) -> ()) {
+    func fetchTodayEvents(completion: @escaping ([Event]) -> Void) {
         fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
     }
     
     func fetchEventsByCategory(uuid: String, completion: @escaping ([Event]) -> ()) {
-        print("\(baseUrl)/bins/mwrh4/\(uuid)")
+        print("\(baseUrl)/bins/14g3vc/\(uuid)")
         fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
     }
     
-    func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> ()) {
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> Void) {
+        guard let url = URL(string: urlString) else {
+            print("No URL provided")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             
             if error != nil {
-                print(error!)
+                print(error ?? "No error message")
                 return
             }
             
             do {
                 if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
                     DispatchQueue.main.async {
-                        completion(jsonDictionaries.map({ return Event(dictionay: $0)} ))
+                        completion(jsonDictionaries.map({ return Event(dictionay: $0)}))
                     }
                 }
                 

@@ -77,8 +77,8 @@ class EventCell: BaseCell {
     
     override func setupViews() {
         addSubview(eventImageView)
-        addSubview(titleLabel)
-        addSubview(subtitleLabel)
+        eventImageView.addSubview(titleLabel)
+        eventImageView.addSubview(subtitleLabel)
         
         // horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: eventImageView)
@@ -88,5 +88,7 @@ class EventCell: BaseCell {
         // vertical constraints
         addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
         addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-30-|", views: titleLabel, subtitleLabel)
+        
+        self.animate(for: eventImageView)
     }
 }
