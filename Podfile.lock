@@ -1,16 +1,20 @@
 PODS:
+  - ReachabilitySwift (4.3.0)
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
+  - ReachabilitySwift
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ReachabilitySwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 60d1c3df96a29a437b3ce0fc2cbfb5db4e9956b7
+PODFILE CHECKSUM: 7a70b427517727ca88bc61621317be6163aeaf55
 
 COCOAPODS: 1.5.3

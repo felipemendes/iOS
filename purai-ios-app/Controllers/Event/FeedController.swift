@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 class FeedController: BaseController, MFMailComposeViewControllerDelegate {
-        
+    
     let upcomingCellId = "upcomingCellId"
     let spotlightCellId = "spotlightCellId"
     let todayCellId = "todayCellId"

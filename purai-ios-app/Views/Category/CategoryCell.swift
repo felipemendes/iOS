@@ -23,6 +23,16 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
         return cv
     }()
     
+    lazy var messageLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.sizeToFit()
+        return label
+    }()
+    
     func fetchCategories() {
         ApiServiceCategory.sharedCategoryInstance.fetchCategories { (categories: [Category]) in
             self.categories = categories
@@ -33,21 +43,26 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     override func setupViews() {
         super.setupViews()
         
-        fetchCategories()
-        
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         
         collectionView.register(BaseCategoryCell.self, forCellWithReuseIdentifier: cellId)
+        
+        NetworkManager.isReachable { _ in
+            self.fetchCategories()
+        }
+        
+        NetworkManager.isUnreachable { _ in
+            
+            self.messageLabel.text = localized("no_internet_connection")
+            self.addSubview(self.messageLabel)
+            self.addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: self.messageLabel)
+            self.addConstraintsWithFormat(format: "V:|[v0]|", views: self.messageLabel)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !Reachability.isConnectedToNetwork() {
-            self.collectionView.setEmptyMessage(localized("no_internet_connection"))
-        } else {
-            self.collectionView.restore()
-        }
         return categories?.count ?? 0
     }
     

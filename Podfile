@@ -7,4 +7,5 @@ target 'purai-ios-app' do
 
   # Pods for purai-ios-app
   pod "SwiftLint"
+  pod 'ReachabilitySwift'
 end

@@ -24,6 +24,16 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         return view
     }()
     
+    lazy var messageLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.sizeToFit()
+        return label
+    }()
+    
     func fetchEvents() {
         
     }
@@ -37,15 +47,19 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         
         collectionView.register(EventCell.self, forCellWithReuseIdentifier: cellId)
         
-        fetchEvents()
+        NetworkManager.isReachable { _ in
+            self.fetchEvents()
+        }
+        
+        NetworkManager.isUnreachable { _ in
+            self.messageLabel.text = localized("no_internet_connection")
+            self.addSubview(self.messageLabel)
+            self.addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: self.messageLabel)
+            self.addConstraintsWithFormat(format: "V:|[v0]|", views: self.messageLabel)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !Reachability.isConnectedToNetwork() {
-            self.collectionView.setEmptyMessage(localized("no_internet_connection"))
-        } else {
-            self.collectionView.restore()
-        }
         return events?.count ?? 0
     }
     
