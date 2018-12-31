@@ -60,6 +60,12 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.events?.count == nil {
+            SpinnerController.sharedInstance.showSpinner()
+        } else {
+            SpinnerController.sharedInstance.removeSpinner()
+        }
+
         return events?.count ?? 0
     }
     
@@ -70,7 +76,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
         let animator = Animator(animation: animation)
         animator.animate(cell: cell, at: indexPath, in: collectionView)
-        
+    
         return cell
     }
     

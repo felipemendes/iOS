@@ -16,7 +16,7 @@ class ApiService: NSObject {
     func fetchUpcomingEvents(completion: @escaping ([Event]) -> Void) {
         fetchFeed(forUrlString: "\(baseUrl)/bins/d0e00", completion: completion)
     }
-    
+        
     func fetchSpotlighEvents(completion: @escaping ([Event]) -> Void) {
         fetchFeed(forUrlString: "\(baseUrl)/bins/dasd3", completion: completion)
     }
