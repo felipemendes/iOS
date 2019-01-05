@@ -12,6 +12,7 @@ import UIKit
 
 enum SettingName {
     static let cancel = NSLocalizedString("cancel", comment: "")
+    static let signout = NSLocalizedString("signout", comment: "")
     static let about = NSLocalizedString("about", comment: "")
     static let suggestion = NSLocalizedString("suggestion", comment: "")
 }
@@ -35,7 +36,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cView.backgroundColor = UIColor.white
+        cView.backgroundColor = .gray
         return cView
     }()
     
@@ -45,9 +46,10 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let settings: [Setting] = {
         let aboutSetting = Setting(name: SettingName.about, imageName: "information")
         let suggestionSetting = Setting(name: SettingName.suggestion, imageName: "like")
+        let signoutSetting = Setting(name: SettingName.signout, imageName: "sign-out")
         let cancelSetting = Setting(name: SettingName.cancel, imageName: "cancel")
         
-        return [aboutSetting, suggestionSetting, cancelSetting]
+        return [aboutSetting, suggestionSetting, signoutSetting, cancelSetting]
     }()
     
     func showSettings() {
@@ -96,6 +98,8 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         }, completion: { (_) in
             if setting.name == SettingName.suggestion {
                 self.homeController?.suggestEvent()
+            } else if setting.name == SettingName.signout {
+                self.homeController?.handleSignOut()
             } else if setting.name != SettingName.cancel {
                 self.homeController?.showControllerForSetting(setting)
             }

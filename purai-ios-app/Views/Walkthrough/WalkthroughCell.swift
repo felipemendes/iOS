@@ -44,15 +44,12 @@ class WalkthroughCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .yellow
-        iv.image = UIImage(named: "sample")
         iv.clipsToBounds = true
         return iv
     }()
     
     let textView: UITextView = {
         let tv = UITextView()
-        tv.text = "Sample text"
         tv.isEditable = false
         tv.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
         return tv

@@ -13,9 +13,15 @@
 "empty_view" = "Oh, no! Nothing here.";
 "not_informed" = "Not informed";
 
+// Walkthrough
+"skip" = "Skip";
+"next" = "Next";
+"login" = "Log in";
+
 // SettingsLauncher
 
 "cancel" = "Cancel";
+"signout" = "Sign out";
 "about" = "About";
 "suggestion" = "Suggestion";
 

@@ -13,6 +13,23 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: localized("back"), style: .plain, target: nil, action: nil)
+        
+        if !isLoggedIn() {
+            perform(#selector(showWalkthroughController), with: nil, afterDelay: 0.01)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.changeStatusBar(background: .dark, tint: .white)
+    }
+    
+    fileprivate func isLoggedIn() -> Bool {
+        return UserDefaults.standard.isLoggedIn()
+    }
+    
+    @objc func showWalkthroughController() {
+        let loginController = WalkthroughController()
+        present(loginController, animated: true, completion: nil)
     }
     
     func showCategoryListController(for category: Category) {

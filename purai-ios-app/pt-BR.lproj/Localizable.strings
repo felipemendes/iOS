@@ -13,9 +13,15 @@
 "empty_view" = "Eita! Nada encontrado aqui.";
 "not_informed" = "Não informado";
 
+// Walkthrough
+"skip" = "Pular";
+"next" = "Próximo";
+"login" = "Entrar";
+
 // SettingsLauncher
 
 "cancel" = "Cancelar";
+"signout" = "Sair";
 "about" = "Sobre";
 "suggestion" = "Sugestão";
 

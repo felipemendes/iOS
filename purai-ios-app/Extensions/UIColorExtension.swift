@@ -37,7 +37,7 @@ extension UIColor {
         if #available(iOS 11.0, *) {
             return UIColor(named: "highlight") ?? .purple
         } else {
-            return .rgb(red: 199, green: 82, blue: 200)
+            return .rgb(red: 138, green: 99, blue: 223)
         }
     }
     

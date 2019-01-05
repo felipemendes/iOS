@@ -91,7 +91,7 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
         setTitleForIndex(index: menuIndex)
     }
     
-    private func setTitleForIndex(index: Int) {
+    fileprivate func setTitleForIndex(index: Int) {
         if let titleLabel = navigationItem.titleView as? UILabel {
             titleLabel.text = titles[index]
         }
@@ -105,6 +105,13 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
     
     @objc func handleMore() {
         settingsLauncher.showSettings()
+    }
+    
+    func handleSignOut() {
+        UserDefaults.standard.setIsLoggedIn(value: false)
+        
+        let walkthroughController = WalkthroughController()
+        present(walkthroughController, animated: true, completion: nil)
     }
     
     func showControllerForSetting(_ setting: Setting) {
@@ -138,7 +145,7 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
         return menu
     }()
     
-    private func setupMenuBar() {
+    fileprivate func setupMenuBar() {
         let blackView = UIView()
         blackView.backgroundColor = .dark
         view.addSubview(blackView)
