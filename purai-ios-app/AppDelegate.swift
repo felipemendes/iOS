@@ -14,24 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+    
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        window?.rootViewController = WalkthroughController()
+    
+        // Internal app setup
+//        let layout = UICollectionViewFlowLayout()
+//        window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
+//        UINavigationBar.appearance().barTintColor = .dark
+//        UINavigationBar.appearance().tintColor = .white
         
-        let layout = UICollectionViewFlowLayout()
-        window?.rootViewController = UINavigationController(rootViewController: FeedController(collectionViewLayout: layout))
-        UINavigationBar.appearance().barTintColor = .dark
-        UINavigationBar.appearance().tintColor = .white
+//        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
+//        UINavigationBar.appearance().titleTextAttributes = textAttributes
         
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
-        UINavigationBar.appearance().titleTextAttributes = textAttributes
-        
-        UIApplication.shared.statusBarView?.backgroundColor = .dark
+//        UIApplication.shared.statusBarView?.backgroundColor = .dark
         
         // Get rid of black underneath navbar
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
         return true
     }

@@ -22,8 +22,8 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func showDetailController(for event: Event, at indexPath: IndexPath, of collectionView: UICollectionView) {
-        let modalViewController = DetailViewController()
-        modalViewController.event = event
-        self.navigationController?.pushViewController(modalViewController, animated: true)
+        let viewController = DetailViewController()
+        viewController.event = event
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

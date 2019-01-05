@@ -16,6 +16,7 @@
 		021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */; };
 		02330C87219F36B400A257CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		023CAC0B21C8718300958231 /* ApiServiceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CAC0A21C8718300958231 /* ApiServiceCategories.swift */; };
+		0259351C21E021EF000C727A /* WalkthroughController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0259351B21E021EF000C727A /* WalkthroughController.swift */; };
 		025FC4D721D8696500596C12 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC4D621D8696400596C12 /* UIViewExtension.swift */; };
 		025FC4DA21D86FA700596C12 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC4D921D86FA700596C12 /* SpinnerController.swift */; };
 		026161F221C7148200DDD5C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
@@ -34,6 +35,7 @@
 		02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3021B2F72500998543 /* SpotlightCell.swift */; };
 		02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3221B2F9BD00998543 /* TodayCell.swift */; };
 		02BBBA3721B3001F00998543 /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3621B3001F00998543 /* UpcomingCell.swift */; };
+		02C3AB7B21E02D0B005B185E /* WalkthroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB7A21E02D0B005B185E /* WalkthroughCell.swift */; };
 		02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */; };
 		02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* BaseCell.swift */; };
 		02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BD218E9EC100FE99C7 /* MenuBar.swift */; };
@@ -56,6 +58,7 @@
 		021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		02330C86219F36B400A257CF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		023CAC0A21C8718300958231 /* ApiServiceCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceCategories.swift; sourceTree = "<group>"; };
+		0259351B21E021EF000C727A /* WalkthroughController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughController.swift; sourceTree = "<group>"; };
 		025FC4D621D8696400596C12 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		025FC4D921D86FA700596C12 /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
 		026161F121C7148200DDD5C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		02BBBA3021B2F72500998543 /* SpotlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
 		02BBBA3221B2F9BD00998543 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		02BBBA3621B3001F00998543 /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
+		02C3AB7A21E02D0B005B185E /* WalkthroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCell.swift; sourceTree = "<group>"; };
 		02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		02E290BA218E9C8A00FE99C7 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		02E290BD218E9EC100FE99C7 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -181,6 +185,14 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
+		0259351D21E021F8000C727A /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				0259351B21E021EF000C727A /* WalkthroughController.swift */,
+			);
+			path = Walkthrough;
+			sourceTree = "<group>";
+		};
 		025FC4D821D86B7000596C12 /* MenuBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +219,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		02C3AB7921E02CFE005B185E /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				02C3AB7A21E02D0B005B185E /* WalkthroughCell.swift */,
+			);
+			path = Walkthrough;
+			sourceTree = "<group>";
+		};
 		02E290B6218E9BBA00FE99C7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,9 +240,10 @@
 		02E290B9218E9C4100FE99C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				025FC4D821D86B7000596C12 /* MenuBar */,
 				020F41D221D2B6AD007CE3BC /* Event */,
 				020F41D321D2B6C8007CE3BC /* Category */,
-				025FC4D821D86B7000596C12 /* MenuBar */,
+				02C3AB7921E02CFE005B185E /* Walkthrough */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +255,7 @@
 				020F41D421D2B6EF007CE3BC /* Event */,
 				020F41D621D2B700007CE3BC /* Detail */,
 				020F41D521D2B6F5007CE3BC /* Category */,
+				0259351D21E021F8000C727A /* Walkthrough */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -448,6 +470,7 @@
 				020F41D921D2B7B8007CE3BC /* StringExtension.swift in Sources */,
 				0270367121D81080008C5F28 /* Animator.swift in Sources */,
 				02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */,
+				0259351C21E021EF000C727A /* WalkthroughController.swift in Sources */,
 				025FC4D721D8696500596C12 /* UIViewExtension.swift in Sources */,
 				02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */,
 				02E8D8DA217516DA001FD974 /* FeedController.swift in Sources */,
@@ -473,6 +496,7 @@
 				02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
 				0295753721B47766000572B2 /* DetailViewController.swift in Sources */,
+				02C3AB7B21E02D0B005B185E /* WalkthroughCell.swift in Sources */,
 				02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
