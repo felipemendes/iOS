@@ -10,7 +10,7 @@ import UIKit
 
 class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var baseController: BaseController?
+    weak var delegate: BaseControllerDelegate?
     var events: [Event]?
     var category: Category?
     let cellId = "cellId"
@@ -90,6 +90,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.baseController?.showDetailController(for: (events?[indexPath.item])!, at: indexPath, of: collectionView)
+        self.delegate?.showDetailController(for: (events?[indexPath.item])!, at: indexPath, of: collectionView)
     }
 }

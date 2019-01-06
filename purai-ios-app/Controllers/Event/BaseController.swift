@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLayout, BaseControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

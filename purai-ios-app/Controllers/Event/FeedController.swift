@@ -195,11 +195,11 @@ class FeedController: BaseController, MFMailComposeViewControllerDelegate {
         
         if identifier == categoryCellId {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CategoryCell
-            cell.baseController = self
+            cell.delegate = self
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! FeedCell
-            cell.baseController = self
+            cell.delegate = self
             return cell
         }
     }

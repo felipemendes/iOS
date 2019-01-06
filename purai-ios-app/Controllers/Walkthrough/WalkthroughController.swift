@@ -14,7 +14,7 @@ struct Page {
     let imageName: String
 }
 
-class WalkthroughController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class WalkthroughController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, WalkthroughControllerDelegate {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -126,7 +126,7 @@ class WalkthroughController: UIViewController, UICollectionViewDataSource, UICol
         
         if indexPath.item == pages.count {
             let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCell
-            loginCell.walkthroughController = self
+            loginCell.delegate = self
             return loginCell
         }
         

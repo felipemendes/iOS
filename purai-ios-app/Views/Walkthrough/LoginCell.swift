@@ -26,10 +26,10 @@ class LoginCell: UICollectionViewCell {
         return button
     }()
     
-    var walkthroughController: WalkthroughController?
+    weak var delegate: WalkthroughControllerDelegate?
     
     @objc func handleLogin() {
-        walkthroughController?.finishLoggingIn()
+        delegate?.finishLoggingIn()
     }
     
     override init(frame: CGRect) {

@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var baseController: BaseController?
+    weak var delegate: BaseControllerDelegate?
     var categories: [Category]?
     let cellId = "cellId"
     
@@ -87,6 +87,6 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.baseController?.showCategoryListController(for: (categories?[indexPath.item])!)
+        self.delegate?.showCategoryListController(for: (categories?[indexPath.item])!)
     }
 }

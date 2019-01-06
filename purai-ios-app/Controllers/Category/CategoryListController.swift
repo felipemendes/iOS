@@ -38,7 +38,7 @@ class CategoryListController: BaseController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedCell
-        cell.baseController = self
+        cell.delegate = self
         cell.category = category
         return cell
     }

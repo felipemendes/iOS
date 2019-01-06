@@ -47,6 +47,8 @@
 		02E8D8DD217516DA001FD974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E8D8DB217516DA001FD974 /* Main.storyboard */; };
 		02E8D8E2217516E5001FD974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E8D8E0217516E5001FD974 /* LaunchScreen.storyboard */; };
 		02EEB42721D2B9E100EB73C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02EEB42921D2B9E100EB73C5 /* Localizable.strings */; };
+		02FC519921E1ACDB00CBB8AE /* WalkthroughControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC519821E1ACDB00CBB8AE /* WalkthroughControllerDelegate.swift */; };
+		02FC519B21E1AD4700CBB8AE /* BaseControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC519A21E1AD4700CBB8AE /* BaseControllerDelegate.swift */; };
 		1BD189BD55E0998BB21D6345 /* Pods_purai_ios_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D753972F5ECE6CB6B24DFA5F /* Pods_purai_ios_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		02E8D8E3217516E5001FD974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02EEB42821D2B9E100EB73C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02EEB42A21D2B9F000EB73C5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		02FC519821E1ACDB00CBB8AE /* WalkthroughControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughControllerDelegate.swift; sourceTree = "<group>"; };
+		02FC519A21E1AD4700CBB8AE /* BaseControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllerDelegate.swift; sourceTree = "<group>"; };
 		067E85B19BE75C3A0F3CB378 /* Pods-purai-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-purai-ios-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app.release.xcconfig"; sourceTree = "<group>"; };
 		2080F1C1C5F6C08E22F3AC6C /* Pods-purai-ios-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-purai-ios-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-purai-ios-app/Pods-purai-ios-app.debug.xcconfig"; sourceTree = "<group>"; };
 		D753972F5ECE6CB6B24DFA5F /* Pods_purai_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_purai_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +309,7 @@
 		02E8D8D6217516DA001FD974 /* purai-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				02FC519721E1ACC200CBB8AE /* Protocols */,
 				0270366D21D81007008C5F28 /* Animations */,
 				02330C85219F369400A257CF /* ApiService */,
 				02E290BF218EBE0800FE99C7 /* Models */,
@@ -319,6 +324,15 @@
 				02EEB42921D2B9E100EB73C5 /* Localizable.strings */,
 			);
 			path = "purai-ios-app";
+			sourceTree = "<group>";
+		};
+		02FC519721E1ACC200CBB8AE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				02FC519821E1ACDB00CBB8AE /* WalkthroughControllerDelegate.swift */,
+				02FC519A21E1AD4700CBB8AE /* BaseControllerDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B0EEA85AED638B8C997FB60E /* Pods */ = {
@@ -502,6 +516,7 @@
 				020F41CA21D2B54D007CE3BC /* UIApplicationExtension.swift in Sources */,
 				02C3AB7D21E0DA7E005B185E /* LoginCell.swift in Sources */,
 				025FC4DA21D86FA700596C12 /* SpinnerController.swift in Sources */,
+				02FC519921E1ACDB00CBB8AE /* WalkthroughControllerDelegate.swift in Sources */,
 				02737A3521D8625C00F3B011 /* NetworkManager.swift in Sources */,
 				02B280E821C7D83800CD7C62 /* EventsByCategoryCell.swift in Sources */,
 				026161F221C7148200DDD5C2 /* Category.swift in Sources */,
@@ -510,6 +525,7 @@
 				02E290C1218EBE1800FE99C7 /* Event.swift in Sources */,
 				02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */,
 				02E290BE218E9EC100FE99C7 /* MenuBar.swift in Sources */,
+				02FC519B21E1AD4700CBB8AE /* BaseControllerDelegate.swift in Sources */,
 				0238A5FC21E1469300B77FF4 /* UserDefaultsExtension.swift in Sources */,
 				0295753721B47766000572B2 /* DetailViewController.swift in Sources */,
 				02C3AB7B21E02D0B005B185E /* WalkthroughCell.swift in Sources */,
