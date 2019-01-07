@@ -14,6 +14,15 @@
 		020F41D021D2B5AA007CE3BC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41CF21D2B5AA007CE3BC /* CustomImageView.swift */; };
 		020F41D921D2B7B8007CE3BC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41D821D2B7B8007CE3BC /* StringExtension.swift */; };
 		021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */; };
+		021B520F21E1B121006C2106 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021B520D21E1B121006C2106 /* Interface.storyboard */; };
+		021B521121E1B122006C2106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021B521021E1B122006C2106 /* Assets.xcassets */; };
+		021B521821E1B122006C2106 /* purai-watchos Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 021B521721E1B122006C2106 /* purai-watchos Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		021B521D21E1B122006C2106 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B521C21E1B122006C2106 /* InterfaceController.swift */; };
+		021B521F21E1B123006C2106 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B521E21E1B123006C2106 /* ExtensionDelegate.swift */; };
+		021B522121E1B123006C2106 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B522021E1B123006C2106 /* NotificationController.swift */; };
+		021B522321E1B123006C2106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021B522221E1B123006C2106 /* Assets.xcassets */; };
+		021B522821E1B123006C2106 /* purai-watchos.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 021B520B21E1B120006C2106 /* purai-watchos.app */; };
+		021B523221E1B448006C2106 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B523121E1B448006C2106 /* RowController.swift */; };
 		02330C87219F36B400A257CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		0238A5FC21E1469300B77FF4 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0238A5FB21E1469300B77FF4 /* UserDefaultsExtension.swift */; };
 		023CAC0B21C8718300958231 /* ApiServiceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CAC0A21C8718300958231 /* ApiServiceCategories.swift */; };
@@ -33,6 +42,14 @@
 		02B280E621C7CA2800CD7C62 /* CategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E521C7CA2800CD7C62 /* CategoryListController.swift */; };
 		02B280E821C7D83800CD7C62 /* EventsByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */; };
 		02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E921C8375D00CD7C62 /* BaseController.swift */; };
+		02B75D7F21E28197009E7AB8 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */; };
+		02B75D8221E282CA009E7AB8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
+		02B75D8421E282D1009E7AB8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
+		02B75D8521E282D4009E7AB8 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
+		02B75D8621E282E0009E7AB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02EEB42921D2B9E100EB73C5 /* Localizable.strings */; };
+		02B75D8721E28308009E7AB8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41D821D2B7B8007CE3BC /* StringExtension.swift */; };
+		02B75D8821E2830B009E7AB8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290C0218EBE1800FE99C7 /* Event.swift */; };
+		02B75D8921E28322009E7AB8 /* ApiServiceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CAC0A21C8718300958231 /* ApiServiceCategories.swift */; };
 		02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3021B2F72500998543 /* SpotlightCell.swift */; };
 		02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3221B2F9BD00998543 /* TodayCell.swift */; };
 		02BBBA3721B3001F00998543 /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3621B3001F00998543 /* UpcomingCell.swift */; };
@@ -52,6 +69,48 @@
 		1BD189BD55E0998BB21D6345 /* Pods_purai_ios_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D753972F5ECE6CB6B24DFA5F /* Pods_purai_ios_app.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		021B521921E1B122006C2106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E8D8CC217516DA001FD974 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 021B521621E1B122006C2106;
+			remoteInfo = "purai-watchos Extension";
+		};
+		021B522621E1B123006C2106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E8D8CC217516DA001FD974 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 021B520A21E1B120006C2106;
+			remoteInfo = "purai-watchos";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		021B522E21E1B123006C2106 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				021B521821E1B122006C2106 /* purai-watchos Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021B523021E1B123006C2106 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				021B522821E1B123006C2106 /* purai-watchos.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		020F41C121D2B4C1007CE3BC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		020F41C521D2B51E007CE3BC /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
@@ -60,6 +119,18 @@
 		020F41CF21D2B5AA007CE3BC /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		020F41D821D2B7B8007CE3BC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		021ACF8F219BA62E00B35F67 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		021B520B21E1B120006C2106 /* purai-watchos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "purai-watchos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B520E21E1B121006C2106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		021B521021E1B122006C2106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		021B521221E1B122006C2106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021B521721E1B122006C2106 /* purai-watchos Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "purai-watchos Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B521C21E1B122006C2106 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		021B521E21E1B123006C2106 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		021B522021E1B123006C2106 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		021B522221E1B123006C2106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		021B522421E1B123006C2106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021B522521E1B123006C2106 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		021B523121E1B448006C2106 /* RowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
 		02330C86219F36B400A257CF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0238A5FB21E1469300B77FF4 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		023CAC0A21C8718300958231 /* ApiServiceCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceCategories.swift; sourceTree = "<group>"; };
@@ -79,6 +150,7 @@
 		02B280E521C7CA2800CD7C62 /* CategoryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListController.swift; sourceTree = "<group>"; };
 		02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsByCategoryCell.swift; sourceTree = "<group>"; };
 		02B280E921C8375D00CD7C62 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		02BBBA3021B2F72500998543 /* SpotlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
 		02BBBA3221B2F9BD00998543 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		02BBBA3621B3001F00998543 /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
@@ -104,6 +176,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		021B521421E1B122006C2106 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02E8D8D1217516DA001FD974 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +263,28 @@
 			path = SettingsLauncher;
 			sourceTree = "<group>";
 		};
+		021B520C21E1B120006C2106 /* purai-watchos */ = {
+			isa = PBXGroup;
+			children = (
+				021B520D21E1B121006C2106 /* Interface.storyboard */,
+				021B521021E1B122006C2106 /* Assets.xcassets */,
+				021B521221E1B122006C2106 /* Info.plist */,
+			);
+			path = "purai-watchos";
+			sourceTree = "<group>";
+		};
+		021B521B21E1B122006C2106 /* purai-watchos Extension */ = {
+			isa = PBXGroup;
+			children = (
+				02A151E421E2CA750020395A /* Controllers */,
+				02A151E521E2CA860020395A /* Extensions */,
+				021B522221E1B123006C2106 /* Assets.xcassets */,
+				021B522421E1B123006C2106 /* Info.plist */,
+				021B522521E1B123006C2106 /* PushNotificationPayload.apns */,
+			);
+			path = "purai-watchos Extension";
+			sourceTree = "<group>";
+		};
 		02330C85219F369400A257CF /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +334,25 @@
 				02E8D8E0217516E5001FD974 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		02A151E421E2CA750020395A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				021B521C21E1B122006C2106 /* InterfaceController.swift */,
+				021B523121E1B448006C2106 /* RowController.swift */,
+				02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */,
+				021B522021E1B123006C2106 /* NotificationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		02A151E521E2CA860020395A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				021B521E21E1B123006C2106 /* ExtensionDelegate.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		02C3AB7921E02CFE005B185E /* Walkthrough */ = {
@@ -292,6 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				02E8D8D6217516DA001FD974 /* purai-ios-app */,
+				021B520C21E1B120006C2106 /* purai-watchos */,
+				021B521B21E1B122006C2106 /* purai-watchos Extension */,
 				02E8D8D5217516DA001FD974 /* Products */,
 				B0EEA85AED638B8C997FB60E /* Pods */,
 				BE139B9DE99A816F5A2B7772 /* Frameworks */,
@@ -302,6 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				02E8D8D4217516DA001FD974 /* purai-ios-app.app */,
+				021B520B21E1B120006C2106 /* purai-watchos.app */,
+				021B521721E1B122006C2106 /* purai-watchos Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +479,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		021B520A21E1B120006C2106 /* purai-watchos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021B522F21E1B123006C2106 /* Build configuration list for PBXNativeTarget "purai-watchos" */;
+			buildPhases = (
+				021B520921E1B120006C2106 /* Resources */,
+				021B522E21E1B123006C2106 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				021B521A21E1B122006C2106 /* PBXTargetDependency */,
+			);
+			name = "purai-watchos";
+			productName = "purai-watchos";
+			productReference = 021B520B21E1B120006C2106 /* purai-watchos.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		021B521621E1B122006C2106 /* purai-watchos Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021B522D21E1B123006C2106 /* Build configuration list for PBXNativeTarget "purai-watchos Extension" */;
+			buildPhases = (
+				021B521321E1B122006C2106 /* Sources */,
+				021B521421E1B122006C2106 /* Frameworks */,
+				021B521521E1B122006C2106 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "purai-watchos Extension";
+			productName = "purai-watchos Extension";
+			productReference = 021B521721E1B122006C2106 /* purai-watchos Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		02E8D8D3217516DA001FD974 /* purai-ios-app */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02E8D8E6217516E5001FD974 /* Build configuration list for PBXNativeTarget "purai-ios-app" */;
@@ -365,10 +523,12 @@
 				02E8D8D1217516DA001FD974 /* Frameworks */,
 				02E8D8D2217516DA001FD974 /* Resources */,
 				94924B82A29B364EEAF546F8 /* [CP] Embed Pods Frameworks */,
+				021B523021E1B123006C2106 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				021B522721E1B123006C2106 /* PBXTargetDependency */,
 			);
 			name = "purai-ios-app";
 			productName = "purai-ios-app";
@@ -381,10 +541,16 @@
 		02E8D8CC217516DA001FD974 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Felipe Mendes";
 				TargetAttributes = {
+					021B520A21E1B120006C2106 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					021B521621E1B122006C2106 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					02E8D8D3217516DA001FD974 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -405,11 +571,31 @@
 			projectRoot = "";
 			targets = (
 				02E8D8D3217516DA001FD974 /* purai-ios-app */,
+				021B520A21E1B120006C2106 /* purai-watchos */,
+				021B521621E1B122006C2106 /* purai-watchos Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		021B520921E1B120006C2106 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B521121E1B122006C2106 /* Assets.xcassets in Resources */,
+				021B520F21E1B121006C2106 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021B521521E1B122006C2106 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B522321E1B123006C2106 /* Assets.xcassets in Resources */,
+				02B75D8621E282E0009E7AB8 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02E8D8D2217516DA001FD974 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +674,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		021B521321E1B122006C2106 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02B75D7F21E28197009E7AB8 /* DetailInterfaceController.swift in Sources */,
+				02B75D8921E28322009E7AB8 /* ApiServiceCategories.swift in Sources */,
+				021B522121E1B123006C2106 /* NotificationController.swift in Sources */,
+				02B75D8221E282CA009E7AB8 /* ApiService.swift in Sources */,
+				02B75D8521E282D4009E7AB8 /* SalePlace.swift in Sources */,
+				02B75D8821E2830B009E7AB8 /* Event.swift in Sources */,
+				021B523221E1B448006C2106 /* RowController.swift in Sources */,
+				02B75D8721E28308009E7AB8 /* StringExtension.swift in Sources */,
+				021B521F21E1B123006C2106 /* ExtensionDelegate.swift in Sources */,
+				021B521D21E1B122006C2106 /* InterfaceController.swift in Sources */,
+				02B75D8421E282D1009E7AB8 /* Category.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02E8D8D0217516DA001FD974 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,7 +739,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		021B521A21E1B122006C2106 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 021B521621E1B122006C2106 /* purai-watchos Extension */;
+			targetProxy = 021B521921E1B122006C2106 /* PBXContainerItemProxy */;
+		};
+		021B522721E1B123006C2106 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 021B520A21E1B120006C2106 /* purai-watchos */;
+			targetProxy = 021B522621E1B123006C2106 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		021B520D21E1B121006C2106 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				021B520E21E1B121006C2106 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		02E8D8DB217516DA001FD974 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -564,6 +789,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		021B522921E1B123006C2106 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G64V5XZM3;
+				IBSC_MODULE = purai_watchos_Extension;
+				INFOPLIST_FILE = "purai-watchos/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.felipemendes.purai-ios-app.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		021B522A21E1B123006C2106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G64V5XZM3;
+				IBSC_MODULE = purai_watchos_Extension;
+				INFOPLIST_FILE = "purai-watchos/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.felipemendes.purai-ios-app.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		021B522B21E1B123006C2106 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G64V5XZM3;
+				INFOPLIST_FILE = "purai-watchos Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.felipemendes.purai-ios-app.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		021B522C21E1B123006C2106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G64V5XZM3;
+				INFOPLIST_FILE = "purai-watchos Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.felipemendes.purai-ios-app.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 		02E8D8E4217516E5001FD974 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -723,6 +1030,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		021B522D21E1B123006C2106 /* Build configuration list for PBXNativeTarget "purai-watchos Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021B522B21E1B123006C2106 /* Debug */,
+				021B522C21E1B123006C2106 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021B522F21E1B123006C2106 /* Build configuration list for PBXNativeTarget "purai-watchos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021B522921E1B123006C2106 /* Debug */,
+				021B522A21E1B123006C2106 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		02E8D8CF217516DA001FD974 /* Build configuration list for PBXProject "purai-ios-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

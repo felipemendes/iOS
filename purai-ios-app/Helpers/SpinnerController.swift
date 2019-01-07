@@ -13,7 +13,7 @@ class SpinnerController: NSObject {
     static let sharedInstance = SpinnerController()
     private let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
     
-    //MARK: Public Methods
+    // MARK: Public Methods
     func showSpinner() {
         
         let appDel = UIApplication.shared.delegate as! AppDelegate
@@ -32,7 +32,7 @@ class SpinnerController: NSObject {
         }
     }
     
-    func removeSpinner(){
+    func removeSpinner() {
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.activityIndicator.stopAnimating()

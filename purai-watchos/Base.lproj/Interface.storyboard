@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="purai_watchos" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="center" text="Check out upcoming events" textAlignment="center" numberOfLines="0" id="YPc-nx-qqU">
+                            <color key="textColor" red="0.86107825043785902" green="0.85998570338982616" blue="0.87906977895000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                        <table alignment="left" id="iqp-6e-dkp">
+                            <items>
+                                <tableRow identifier="RowController" id="u7b-px-mTh" customClass="RowController" customModule="purai_watchos_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" animationDuration="0.29999999999999999" layout="vertical" id="1TB-QV-qok">
+                                        <items>
+                                            <label width="1" alignment="left" text="Confira os próximos eventos" textAlignment="left" numberOfLines="0" id="iez-RA-83i">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" type="system" weight="medium" pointSize="18"/>
+                                            </label>
+                                            <label width="1" alignment="left" text="01/01/2019" textAlignment="left" numberOfLines="0" id="ioj-kX-aov">
+                                                <color key="textColor" name="highlight"/>
+                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" name="gray"/>
+                                        <edgeInsets key="margins" left="8" right="8" top="4" bottom="4"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="eventDate" destination="ioj-kX-aov" id="ZL7-mS-Ere"/>
+                                        <outlet property="eventName" destination="iez-RA-83i" id="NeW-cq-wPu"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceTitle" destination="YPc-nx-qqU" id="ltx-v6-nbw"/>
+                        <outlet property="tableView" destination="iqp-6e-dkp" id="nfn-ER-w4C"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.69230769230771" y="344.79487179487182"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="202" y="723"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="purai_watchos" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="1075"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="purai_watchos" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="722"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="xf6-mD-zTz">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="p1J-Iq-hqk" customClass="DetailInterfaceController" customModule="purai_watchos_Extension">
+                    <items>
+                        <imageView alignment="center" image="sample1" id="m8h-4i-Xff"/>
+                        <label width="1" alignment="left" text="Name" textAlignment="center" numberOfLines="0" id="o9a-Hv-Bwb">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <separator alignment="left" id="5KF-mY-ab0">
+                            <color key="color" name="highlight"/>
+                        </separator>
+                        <label width="1" alignment="left" text="Date" textAlignment="center" numberOfLines="0" id="lbX-eS-7KB">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <separator alignment="left" id="2mO-jD-whu">
+                            <color key="color" name="highlight"/>
+                        </separator>
+                        <label width="1" alignment="left" text="Price" textAlignment="center" numberOfLines="0" id="kDR-xt-8G3">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <separator alignment="left" id="Hoe-hB-Dfu">
+                            <color key="color" name="highlight"/>
+                        </separator>
+                        <label width="1" alignment="left" text="Place" textAlignment="center" numberOfLines="0" id="Kec-ht-yZ7">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <separator alignment="left" id="dQx-Mn-SK0">
+                            <color key="color" name="highlight"/>
+                        </separator>
+                        <label width="1" alignment="left" text="City" textAlignment="center" numberOfLines="0" id="Cyi-cu-N7g">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <separator alignment="left" id="ArD-Tt-sRd">
+                            <color key="color" name="highlight"/>
+                        </separator>
+                    </items>
+                    <connections>
+                        <outlet property="eventCity" destination="Cyi-cu-N7g" id="pWI-8r-QDT"/>
+                        <outlet property="eventDate" destination="lbX-eS-7KB" id="eT7-zi-5eD"/>
+                        <outlet property="eventName" destination="o9a-Hv-Bwb" id="cLV-go-SWz"/>
+                        <outlet property="eventPlace" destination="Kec-ht-yZ7" id="BuR-MY-qzh"/>
+                        <outlet property="eventPrice" destination="kDR-xt-8G3" id="pfI-9B-ljd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="508" y="362"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="gray">
+            <color red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="highlight">
+            <color red="0.54117647058823526" green="0.38823529411764707" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

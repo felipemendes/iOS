@@ -14,6 +14,7 @@
 "not_informed" = "Not informed";
 
 // Walkthrough
+
 "skip" = "Skip";
 "next" = "Next";
 "login" = "Log in";
@@ -43,3 +44,8 @@
 "sale_place" = "Where to buy";
 "phone" = "Phone";
 "share_message" = "Check the events closest to you";
+
+// WatchOS
+
+"interface_title" = "PurAí";
+"interface_info" = "Check out upcoming events";
