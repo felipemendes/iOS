@@ -11,6 +11,7 @@ import WatchKit
 
 class DetailInterfaceController: WKInterfaceController {
     
+    @IBOutlet weak var eventImage: WKInterfaceImage!
     @IBOutlet weak var eventName: WKInterfaceLabel!
     @IBOutlet weak var eventDate: WKInterfaceLabel!
     @IBOutlet weak var eventPrice: WKInterfaceLabel!
@@ -21,6 +22,11 @@ class DetailInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         if let event = context as? Event {
+            
+            if let image = event.image {
+                eventImage.imageFromUrl(image)
+            }
+            
             eventName.setText(event.title)
             eventDate.setText(event.title)
             eventPrice.setText(event.price)
@@ -28,13 +34,26 @@ class DetailInterfaceController: WKInterfaceController {
             eventCity.setText(event.city)
         }
     }
-    
-    override func willActivate() {
-        super.willActivate()
+}
+
+extension WKInterfaceImage {
+    public func imageFromUrl(_ urlString: String) {
+        
+        if let url = NSURL(string: urlString) {
+            
+            let request = NSURLRequest(url: url as URL)
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            
+            let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, _, _) in
+                if let imageData = data as Data? {
+                    DispatchQueue.main.async {
+                        self.setImageData(imageData)
+                    }
+                }
+            })
+            
+            task.resume()
+        }
     }
-    
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
-    
 }
