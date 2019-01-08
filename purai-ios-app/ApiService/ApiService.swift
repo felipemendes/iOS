@@ -35,7 +35,10 @@ class ApiService: NSObject {
             print("No URL provided")
             return
         }
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+        
+        var request = URLRequest(url: url)
+        request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
             
             if error != nil {
                 print(error ?? "No error message")

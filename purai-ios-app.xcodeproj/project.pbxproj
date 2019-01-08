@@ -23,10 +23,12 @@
 		021B522321E1B123006C2106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021B522221E1B123006C2106 /* Assets.xcassets */; };
 		021B522821E1B123006C2106 /* purai-watchos.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 021B520B21E1B120006C2106 /* purai-watchos.app */; };
 		021B523221E1B448006C2106 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B523121E1B448006C2106 /* RowController.swift */; };
-		02330C87219F36B400A257CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		0238A5FC21E1469300B77FF4 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0238A5FB21E1469300B77FF4 /* UserDefaultsExtension.swift */; };
 		023CAC0B21C8718300958231 /* ApiServiceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CAC0A21C8718300958231 /* ApiServiceCategories.swift */; };
 		0259351C21E021EF000C727A /* WalkthroughController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0259351B21E021EF000C727A /* WalkthroughController.swift */; };
+		025D821B21E427BF00169300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02684CA021BB418100A2ABE3 /* Assets.xcassets */; };
+		025D821C21E42A4400169300 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
+		025D821D21E42A4500169300 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		025FC4D721D8696500596C12 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC4D621D8696400596C12 /* UIViewExtension.swift */; };
 		025FC4DA21D86FA700596C12 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC4D921D86FA700596C12 /* SpinnerController.swift */; };
 		026161F221C7148200DDD5C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
@@ -43,7 +45,6 @@
 		02B280E821C7D83800CD7C62 /* EventsByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E721C7D83800CD7C62 /* EventsByCategoryCell.swift */; };
 		02B280EA21C8375D00CD7C62 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B280E921C8375D00CD7C62 /* BaseController.swift */; };
 		02B75D7F21E28197009E7AB8 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */; };
-		02B75D8221E282CA009E7AB8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		02B75D8421E282D1009E7AB8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
 		02B75D8521E282D4009E7AB8 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
 		02B75D8621E282E0009E7AB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02EEB42921D2B9E100EB73C5 /* Localizable.strings */; };
@@ -592,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B522321E1B123006C2106 /* Assets.xcassets in Resources */,
+				025D821B21E427BF00169300 /* Assets.xcassets in Resources */,
 				02B75D8621E282E0009E7AB8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,10 +683,10 @@
 				02B75D7F21E28197009E7AB8 /* DetailInterfaceController.swift in Sources */,
 				02B75D8921E28322009E7AB8 /* ApiServiceCategories.swift in Sources */,
 				021B522121E1B123006C2106 /* NotificationController.swift in Sources */,
-				02B75D8221E282CA009E7AB8 /* ApiService.swift in Sources */,
 				02B75D8521E282D4009E7AB8 /* SalePlace.swift in Sources */,
 				02B75D8821E2830B009E7AB8 /* Event.swift in Sources */,
 				021B523221E1B448006C2106 /* RowController.swift in Sources */,
+				025D821D21E42A4500169300 /* ApiService.swift in Sources */,
 				02B75D8721E28308009E7AB8 /* StringExtension.swift in Sources */,
 				021B521F21E1B123006C2106 /* ExtensionDelegate.swift in Sources */,
 				021B521D21E1B122006C2106 /* InterfaceController.swift in Sources */,
@@ -710,10 +712,10 @@
 				026161F621C7160200DDD5C2 /* CategoryCell.swift in Sources */,
 				020F41D021D2B5AA007CE3BC /* CustomImageView.swift in Sources */,
 				020F41C621D2B51E007CE3BC /* UILabelExtension.swift in Sources */,
+				025D821C21E42A4400169300 /* ApiService.swift in Sources */,
 				027E3C32219D070900219E32 /* SettingCell.swift in Sources */,
 				02B280E621C7CA2800CD7C62 /* CategoryListController.swift in Sources */,
 				021ACF90219BA62E00B35F67 /* SettingsLauncher.swift in Sources */,
-				02330C87219F36B400A257CF /* ApiService.swift in Sources */,
 				02E8D8D8217516DA001FD974 /* AppDelegate.swift in Sources */,
 				0270366F21D8101B008C5F28 /* Animations.swift in Sources */,
 				023CAC0B21C8718300958231 /* ApiServiceCategories.swift in Sources */,

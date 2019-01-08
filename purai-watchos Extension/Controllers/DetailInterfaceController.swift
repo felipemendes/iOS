@@ -17,22 +17,16 @@ class DetailInterfaceController: WKInterfaceController {
     @IBOutlet weak var eventPlace: WKInterfaceLabel!
     @IBOutlet weak var eventCity: WKInterfaceLabel!
     
-    var context: Event? {
-        didSet {
-            eventName.setText(context?.title)
-            eventDate.setText(context?.title)
-            eventPrice.setText(context?.price)
-            eventPlace.setText(context?.sale_place?.title)
-            eventCity.setText(context?.city)
-        }
-    }
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-//        if let event = context as? String {
-//            eventName.setText(event)
-//        }
+        if let event = context as? Event {
+            eventName.setText(event.title)
+            eventDate.setText(event.title)
+            eventPrice.setText(event.price)
+            eventPlace.setText(event.sale_place?.title)
+            eventCity.setText(event.city)
+        }
     }
     
     override func willActivate() {

@@ -14,7 +14,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var interfaceTitle: WKInterfaceLabel!
     @IBOutlet weak var tableView: WKInterfaceTable!
     
-    var events: [Event]?
+    private var events = [Event]()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -37,12 +37,14 @@ class InterfaceController: WKInterfaceController {
     
     private func loadTableData() {
         
-        fetchEvents()
-
-        if let events = events {
-            tableView.setNumberOfRows(2, withRowType: "RowController")
+        ApiService.sharedInstance.fetchUpcomingEvents { (events) in
+            
+            self.tableView.setNumberOfRows(events.count, withRowType: "RowController")
             
             for (index, rowModel) in events.enumerated() {
+                
+                self.events.append(rowModel)
+                
                 if let rowController = self.tableView.rowController(at: index) as? RowController {
                     rowController.eventName.setText(rowModel.title)
                     rowController.eventDate.setText(rowModel.city)
@@ -52,15 +54,6 @@ class InterfaceController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        if let events = events {
-            pushController(withName: "DetailInterfaceController", context: events[rowIndex])
-        }
+        presentController(withName: "DetailInterfaceController", context: events[rowIndex])
     }
-    
-    func fetchEvents() {
-        ApiService.sharedInstance.fetchUpcomingEvents { (events) in
-            self.events = events
-        }
-    }
-
 }

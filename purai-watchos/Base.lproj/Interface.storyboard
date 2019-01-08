@@ -88,42 +88,57 @@
             <objects>
                 <controller identifier="DetailInterfaceController" id="p1J-Iq-hqk" customClass="DetailInterfaceController" customModule="purai_watchos_Extension">
                     <items>
-                        <imageView alignment="center" image="sample1" id="m8h-4i-Xff"/>
-                        <label width="1" alignment="left" text="Name" textAlignment="center" numberOfLines="0" id="o9a-Hv-Bwb">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="font" type="system" pointSize="18"/>
-                        </label>
-                        <separator alignment="left" id="5KF-mY-ab0">
-                            <color key="color" name="highlight"/>
-                        </separator>
-                        <label width="1" alignment="left" text="Date" textAlignment="center" numberOfLines="0" id="lbX-eS-7KB">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="font" type="system" pointSize="18"/>
-                        </label>
-                        <separator alignment="left" id="2mO-jD-whu">
-                            <color key="color" name="highlight"/>
-                        </separator>
-                        <label width="1" alignment="left" text="Price" textAlignment="center" numberOfLines="0" id="kDR-xt-8G3">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="font" type="system" pointSize="18"/>
-                        </label>
-                        <separator alignment="left" id="Hoe-hB-Dfu">
-                            <color key="color" name="highlight"/>
-                        </separator>
-                        <label width="1" alignment="left" text="Place" textAlignment="center" numberOfLines="0" id="Kec-ht-yZ7">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="font" type="system" pointSize="18"/>
-                        </label>
-                        <separator alignment="left" id="dQx-Mn-SK0">
-                            <color key="color" name="highlight"/>
-                        </separator>
-                        <label width="1" alignment="left" text="City" textAlignment="center" numberOfLines="0" id="Cyi-cu-N7g">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="font" type="system" pointSize="18"/>
-                        </label>
-                        <separator alignment="left" id="ArD-Tt-sRd">
-                            <color key="color" name="highlight"/>
-                        </separator>
+                        <imageView alignment="center" image="sample1" animationDuration="0.29999999999999999" id="htp-Nn-NWW"/>
+                        <group width="1" alignment="left" spacing="8" id="bRq-UK-b2r">
+                            <items>
+                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="info" id="ChO-eu-Ecx"/>
+                                <label width="1" alignment="left" text="Name" textAlignment="left" numberOfLines="0" id="o9a-Hv-Bwb">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="Edv-EQ-bWV">
+                            <items>
+                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="date" id="Efh-GS-KAn"/>
+                                <label width="1" alignment="left" text="Date" textAlignment="left" numberOfLines="0" id="lbX-eS-7KB">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="XOy-YI-jcx">
+                            <items>
+                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="price" id="a1M-ej-Wrb"/>
+                                <label width="1" alignment="left" text="Price" textAlignment="left" numberOfLines="0" id="kDR-xt-8G3">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="RmY-Jm-ToR">
+                            <items>
+                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="address" id="llW-za-bcb"/>
+                                <label width="1" alignment="left" text="Place" textAlignment="left" numberOfLines="0" id="Kec-ht-yZ7">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="nz8-ks-O8a">
+                            <items>
+                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="address" id="J44-Ur-2jK"/>
+                                <label width="1" alignment="left" text="City" textAlignment="left" numberOfLines="0" id="Cyi-cu-N7g">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="eventCity" destination="Cyi-cu-N7g" id="pWI-8r-QDT"/>
