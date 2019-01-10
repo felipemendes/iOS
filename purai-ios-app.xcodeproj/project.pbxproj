@@ -52,6 +52,7 @@
 		02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3021B2F72500998543 /* SpotlightCell.swift */; };
 		02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3221B2F9BD00998543 /* TodayCell.swift */; };
 		02BBBA3721B3001F00998543 /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3621B3001F00998543 /* UpcomingCell.swift */; };
+		02BD15BC21E7FB8D00137DE8 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD15AD21E7FB6900137DE8 /* ComplicationController.swift */; };
 		02C3AB7B21E02D0B005B185E /* WalkthroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB7A21E02D0B005B185E /* WalkthroughCell.swift */; };
 		02C3AB7D21E0DA7E005B185E /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB7C21E0DA7E005B185E /* LoginCell.swift */; };
 		02D08E1621E568EA003C0BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02684CA021BB418100A2ABE3 /* Assets.xcassets */; };
@@ -153,6 +154,7 @@
 		02BBBA3021B2F72500998543 /* SpotlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
 		02BBBA3221B2F9BD00998543 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		02BBBA3621B3001F00998543 /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
+		02BD15AD21E7FB6900137DE8 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		02C3AB7A21E02D0B005B185E /* WalkthroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCell.swift; sourceTree = "<group>"; };
 		02C3AB7C21E0DA7E005B185E /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -176,6 +178,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		021B521421E1B122006C2106 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02875EC3DE1722547AD61902 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +288,7 @@
 				021B523121E1B448006C2106 /* RowController.swift */,
 				02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */,
 				021B521E21E1B123006C2106 /* ExtensionDelegate.swift */,
+				02BD15AD21E7FB6900137DE8 /* ComplicationController.swift */,
 				021B522221E1B123006C2106 /* Assets.xcassets */,
 				021B522421E1B123006C2106 /* Info.plist */,
 				021B522521E1B123006C2106 /* PushNotificationPayload.apns */,
@@ -467,6 +477,7 @@
 			buildPhases = (
 				021B520921E1B120006C2106 /* Resources */,
 				021B522E21E1B123006C2106 /* Embed App Extensions */,
+				02875EC3DE1722547AD61902 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -669,6 +680,7 @@
 				025D821D21E42A4500169300 /* ApiService.swift in Sources */,
 				02B75D8721E28308009E7AB8 /* StringExtension.swift in Sources */,
 				021B521F21E1B123006C2106 /* ExtensionDelegate.swift in Sources */,
+				02BD15BC21E7FB8D00137DE8 /* ComplicationController.swift in Sources */,
 				021B521D21E1B122006C2106 /* InterfaceController.swift in Sources */,
 				02B75D8421E282D1009E7AB8 /* Category.swift in Sources */,
 			);

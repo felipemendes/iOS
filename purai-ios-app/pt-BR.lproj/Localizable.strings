@@ -49,3 +49,5 @@
 
 "interface_title" = "PurAí";
 "interface_info" = "Confira os próximos eventos";
+"next_event_name" = "Próximo evento";
+
