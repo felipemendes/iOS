@@ -26,15 +26,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func loadTableData() {
-        
         ApiService.sharedInstance.fetchUpcomingEvents { (events) in
-            
             self.tableView.setNumberOfRows(events.count, withRowType: "RowController")
-            
             for (index, rowModel) in events.enumerated() {
-                
                 self.events.append(rowModel)
-                
                 if let rowController = self.tableView.rowController(at: index) as? RowController {
                     rowController.eventName.setText(rowModel.title)
                     rowController.eventDate.setText(rowModel.city)

@@ -21,7 +21,7 @@ class Event: NSObject {
     var image: String?
     var about: String?
     var price: String?
-    var date: NSDate?
+    var date: String?
     var address: String?
     var city: String?
     var id_category: NSNumber?

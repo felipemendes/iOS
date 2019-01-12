@@ -61,8 +61,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func fetchEvents() {
         ApiService.sharedInstance.fetchUpcomingEvents { (events) in
-            for (index, rowModel) in events.enumerated() {
-                self.upcomingEvents.append(rowModel)
+            for row in events {
+                self.upcomingEvents.append(row)
             }
         }
     }

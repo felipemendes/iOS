@@ -50,3 +50,7 @@
 "interface_title" = "PurAí";
 "interface_info" = "Check out upcoming events";
 "next_event_name" = "Next event";
+
+// Today Extension
+
+"extension_title" = "New upcomming events 🎉";

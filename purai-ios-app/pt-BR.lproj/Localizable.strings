@@ -51,3 +51,6 @@
 "interface_info" = "Confira os próximos eventos";
 "next_event_name" = "Próximo evento";
 
+// Today Extension
+
+"extension_title" = "Próximo evento 🎉";

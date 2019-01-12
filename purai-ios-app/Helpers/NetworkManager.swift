@@ -42,7 +42,7 @@ class NetworkManager: NSObject {
         // Do something globally here!
     }
     
-    static func stopNotifier() -> Void {
+    static func stopNotifier() {
         do {
             // Stop the network status notifier
             try (NetworkManager.sharedInstance.reachability).startNotifier()
