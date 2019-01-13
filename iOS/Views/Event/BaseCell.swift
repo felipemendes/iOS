@@ -30,7 +30,6 @@ class EventCell: BaseCell {
         didSet {
             titleLabel.text = event?.title
             setupEventImage()
-            subtitleLabel.text = event?.city
             
             if let title = event?.title {
                 let size = CGSize(width: frame.width - 16 - 40 - 8 - 16, height: 1000)
@@ -58,35 +57,37 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         label.adjustsFontSizeToFitWidth = true
-        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 0)
+        label.numberOfLines = 1
         return label
     }()
     
-    let subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 0)
-        return label
+    let backgroundTitle: UIView = {
+        let view = UIView()
+        view.backgroundColor = .highlight
+        view.layer.cornerRadius = 8
+        return view
     }()
     
     var titleLabelHeightConstraint: NSLayoutConstraint?
     
     override func setupViews() {
         addSubview(eventImageView)
-        eventImageView.addSubview(titleLabel)
-        eventImageView.addSubview(subtitleLabel)
+        eventImageView.addSubview(backgroundTitle)
+        backgroundTitle.addSubview(titleLabel)
         
         // horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: eventImageView)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: titleLabel)
-        addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: subtitleLabel)
+        addConstraintsWithFormat(format: "H:|-12-[v0]", views: backgroundTitle)
+        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: titleLabel)
         
         // vertical constraints
         addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
-        addConstraintsWithFormat(format: "V:[v0]-5-[v1(20)]-20-|", views: titleLabel, subtitleLabel)
+        addConstraintsWithFormat(format: "V:[v0]-12-|", views: backgroundTitle)
+        
+        DispatchQueue.main.async {
+            self.backgroundTitle.heightAnchor.constraint(equalToConstant: self.titleLabel.frame.height).isActive = true
+        }
     }
 }
