@@ -60,7 +60,9 @@
                         <imageView alignment="center" image="sample1" animationDuration="0.29999999999999999" id="htp-Nn-NWW"/>
                         <group width="1" alignment="left" spacing="8" id="bRq-UK-b2r">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="info" contentMode="scaleAspectFit" id="ChO-eu-Ecx"/>
+                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="info" contentMode="scaleAspectFit" id="ChO-eu-Ecx">
+                                    <color key="tintColor" name="highlight"/>
+                                </imageView>
                                 <label width="1" alignment="left" text="Name" textAlignment="left" numberOfLines="0" id="o9a-Hv-Bwb">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="15"/>
@@ -70,7 +72,9 @@
                         </group>
                         <group width="1" alignment="left" spacing="8" id="Edv-EQ-bWV">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="date" id="Efh-GS-KAn"/>
+                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="date" contentMode="scaleAspectFit" id="Efh-GS-KAn">
+                                    <color key="tintColor" name="highlight"/>
+                                </imageView>
                                 <label width="1" alignment="left" text="Date" textAlignment="left" numberOfLines="0" id="lbX-eS-7KB">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="15"/>
@@ -80,7 +84,9 @@
                         </group>
                         <group width="1" alignment="left" spacing="8" id="XOy-YI-jcx">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="price" id="a1M-ej-Wrb"/>
+                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="price" contentMode="scaleAspectFit" id="a1M-ej-Wrb">
+                                    <color key="tintColor" name="highlight"/>
+                                </imageView>
                                 <label width="1" alignment="left" text="Price" textAlignment="left" numberOfLines="0" id="kDR-xt-8G3">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="15"/>
@@ -90,8 +96,10 @@
                         </group>
                         <group width="1" alignment="left" spacing="8" id="RmY-Jm-ToR">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="address" id="llW-za-bcb"/>
-                                <label width="1" alignment="left" text="Place" textAlignment="left" numberOfLines="0" id="Kec-ht-yZ7">
+                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="address" contentMode="scaleAspectFit" id="llW-za-bcb">
+                                    <color key="tintColor" name="highlight"/>
+                                </imageView>
+                                <label width="1" alignment="left" text="Where To Buy" textAlignment="left" numberOfLines="0" id="Kec-ht-yZ7">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
@@ -100,7 +108,9 @@
                         </group>
                         <group width="1" alignment="left" spacing="8" id="nz8-ks-O8a">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="address" id="J44-Ur-2jK"/>
+                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="address" contentMode="scaleAspectFit" id="J44-Ur-2jK">
+                                    <color key="tintColor" name="highlight"/>
+                                </imageView>
                                 <label width="1" alignment="left" text="City" textAlignment="left" numberOfLines="0" id="Cyi-cu-N7g">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="15"/>
@@ -114,8 +124,9 @@
                         <outlet property="eventDate" destination="lbX-eS-7KB" id="eT7-zi-5eD"/>
                         <outlet property="eventImage" destination="htp-Nn-NWW" id="Bhz-9l-10R"/>
                         <outlet property="eventName" destination="o9a-Hv-Bwb" id="cLV-go-SWz"/>
-                        <outlet property="eventPlace" destination="Kec-ht-yZ7" id="BuR-MY-qzh"/>
                         <outlet property="eventPrice" destination="kDR-xt-8G3" id="pfI-9B-ljd"/>
+                        <outlet property="eventWhereToBuy" destination="Kec-ht-yZ7" id="BuR-MY-qzh"/>
+                        <outlet property="iconName" destination="ChO-eu-Ecx" id="ig5-fL-jTL"/>
                     </connections>
                 </controller>
             </objects>
@@ -124,7 +135,7 @@
     </scenes>
     <resources>
         <namedColor name="gray">
-            <color red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="highlight">
             <color red="0.54117647058823526" green="0.38823529411764707" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

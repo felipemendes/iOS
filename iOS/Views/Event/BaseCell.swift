@@ -57,7 +57,7 @@ class EventCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 1
         return label
@@ -66,28 +66,29 @@ class EventCell: BaseCell {
     let backgroundTitle: UIView = {
         let view = UIView()
         view.backgroundColor = .highlight
-        view.layer.cornerRadius = 8
         return view
     }()
     
     var titleLabelHeightConstraint: NSLayoutConstraint?
     
     override func setupViews() {
+        
         addSubview(eventImageView)
         eventImageView.addSubview(backgroundTitle)
         backgroundTitle.addSubview(titleLabel)
         
         // horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: eventImageView)
-        addConstraintsWithFormat(format: "H:|-12-[v0]", views: backgroundTitle)
-        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: backgroundTitle)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: titleLabel)
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: eventImageView)
-        addConstraintsWithFormat(format: "V:[v0]-12-|", views: backgroundTitle)
+        addConstraintsWithFormat(format: "V:|-10-[v0]-5-|", views: eventImageView)
+        addConstraintsWithFormat(format: "V:[v0]|", views: backgroundTitle)
+        addConstraintsWithFormat(format: "V:|-6-[v0]-6-|", views: titleLabel)
         
         DispatchQueue.main.async {
-            self.backgroundTitle.heightAnchor.constraint(equalToConstant: self.titleLabel.frame.height).isActive = true
+            self.backgroundTitle.heightAnchor.constraint(equalToConstant: self.titleLabel.frame.height + 12).isActive = true
         }
     }
 }

@@ -39,9 +39,10 @@
 // Detail
 
 "description" = "Description";
+"date" = "Date";
 "price" = "Price";
 "address" = "Address";
-"sale_place" = "Where to buy";
+"where_to_buy" = "Where to buy";
 "phone" = "Phone";
 "share_message" = "Check the events closest to you";
 

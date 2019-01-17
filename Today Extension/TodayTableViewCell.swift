@@ -28,7 +28,7 @@ class TodayTableViewCell: UITableViewCell {
     func prepare(with event: Event) {
         cellTitle.text = localized("extension_title")
         eventTitle.text = event.title
-        eventDate.text = event.price
+        eventDate.text = event.date
     }
 
 }

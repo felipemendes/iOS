@@ -1,5 +1,5 @@
 //
-//  SalePlace.swift
+//  WhereToBuy.swift
 //  iOS
 //
 //  Created by Felipe Mendes on 18/12/18.
@@ -9,11 +9,8 @@
 import UIKit
 
 @objcMembers
-class SalePlace: NSObject {
+class WhereToBuy: NSObject {
     
-    var id: NSNumber?
-    var uuid: String?
-    var status: NSNumber?
+    var slug: String?
     var title: String?
-    var phone: String?
 }

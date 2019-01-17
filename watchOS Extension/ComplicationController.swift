@@ -41,7 +41,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return handler(nil)
         }
         
-        guard let title = firstEvent.title, let city = firstEvent.city else {
+        guard let title = firstEvent.title, let date = firstEvent.date else {
             return handler(nil)
         }
         
@@ -50,7 +50,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             let template = CLKComplicationTemplateModularLargeStandardBody()
             template.headerTextProvider = CLKSimpleTextProvider(text: localized("next_event_name"))
             template.body1TextProvider = CLKSimpleTextProvider(text: title)
-            template.body2TextProvider = CLKSimpleTextProvider(text: city)
+            template.body2TextProvider = CLKSimpleTextProvider(text: date)
 
             let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             handler(entry)

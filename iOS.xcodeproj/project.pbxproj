@@ -12,7 +12,7 @@
 		02007DD221E983DD00B6BA76 /* ApiServiceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CAC0A21C8718300958231 /* ApiServiceCategories.swift */; };
 		02007DD321E983DD00B6BA76 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290C0218EBE1800FE99C7 /* Event.swift */; };
 		02007DD421E983DD00B6BA76 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
-		02007DD521E983DD00B6BA76 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
+		02007DD521E983DD00B6BA76 /* WhereToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* WhereToBuy.swift */; };
 		020F41C221D2B4C1007CE3BC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C121D2B4C1007CE3BC /* UIColorExtension.swift */; };
 		020F41C621D2B51E007CE3BC /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C521D2B51E007CE3BC /* UILabelExtension.swift */; };
 		020F41CA21D2B54D007CE3BC /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F41C921D2B54D007CE3BC /* UIApplicationExtension.swift */; };
@@ -49,7 +49,8 @@
 		02720B8821E986EF004CEA9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02EEB42921D2B9E100EB73C5 /* Localizable.strings */; };
 		02720B8921E986EF004CEA9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02EEB42921D2B9E100EB73C5 /* Localizable.strings */; };
 		02737A3521D8625C00F3B011 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737A3421D8625C00F3B011 /* NetworkManager.swift */; };
-		027C103721C894DF00D78A51 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
+		0279829421EBD24C00967649 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0279829321EBD24C00967649 /* UICollectionViewExtension.swift */; };
+		027C103721C894DF00D78A51 /* WhereToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* WhereToBuy.swift */; };
 		027E3C32219D070900219E32 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E3C31219D070900219E32 /* SettingCell.swift */; };
 		028C3C7721E981D7001D78CE /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */; };
 		028C3C7821E981D7001D78CE /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */; };
@@ -62,7 +63,7 @@
 		02B4E11221E958E80057AC8B /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B4E11121E958E80057AC8B /* TodayTableViewCell.swift */; };
 		02B75D7F21E28197009E7AB8 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B75D7E21E28197009E7AB8 /* DetailInterfaceController.swift */; };
 		02B75D8421E282D1009E7AB8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
-		02B75D8521E282D4009E7AB8 /* SalePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* SalePlace.swift */; };
+		02B75D8521E282D4009E7AB8 /* WhereToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C103621C894DF00D78A51 /* WhereToBuy.swift */; };
 		02B75D8821E2830B009E7AB8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290C0218EBE1800FE99C7 /* Event.swift */; };
 		02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3021B2F72500998543 /* SpotlightCell.swift */; };
 		02BBBA3321B2F9BD00998543 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBBA3221B2F9BD00998543 /* TodayCell.swift */; };
@@ -182,7 +183,8 @@
 		0270366E21D8101B008C5F28 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		0270367021D81080008C5F28 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		02737A3421D8625C00F3B011 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		027C103621C894DF00D78A51 /* SalePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePlace.swift; sourceTree = "<group>"; };
+		0279829321EBD24C00967649 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		027C103621C894DF00D78A51 /* WhereToBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToBuy.swift; sourceTree = "<group>"; };
 		027E3C31219D070900219E32 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		0295753621B47766000572B2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		02B280E521C7CA2800CD7C62 /* CategoryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				020F41C521D2B51E007CE3BC /* UILabelExtension.swift */,
 				020F41D821D2B7B8007CE3BC /* StringExtension.swift */,
 				0238A5FB21E1469300B77FF4 /* UserDefaultsExtension.swift */,
+				0279829321EBD24C00967649 /* UICollectionViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,7 +456,7 @@
 			children = (
 				02E290C0218EBE1800FE99C7 /* Event.swift */,
 				026161F121C7148200DDD5C2 /* Category.swift */,
-				027C103621C894DF00D78A51 /* SalePlace.swift */,
+				027C103621C894DF00D78A51 /* WhereToBuy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -767,7 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02B75D7F21E28197009E7AB8 /* DetailInterfaceController.swift in Sources */,
-				02B75D8521E282D4009E7AB8 /* SalePlace.swift in Sources */,
+				02B75D8521E282D4009E7AB8 /* WhereToBuy.swift in Sources */,
 				02B75D8821E2830B009E7AB8 /* Event.swift in Sources */,
 				021B523221E1B448006C2106 /* RowController.swift in Sources */,
 				021B521F21E1B123006C2106 /* ExtensionDelegate.swift in Sources */,
@@ -788,7 +791,7 @@
 				02007DD221E983DD00B6BA76 /* ApiServiceCategories.swift in Sources */,
 				024FC60221E94B52002ACE45 /* TodayViewController.swift in Sources */,
 				02007DD121E983DD00B6BA76 /* ApiService.swift in Sources */,
-				02007DD521E983DD00B6BA76 /* SalePlace.swift in Sources */,
+				02007DD521E983DD00B6BA76 /* WhereToBuy.swift in Sources */,
 				02720B8621E986E3004CEA9F /* StringExtension.swift in Sources */,
 				02007DD321E983DD00B6BA76 /* Event.swift in Sources */,
 				028C3C7721E981D7001D78CE /* DetailInterfaceController.swift in Sources */,
@@ -804,6 +807,7 @@
 				02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */,
 				02BBBA3721B3001F00998543 /* UpcomingCell.swift in Sources */,
 				028C3C7821E981D7001D78CE /* DetailInterfaceController.swift in Sources */,
+				0279829421EBD24C00967649 /* UICollectionViewExtension.swift in Sources */,
 				020F41D921D2B7B8007CE3BC /* StringExtension.swift in Sources */,
 				0270367121D81080008C5F28 /* Animator.swift in Sources */,
 				02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */,
@@ -811,7 +815,7 @@
 				025FC4D721D8696500596C12 /* UIViewExtension.swift in Sources */,
 				02BBBA3121B2F72500998543 /* SpotlightCell.swift in Sources */,
 				02E8D8DA217516DA001FD974 /* FeedController.swift in Sources */,
-				027C103721C894DF00D78A51 /* SalePlace.swift in Sources */,
+				027C103721C894DF00D78A51 /* WhereToBuy.swift in Sources */,
 				026161F621C7160200DDD5C2 /* CategoryCell.swift in Sources */,
 				020F41D021D2B5AA007CE3BC /* CustomImageView.swift in Sources */,
 				020F41C621D2B51E007CE3BC /* UILabelExtension.swift in Sources */,

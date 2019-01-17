@@ -15,8 +15,10 @@ class DetailInterfaceController: WKInterfaceController {
     @IBOutlet weak var eventName: WKInterfaceLabel!
     @IBOutlet weak var eventDate: WKInterfaceLabel!
     @IBOutlet weak var eventPrice: WKInterfaceLabel!
-    @IBOutlet weak var eventPlace: WKInterfaceLabel!
+    @IBOutlet weak var eventWhereToBuy: WKInterfaceLabel!
     @IBOutlet weak var eventCity: WKInterfaceLabel!
+    
+    @IBOutlet weak var iconName: WKInterfaceImage!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -28,9 +30,9 @@ class DetailInterfaceController: WKInterfaceController {
             }
             
             eventName.setText(event.title)
-            eventDate.setText(event.title)
+            eventDate.setText(event.date)
             eventPrice.setText(event.price)
-            eventPlace.setText(event.sale_place?.title)
+            eventWhereToBuy.setText(event.where_to_buy?.title)
             eventCity.setText(event.city)
         }
     }

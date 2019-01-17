@@ -16,19 +16,19 @@ extension UIColor {
         if #available(iOS 11.0, *) {
             return UIColor(named: "dark") ?? .black
         } else {
-            return .rgb(red: 19, green: 25, blue: 33)
+            return .rgb(red: 11, green: 11, blue: 11)
         }
     }
     @objc class var gray: UIColor {
         if #available(iOS 11.0, *) {
-            return UIColor(named: "gray") ?? .black
+            return UIColor(named: "gray") ?? .lightGray
         } else {
-            return .rgb(red: 26, green: 26, blue: 26)
+            return .rgb(red: 29, green: 29, blue: 29)
         }
     }
     @objc class var lightGray: UIColor {
         if #available(iOS 11.0, *) {
-            return UIColor(named: "lightGray") ?? .black
+            return UIColor(named: "lightGray") ?? .lightGray
         } else {
             return .rgb(red: 133, green: 133, blue: 133)
         }

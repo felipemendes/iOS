@@ -12,7 +12,7 @@ class EventByCategoryCell: FeedCell {
     
     override func fetchEvents() {
         DispatchQueue.main.async {
-            ApiService.sharedInstance.fetchEventsByCategory(uuid: (self.category?.uuid)!) { (events: [Event]) in
+            ApiService.sharedInstance.fetchEventsByCategory(slug: (self.category?.slug)!) { (events: [Event]) in
                 self.events = events
                 self.collectionView.reloadData()
             }

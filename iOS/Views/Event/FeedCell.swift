@@ -11,7 +11,7 @@ import UIKit
 class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     weak var delegate: BaseControllerDelegate?
-    var events: [Event]?
+    var events = [Event]()
     var category: Category?
     let cellId = "cellId"
     
@@ -22,16 +22,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         view.dataSource = self
         view.delegate = self
         return view
-    }()
-    
-    lazy var messageLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.sizeToFit()
-        return label
     }()
     
     func fetchEvents() {
@@ -52,26 +42,25 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         }
         
         NetworkManager.isUnreachable { _ in
-            self.messageLabel.text = localized("no_internet_connection")
-            self.addSubview(self.messageLabel)
-            self.addConstraintsWithFormat(format: "H:|-20-[v0]-20-|", views: self.messageLabel)
-            self.addConstraintsWithFormat(format: "V:|[v0]|", views: self.messageLabel)
+            self.collectionView.setEmptyMessage(localized("no_internet_connection"))
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if self.events?.count == nil {
+        if self.events.count == 0 {
+            self.collectionView.setEmptyMessage(localized("empty_view"))
             SpinnerController.sharedInstance.showSpinner()
         } else {
+            self.collectionView.restore()
             SpinnerController.sharedInstance.removeSpinner()
         }
 
-        return events?.count ?? 0
+        return events.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! EventCell
-        cell.event = events?[indexPath.item]
+        cell.event = events[indexPath.item]
         
         let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
         let animator = Animator(animation: animation)
@@ -82,7 +71,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (frame.width - 16 - 16) * 12 / 16
-        return CGSize(width: frame.width, height: height + 16 + 76)
+        return CGSize(width: frame.width, height: height + 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -90,6 +79,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.showDetailController(for: (events?[indexPath.item])!, at: indexPath, of: collectionView)
+        self.delegate?.showDetailController(for: (events[indexPath.item]), at: indexPath, of: collectionView)
     }
 }

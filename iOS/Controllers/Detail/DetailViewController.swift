@@ -19,12 +19,12 @@ class DetailViewController: UIViewController {
     
     var event: Event?
     
-    let featuredImage = CustomImageView().setImageStyle()
+    let featuredImage = CustomImageView().setImageStyle(mode: .scaleAspectFill, radius: 0)
     let backgroundImage = CustomImageView().setImageStyle(mode: .scaleAspectFill, radius: 0)
     
     let backgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .dark
         view.layer.cornerRadius = 12
         return view
     }()
@@ -34,6 +34,12 @@ class DetailViewController: UIViewController {
     let descriptionLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
     let descriptionValue = UILabel().setTextStyle()
     let descriptionIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
+    
+    // Date
+    var dateView = UIView().setupBoxInfo()
+    let dateLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
+    let dateValue = UILabel().setTextStyle()
+    let dateIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     // Price
     var priceView = UIView().setupBoxInfo()
@@ -47,17 +53,17 @@ class DetailViewController: UIViewController {
     let addressValue = UILabel().setTextStyle()
     let addressIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
-    // Sale Place
-    var salePlaceView = UIView().setupBoxInfo()
-    let salePlaceLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
-    let salePlaceValue = UILabel().setTextStyle()
-    let salePlaceIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
+    // Where To Buy
+    var whereToBuyView = UIView().setupBoxInfo()
+    let whereToBuyLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
+    let whereToBuyValue = UILabel().setTextStyle()
+    let whereToBuyIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
-    // Sale Place Phone
-    var salePlacePhoneView = UIView().setupBoxInfo()
-    let salePlacePhoneLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
-    let salePlacePhoneValue = UILabel().setTextStyle()
-    let salePlacePhoneIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
+    // Contact
+    var contactView = UIView().setupBoxInfo()
+    let contactLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
+    let contactValue = UILabel().setTextStyle()
+    let contactIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
     let dismissButton: UIButton = {
         let btn: UIButton = UIButton()
@@ -86,10 +92,11 @@ class DetailViewController: UIViewController {
     
     func setupValues() {
         descriptionValue.text = event?.about
+        dateValue.text = event?.date
         priceValue.text = event?.price
         addressValue.text = event?.addressFormatted
-        salePlaceValue.text = event?.sale_place?.title
-        salePlacePhoneValue.text = event?.sale_place?.phone
+        whereToBuyValue.text = event?.where_to_buy?.title
+        contactValue.text = event?.contact
         
         if let eventImageUrl = event?.image {
             featuredImage.loadImageUsingUrlString(urlString: eventImageUrl)
@@ -103,23 +110,24 @@ class DetailViewController: UIViewController {
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 
-        setupBackgroundImage()
+//        setupBackgroundImage()
         setupFeaturedImage()
         
         setupBox(for: localized("description"), label: descriptionLabel, value: descriptionValue, icon: descriptionIcon, iconName: "info", box: descriptionView)
+        setupBox(for: localized("date"), label: dateLabel, value: dateValue, icon: dateIcon, iconName: "date", box: dateView)
         setupBox(for: localized("price"), label: priceLabel, value: priceValue, icon: priceIcon, iconName: "price", box: priceView)
         setupBox(for: localized("address"), label: addressLabel, value: addressValue, icon: addressIcon, iconName: "address", box: addressView)
-        setupBox(for: localized("sale_place"), label: salePlaceLabel, value: salePlaceValue, icon: salePlaceIcon, iconName: "sale_place", box: salePlaceView)
-        setupBox(for: localized("phone"), label: salePlacePhoneLabel, value: salePlacePhoneValue, icon: salePlacePhoneIcon, iconName: "phone", box: salePlacePhoneView)
+        setupBox(for: localized("where_to_buy"), label: whereToBuyLabel, value: whereToBuyValue, icon: whereToBuyIcon, iconName: "where_to_buy", box: whereToBuyView)
+        setupBox(for: localized("phone"), label: contactLabel, value: contactValue, icon: contactIcon, iconName: "phone", box: contactView)
         
         scrollView.addSubview(backgroundView)
-        scrollView.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: backgroundView)
-        scrollView.addConstraintsWithFormat(format: "V:|[v0]-16-[v1]", views: featuredImage, backgroundView)
-        backgroundView.addConstraintsWithFormat(format: "V:|[v0]-[v1]-[v2]-[v3]-[v4]", views: descriptionView, priceView, addressView, salePlaceView, salePlacePhoneView)
+        scrollView.addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: backgroundView)
+        scrollView.addConstraintsWithFormat(format: "V:|[v0]-30-[v1]", views: featuredImage, backgroundView)
+        backgroundView.addConstraintsWithFormat(format: "V:|[v0]-[v1]-[v2]-[v3]-[v4]-[v5]", views: descriptionView, dateView, priceView, addressView, whereToBuyView, contactView)
         backgroundView.widthAnchor.constraint(equalToConstant: view.frame.width - 32).isActive = true
         
         DispatchQueue.main.async {
-            let boxInfoHeight: CGFloat = 380.0
+            let boxInfoHeight: CGFloat = 550.0
             let viewHeight = self.featuredImage.frame.height + boxInfoHeight + 32
             self.backgroundView.heightAnchor.constraint(equalToConstant: boxInfoHeight).isActive = true
             self.scrollView.contentSize.height = viewHeight
@@ -128,7 +136,7 @@ class DetailViewController: UIViewController {
     
     func setupFeaturedImage() {
         scrollView.addSubview(featuredImage)
-        featuredImage.heightAnchor.constraint(lessThanOrEqualToConstant: view.frame.height / 2).isActive = true
+        featuredImage.heightAnchor.constraint(equalToConstant: view.frame.height / 2).isActive = true
         featuredImage.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
     }
     
@@ -162,8 +170,8 @@ extension DetailViewController {
         box.addSubview(label)
         box.addSubview(value)
         
-        box.addConstraintsWithFormat(format: "H:|-10-[v0(20)]-12-[v1]-10-|", views: icon, label)
-        box.addConstraintsWithFormat(format: "V:|-16-[v0(20)]", views: icon)
+        box.addConstraintsWithFormat(format: "H:|-20-[v0(20)]-12-[v1]-20-|", views: icon, label)
+        box.addConstraintsWithFormat(format: "V:|-28-[v0(20)]", views: icon)
         
         NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: icon, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
         

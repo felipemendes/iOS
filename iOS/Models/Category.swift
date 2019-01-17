@@ -12,10 +12,10 @@ import UIKit
 class Category: NSObject {
     
     var id: NSNumber?
-    var uuid: String?
-    var status: NSNumber?
+    var slug: String?
     var title: String?
-    var category_image: String?
+    var about: String?
+    var count: NSNumber?
     
     override init() {
         super.init()

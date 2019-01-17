@@ -14,20 +14,20 @@ class ApiService: NSObject {
     static let sharedInstance = ApiService()
     
     func fetchUpcomingEvents(completion: @escaping ([Event]) -> Void) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/d0e00", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/1ey3cs", completion: completion)
     }
         
     func fetchSpotlighEvents(completion: @escaping ([Event]) -> Void) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/dasd3", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/12fzng", completion: completion)
     }
     
     func fetchTodayEvents(completion: @escaping ([Event]) -> Void) {
-        fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
+        fetchFeed(forUrlString: "\(baseUrl)/bins/12fzng", completion: completion)
     }
     
-    func fetchEventsByCategory(uuid: String, completion: @escaping ([Event]) -> Void) {
-        print("\(baseUrl)/bins/14g3vc/\(uuid)")
-        fetchFeed(forUrlString: "\(baseUrl)/bins/14g3vc", completion: completion)
+    func fetchEventsByCategory(slug: String, completion: @escaping ([Event]) -> Void) {
+        print("\(baseUrl)/bins/14g3vc/\(slug)")
+        fetchFeed(forUrlString: "\(baseUrl)/bins/1ey3cs", completion: completion)
     }
     
     func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> Void) {

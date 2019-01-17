@@ -39,7 +39,7 @@ class BaseCategoryCell: BaseCell {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.adjustsFontSizeToFitWidth = true
         label.dropShadow(color: .black, opacity: 1, offSet: CGSize.zero, radius: 5)
         return label
@@ -53,7 +53,7 @@ class BaseCategoryCell: BaseCell {
         
         // horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: background)
-        addConstraintsWithFormat(format: "H:|-28-[v0]-28-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: titleLabel)
         
         // vertical constraints
         addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: background)

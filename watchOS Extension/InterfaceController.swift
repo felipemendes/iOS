@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController {
                 self.events.append(rowModel)
                 if let rowController = self.tableView.rowController(at: index) as? RowController {
                     rowController.eventName.setText(rowModel.title)
-                    rowController.eventDate.setText(rowModel.city)
+                    rowController.eventDate.setText(rowModel.date)
                 }
             }
         }
