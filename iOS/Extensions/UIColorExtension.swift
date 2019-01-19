@@ -35,9 +35,9 @@ extension UIColor {
     }
     @objc class var highlight: UIColor {
         if #available(iOS 11.0, *) {
-            return UIColor(named: "highlight") ?? .purple
+            return UIColor(named: "highlight") ?? .red
         } else {
-            return .rgb(red: 138, green: 99, blue: 223)
+            return .rgb(red: 235, green: 34, blue: 90)
         }
     }
     

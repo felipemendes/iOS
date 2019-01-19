@@ -29,6 +29,8 @@ class DetailViewController: UIViewController {
         return view
     }()
     
+    var boxHeight: CGFloat = 0.0
+    
     // Description
     var descriptionView = UIView().setupBoxInfo()
     let descriptionLabel = UILabel().setTextStyle(size: 14, color: .highlight, weight: .semibold)
@@ -127,8 +129,8 @@ class DetailViewController: UIViewController {
         backgroundView.widthAnchor.constraint(equalToConstant: view.frame.width - 32).isActive = true
         
         DispatchQueue.main.async {
-            let boxInfoHeight: CGFloat = 550.0
-            let viewHeight = self.featuredImage.frame.height + boxInfoHeight + 32
+            let boxInfoHeight: CGFloat = self.boxHeight + self.featuredImage.frame.height
+            let viewHeight = self.featuredImage.frame.height + boxInfoHeight
             self.backgroundView.heightAnchor.constraint(equalToConstant: boxInfoHeight).isActive = true
             self.scrollView.contentSize.height = viewHeight
         }
@@ -163,6 +165,7 @@ extension DetailViewController {
         
         DispatchQueue.main.async {
             let viewHeight = label.frame.height + value.frame.height
+            self.boxHeight += viewHeight
             NSLayoutConstraint(item: box, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: viewHeight + 16).isActive = true
         }
         
