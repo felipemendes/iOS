@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "021B520A21E1B120006C2106"
+               BuildableName = "watchOS.app"
+               BlueprintName = "watchOS"
+               ReferencedContainer = "container:iOS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "02E8D8D3217516DA001FD974"
                BuildableName = "iOS.app"
                BlueprintName = "iOS"
@@ -32,9 +46,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E8D8D3217516DA001FD974"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BlueprintIdentifier = "021B520A21E1B120006C2106"
+            BuildableName = "watchOS.app"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,17 +65,29 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES"
+      notificationPayloadFile = "watchOS Extension/PushNotificationPayload.apns">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/PurAi&#x301;">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E8D8D3217516DA001FD974"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BlueprintIdentifier = "021B520A21E1B120006C2106"
+            BuildableName = "watchOS.app"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:iOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "021B520A21E1B120006C2106"
+            BuildableName = "watchOS.app"
+            BlueprintName = "watchOS"
+            ReferencedContainer = "container:iOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -71,16 +97,27 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/PurAi&#x301;">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E8D8D3217516DA001FD974"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BlueprintIdentifier = "021B520A21E1B120006C2106"
+            BuildableName = "watchOS.app"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:iOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "021B520A21E1B120006C2106"
+            BuildableName = "watchOS.app"
+            BlueprintName = "watchOS"
+            ReferencedContainer = "container:iOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -71,6 +71,8 @@
 		02BD15BC21E7FB8D00137DE8 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD15AD21E7FB6900137DE8 /* ComplicationController.swift */; };
 		02C3AB7B21E02D0B005B185E /* WalkthroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB7A21E02D0B005B185E /* WalkthroughCell.swift */; };
 		02C3AB7D21E0DA7E005B185E /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB7C21E0DA7E005B185E /* LoginCell.swift */; };
+		02CDE40121F2BD7000672DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021B521021E1B122006C2106 /* Assets.xcassets */; };
+		02CDE40221F2BD7100672DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021B521021E1B122006C2106 /* Assets.xcassets */; };
 		02D08E1621E568EA003C0BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02684CA021BB418100A2ABE3 /* Assets.xcassets */; };
 		02DF2EBE219FBDE80057CEF1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EBD219FBDE70057CEF1 /* FeedCell.swift */; };
 		02E290BB218E9C8A00FE99C7 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E290BA218E9C8A00FE99C7 /* BaseCell.swift */; };
@@ -663,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0239150E21E98B400076E624 /* Assets.xcassets in Resources */,
+				02CDE40121F2BD7000672DCB /* Assets.xcassets in Resources */,
 				021B520F21E1B121006C2106 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,6 +676,7 @@
 			files = (
 				021B522321E1B123006C2106 /* Assets.xcassets in Resources */,
 				02720B8821E986EF004CEA9F /* Localizable.strings in Resources */,
+				02CDE40221F2BD7100672DCB /* Assets.xcassets in Resources */,
 				02D08E1621E568EA003C0BED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

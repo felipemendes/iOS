@@ -57,63 +57,63 @@
             <objects>
                 <controller identifier="DetailInterfaceController" id="p1J-Iq-hqk" customClass="DetailInterfaceController" customModule="watchOS_Extension">
                     <items>
-                        <imageView alignment="center" image="sample1" animationDuration="0.29999999999999999" id="htp-Nn-NWW"/>
+                        <imageView alignment="center" animationDuration="0.29999999999999999" id="htp-Nn-NWW"/>
                         <group width="1" alignment="left" spacing="8" id="bRq-UK-b2r">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="info" contentMode="scaleAspectFit" id="ChO-eu-Ecx">
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="info" contentMode="scaleAspectFit" id="ChO-eu-Ecx">
                                     <color key="tintColor" name="highlight"/>
                                 </imageView>
-                                <label width="1" alignment="left" text="Name" textAlignment="left" numberOfLines="0" id="o9a-Hv-Bwb">
+                                <label width="0.90000000000000002" alignment="left" text="Name" textAlignment="left" numberOfLines="0" id="o9a-Hv-Bwb">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
                         </group>
                         <group width="1" alignment="left" spacing="8" id="Edv-EQ-bWV">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="date" contentMode="scaleAspectFit" id="Efh-GS-KAn">
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="date" contentMode="scaleAspectFit" id="Efh-GS-KAn">
                                     <color key="tintColor" name="highlight"/>
                                 </imageView>
-                                <label width="1" alignment="left" text="Date" textAlignment="left" numberOfLines="0" id="lbX-eS-7KB">
+                                <label width="0.90000000000000002" alignment="left" text="Date" textAlignment="left" numberOfLines="0" id="lbX-eS-7KB">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
                         </group>
                         <group width="1" alignment="left" spacing="8" id="XOy-YI-jcx">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="price" contentMode="scaleAspectFit" id="a1M-ej-Wrb">
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="price" contentMode="scaleAspectFit" id="a1M-ej-Wrb">
                                     <color key="tintColor" name="highlight"/>
                                 </imageView>
-                                <label width="1" alignment="left" text="Price" textAlignment="left" numberOfLines="0" id="kDR-xt-8G3">
+                                <label width="0.90000000000000002" alignment="left" text="Price" textAlignment="left" numberOfLines="0" id="kDR-xt-8G3">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
                         </group>
                         <group width="1" alignment="left" spacing="8" id="RmY-Jm-ToR">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="address" contentMode="scaleAspectFit" id="llW-za-bcb">
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="address" contentMode="scaleAspectFit" id="llW-za-bcb">
                                     <color key="tintColor" name="highlight"/>
                                 </imageView>
-                                <label width="1" alignment="left" text="Where To Buy" textAlignment="left" numberOfLines="0" id="Kec-ht-yZ7">
+                                <label width="0.90000000000000002" alignment="left" text="Where To Buy" textAlignment="left" numberOfLines="0" id="Kec-ht-yZ7">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
                         </group>
                         <group width="1" alignment="left" spacing="8" id="nz8-ks-O8a">
                             <items>
-                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" image="address" contentMode="scaleAspectFit" id="J44-Ur-2jK">
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="address" contentMode="scaleAspectFit" id="J44-Ur-2jK">
                                     <color key="tintColor" name="highlight"/>
                                 </imageView>
-                                <label width="1" alignment="left" text="City" textAlignment="left" numberOfLines="0" id="Cyi-cu-N7g">
+                                <label width="0.90000000000000002" alignment="left" text="City" textAlignment="left" numberOfLines="0" id="Cyi-cu-N7g">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>

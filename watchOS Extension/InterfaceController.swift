@@ -39,6 +39,6 @@ class InterfaceController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        presentController(withName: "DetailInterfaceController", context: events[rowIndex])
+        pushController(withName: "DetailInterfaceController", context: events[rowIndex])
     }
 }
