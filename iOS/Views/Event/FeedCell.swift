@@ -49,10 +49,10 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.events.count == 0 {
             self.collectionView.setEmptyMessage(localized("empty_view"))
-            SpinnerController.sharedInstance.showSpinner()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
         } else {
             self.collectionView.restore()
-            SpinnerController.sharedInstance.removeSpinner()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
 
         return events.count

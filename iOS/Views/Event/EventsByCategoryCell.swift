@@ -12,7 +12,8 @@ class EventByCategoryCell: FeedCell {
     
     override func fetchEvents() {
         DispatchQueue.main.async {
-            ApiService.sharedInstance.fetchEventsByCategory(slug: (self.category?.slug)!) { (events: [Event]) in
+            guard let slug = self.category?.slug else { return }
+            ApiService.sharedInstance.fetchEventsByCategory(slug: slug) { (events: [Event]) in
                 self.events = events
                 self.collectionView.reloadData()
             }

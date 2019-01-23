@@ -73,6 +73,7 @@ class CategoryCell: BaseCategoryCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.showCategoryListController(for: (categories?[indexPath.item])!)
+        guard let categories = categories?[indexPath.item] else { return }
+        self.delegate?.showCategoryListController(for: categories)
     }
 }

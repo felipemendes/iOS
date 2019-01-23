@@ -37,7 +37,6 @@
 		0259351C21E021EF000C727A /* WalkthroughController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0259351B21E021EF000C727A /* WalkthroughController.swift */; };
 		025D821C21E42A4400169300 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330C86219F36B400A257CF /* ApiService.swift */; };
 		025FC4D721D8696500596C12 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC4D621D8696400596C12 /* UIViewExtension.swift */; };
-		025FC4DA21D86FA700596C12 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC4D921D86FA700596C12 /* SpinnerController.swift */; };
 		026161F221C7148200DDD5C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F121C7148200DDD5C2 /* Category.swift */; };
 		026161F421C714B700DDD5C2 /* BaseCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */; };
 		026161F621C7160200DDD5C2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026161F521C7160200DDD5C2 /* CategoryCell.swift */; };
@@ -177,7 +176,6 @@
 		024FC60621E94B52002ACE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0259351B21E021EF000C727A /* WalkthroughController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughController.swift; sourceTree = "<group>"; };
 		025FC4D621D8696400596C12 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		025FC4D921D86FA700596C12 /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
 		026161F121C7148200DDD5C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		026161F321C714B700DDD5C2 /* BaseCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCategoryCell.swift; sourceTree = "<group>"; };
 		026161F521C7160200DDD5C2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -424,7 +422,6 @@
 			children = (
 				020F41CF21D2B5AA007CE3BC /* CustomImageView.swift */,
 				02737A3421D8625C00F3B011 /* NetworkManager.swift */,
-				025FC4D921D86FA700596C12 /* SpinnerController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -832,7 +829,6 @@
 				02007DD021E9839E00B6BA76 /* AppDelegate.swift in Sources */,
 				020F41CA21D2B54D007CE3BC /* UIApplicationExtension.swift in Sources */,
 				02C3AB7D21E0DA7E005B185E /* LoginCell.swift in Sources */,
-				025FC4DA21D86FA700596C12 /* SpinnerController.swift in Sources */,
 				02FC519921E1ACDB00CBB8AE /* WalkthroughControllerDelegate.swift in Sources */,
 				02737A3521D8625C00F3B011 /* NetworkManager.swift in Sources */,
 				02B280E821C7D83800CD7C62 /* EventsByCategoryCell.swift in Sources */,
