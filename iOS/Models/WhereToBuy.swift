@@ -8,9 +8,7 @@
 
 import UIKit
 
-@objcMembers
-class WhereToBuy: NSObject {
-    
-    var slug: String?
-    var title: String?
+struct WhereToBuy: Decodable {
+    let slug: String?
+    let title: String?
 }

@@ -96,7 +96,7 @@ class DetailViewController: UIViewController {
         descriptionValue.text = event?.about
         dateValue.text = event?.date
         priceValue.text = event?.price
-        addressValue.text = event?.addressFormatted
+        addressValue.text = "" // event?.addressFormatted
         whereToBuyValue.text = event?.where_to_buy?.title
         contactValue.text = event?.contact
         

@@ -37,13 +37,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         fetchEvents()
         
-        guard let firstEvent = upcomingEvents.first else {
-            return handler(nil)
-        }
+        guard let firstEvent = upcomingEvents.first else { return handler(nil) }
         
-        guard let title = firstEvent.title, let date = firstEvent.date else {
-            return handler(nil)
-        }
+        guard let title = firstEvent.title, let date = firstEvent.date else { return handler(nil) }
         
         switch complication.family {
         case .modularLarge:

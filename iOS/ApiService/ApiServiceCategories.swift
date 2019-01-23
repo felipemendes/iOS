@@ -17,27 +17,25 @@ class ApiServiceCategory: ApiService {
     
     func fetchCategoryFeed(forUrlString urlString: String, completion: @escaping ([Category]) -> Void) {
         guard let url = URL(string: urlString) else {
-            print("No URL provided")
+            print("No URL provided on fetchCategoryFeed()")
             return
         }
+        
         URLSession.shared.dataTask(with: url) { (data, _, error) in
-            
             if error != nil {
-                print(error ?? "No error message")
+                print(error ?? "Fetch error. No error message")
                 return
             }
             
+            guard let data = data else { return }
             do {
-                if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
-                    DispatchQueue.main.async {
-                        completion(jsonDictionaries.map({ return Category(dictionay: $0)}))
-                    }
+                let categories = try JSONDecoder().decode([Category].self, from: data)
+                DispatchQueue.main.async {
+                    completion(categories)
                 }
-                
             } catch let jsonError {
-                print(jsonError)
+                print("Error serializing json:", jsonError)
             }
-            
         }.resume()
     }
 }

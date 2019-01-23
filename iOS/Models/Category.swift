@@ -8,21 +8,7 @@
 
 import UIKit
 
-@objcMembers
-class Category: NSObject {
-    
-    var id: NSNumber?
-    var slug: String?
-    var title: String?
-    var about: String?
-    var count: NSNumber?
-    
-    override init() {
-        super.init()
-    }
-    
-    init(dictionay: [String: AnyObject]) {
-        super.init()
-        setValuesForKeys(dictionay)
-    }
+struct Category: Decodable {
+    let slug: String?
+    let title: String?
 }

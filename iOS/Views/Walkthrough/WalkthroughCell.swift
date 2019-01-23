@@ -13,9 +13,7 @@ class WalkthroughCell: UICollectionViewCell {
     var page: Page? {
         didSet {
             
-            guard let page = page else {
-                return
-            }
+            guard let page = page else { return }
             
             imageView.image = UIImage(named: page.imageName)
             

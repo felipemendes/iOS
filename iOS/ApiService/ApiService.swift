@@ -32,30 +32,25 @@ class ApiService: NSObject {
     
     func fetchFeed(forUrlString urlString: String, completion: @escaping ([Event]) -> Void) {
         guard let url = URL(string: urlString) else {
-            print("No URL provided")
+            print("No URL provided on fetchFeed()")
             return
         }
         
-        var request = URLRequest(url: url)
-        request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             if error != nil {
-                print(error ?? "No error message")
+                print(error ?? "Fetch error. No error message")
                 return
             }
             
+            guard let data = data else { return }
             do {
-                if let unrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unrappedData, options: .mutableContainers) as? [[String: AnyObject]] {
-                    DispatchQueue.main.async {
-                        completion(jsonDictionaries.map({ return Event(dictionay: $0)}))
-                    }
+                let events = try JSONDecoder().decode([Event].self, from: data)
+                DispatchQueue.main.async {
+                    completion(events)
                 }
-                
             } catch let jsonError {
-                print(jsonError)
+                print("Error serializing json:", jsonError)
             }
-            
         }.resume()
     }
 }
