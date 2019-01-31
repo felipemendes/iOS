@@ -67,19 +67,12 @@ class DetailViewController: UIViewController {
     let contactValue = UILabel().setTextStyle()
     let contactIcon = CustomImageView().setImageStyle(mode: .scaleToFill, radius: 0)
     
-    let dismissButton: UIButton = {
-        let btn: UIButton = UIButton()
-        btn.setImage(UIImage(named: "dismiss"), for: .normal)
-        btn.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
-        return btn
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = event?.title
         self.navigationController?.navigationBar.backgroundColor = .dark
-        
+
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.isTranslucent = true

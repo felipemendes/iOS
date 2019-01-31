@@ -6,6 +6,6 @@ target 'iOS' do
   use_frameworks!
 
   # Pods for iOS
-  pod "SwiftLint"
+  pod 'SwiftLint'
   pod 'ReachabilitySwift'
 end
