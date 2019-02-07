@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLayout, BaseControllerDelegate {
+class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +31,18 @@ class BaseController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let loginController = WalkthroughController()
         present(loginController, animated: true, completion: nil)
     }
+}
+
+extension BaseController: BaseControllerDelegate {
+    func showDetailController(for event: Event, at indexPath: IndexPath, of collectionView: UICollectionView) {
+        let viewController = DetailViewController()
+        viewController.event = event
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     func showCategoryListController(for category: Category) {
         let viewController = CategoryListController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.category = category
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func showDetailController(for event: Event, at indexPath: IndexPath, of collectionView: UICollectionView) {
-        let viewController = DetailViewController()
-        viewController.event = event
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

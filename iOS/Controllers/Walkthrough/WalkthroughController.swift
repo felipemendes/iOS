@@ -14,7 +14,7 @@ struct Page {
     let imageName: String
 }
 
-class WalkthroughController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, WalkthroughControllerDelegate {
+class WalkthroughController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -143,13 +143,14 @@ class WalkthroughController: UIViewController, UICollectionViewDataSource, UICol
     }
 }
 
-extension WalkthroughController {
-    
+extension WalkthroughController: WalkthroughControllerDelegate {
     func finishLoggingIn() {
         UserDefaults.standard.setIsLoggedIn(value: true)
         dismiss(animated: true, completion: nil)
     }
-    
+}
+
+extension WalkthroughController {
     @objc func skip() {
         pageControl.currentPage = pages.count - 1
         nextPage()
